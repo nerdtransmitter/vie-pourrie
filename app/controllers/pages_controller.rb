@@ -5,5 +5,11 @@ class PagesController < ApplicationController
   end
 
   def start
+    # formulaire avec les options du jour
+  end
+
+  def dashboard
+    @wishlist_cards = current_user.cards
+    @journal_entries = current_user.journal_entries
   end
 end
