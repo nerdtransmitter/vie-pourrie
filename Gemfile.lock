@@ -78,6 +78,8 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     autoprefixer-rails (10.4.13.0)
       execjs (~> 2)
+    awesome_nested_set (3.5.0)
+      activerecord (>= 4.0.0, < 7.1)
     bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -252,6 +254,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  awesome_nested_set
   bootsnap
   capybara
   debug
