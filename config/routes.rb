@@ -10,5 +10,5 @@ Rails.application.routes.draw do
     resources :wishlists, only: :create
   end
   resources :wishlists, only: :destroy
-  resources :journal_entries, only: [:edit, :update, :destroy]
+  resources :journal_entries, only: [:edit, :update, :destroy, :show]
 end
