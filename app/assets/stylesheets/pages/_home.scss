@@ -1,23 +1,9 @@
 // Specific CSS for your home-page
-h1 {
-  font-family: $main-font;
-  text-align: center;
-  padding: 10px;
-  font-size: 40px;
-  white-space: pre-wrap;
-  width: 270px;
-  padding-top: 20px;
-}
-
 .card-home {
   width: 270px;
   height: 100%;
   transform: rotate(3deg);
   // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-
-body {
-  background-color: white;
 }
 
 .container-home {

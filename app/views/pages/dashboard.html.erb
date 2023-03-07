@@ -1,0 +1,19 @@
+  <div class="">
+    <h1 class="text-center w-100">My dashboard</h1>
+  </div>
+<div class="container">
+  <div>
+    <h2 class="text-center">My journal entries</h2>
+    <% @journal_entries.each do |entry| %>
+      <%= entry.created_at %>
+      <%= entry.content %>
+    <% end %>
+    <br>
+    <h2 class="text-center">My wishlist</h2>
+     <% @wishlist_cards.each do |card| %>
+      <%= card.name %>
+    <% end %>
+
+    <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn text-end" %>
+  </div>
+</div>
