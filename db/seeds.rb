@@ -7,6 +7,18 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Card.destroy_all
+User.destroy_all
+
+alessia = User.new(email: "alessia@viepourrie.com", password: "auroretest", password_confirmation: "auroretest", username: "Alessia", location: "68 avenue parmentier")
+olga = User.new(email: "olga@viepourrie.com", password: "auroretest", password_confirmation: "auroretest", username: "Olga", location: "68 avenue parmentier")
+martial = User.new(email: "martial@viepourrie.com", password: "auroretest", password_confirmation: "auroretest", username: "Martial", location: "68 avenue parmentier")
+aurore = User.new(email: "aurore@viepourrie.com", password: "auroretest", password_confirmation: "auroretest", username: "Aurore", location: "68 avenue parmentier")
+
+alessia.save
+olga.save
+martial.save
+aurore.save
+puts "users seed completed"
 
 thematic_card = Card.new(name: "Manger des trucs bons")
 thematic_card.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/manger_des_trucs_bons.png")), filename: "manger_des_trucs_bons.png", content_type: "image/png")
@@ -166,3 +178,5 @@ activity_card_four.save
 activity_card_four = Card.create!(name: "Méditation", playlist:"https://open.spotify.com/album/6GMlQBylzCYzGyuTCY0VJE", outside: true, active: true)
 activity_card_four.parent = thematic_card6
 activity_card_four.save
+
+puts "cards seed completed"
