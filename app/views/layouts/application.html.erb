@@ -10,7 +10,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body data-controller="hello">
     <%= render "shared/flashes" %>
     <%= yield %>
     <% if params[:action] != "home" %>

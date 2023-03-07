@@ -1,8 +1,9 @@
-class JournalEntriesController < ApplicationController
+class JournalEntrysController < ApplicationController
   before_action :set_journalentry, only: [:show, :update, :recap, :edit]
   
   def new
     @journalentry = JournalEntry.new
+    
   end
 
   def create

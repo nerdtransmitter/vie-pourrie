@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h2>Preferences du jour</h2>
+
+      <div class="row">
+        <%= simple_form_for [@card, @journalentry] do |f| %>
+        <p>A la maison ou a l'exterieur?</p> 
+        <div class="col">
+          <i class="fa-solid fa-house"></i>
+          <%= f.input :outside, as: :boolean %>
+          <i class="fa-solid fa-tree"></i>
+        </div>
+        <p>J'ai la flemme ou j'ai envie de bouger?</p> 
+        <div class="col">
+        <i class="fa-solid fa-bed"></i>
+          <%= f.input :active, as: :boolean %>
+        </div>
+        <% end %>
+      </div>
+
+        <div class="btn btn-classic">
+          <%= f.button :submit, "melanger les cartes" %>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<i class="fa-solid fa-person-running"></i>

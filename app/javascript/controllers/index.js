@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import OutdoorInputController from "./outdoor_input_controller"
+application.register("outdoor-input", OutdoorInputController)
