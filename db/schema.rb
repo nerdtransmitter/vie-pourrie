@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_153034) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_120049) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_153034) do
     t.integer "rgt"
     t.integer "depth"
     t.integer "children_count"
+    t.string "video"
+    t.string "playlist"
+    t.string "website"
+    t.string "address"
   end
 
   create_table "journal_entries", force: :cascade do |t|
