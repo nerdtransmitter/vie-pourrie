@@ -8,8 +8,9 @@
 
 Card.destroy_all
 
-thematic_card = Card.create!(name: "Manger des trucs bons")
-thematic_card.photo.attach(io: file, filename: "manger_des_trucs_bons.png", content_type: "image/png")
+thematic_card = Card.new(name: "Manger des trucs bons")
+thematic_card.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/manger_des_trucs_bons.png")), filename: "manger_des_trucs_bons.png", content_type: "image/png")
+thematic_card.save!
 activity_card_one = Card.create!(name: "Se faire un chocolat chaud", outside: false, active: false)
 activity_card_one.parent = thematic_card
 # photo
@@ -32,8 +33,9 @@ activity_card_four.save
 
 
 
-thematic_card2 = Card.create!(name: "Marcher prendre l'air")
-thematic_card2.photo.attach(io: file, filename: "marcher_prendre_lair.png", content_type: "image/png")
+thematic_card2 = Card.new(name: "Marcher prendre l'air")
+thematic_card2.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/marcher_prendre_lair.png")), filename: "marcher_prendre_lair.png", content_type: "image/png")
+thematic_card2.save
 activity_card_one = Card.create!(name: "Se faire balade", outside: true, active: true)
 activity_card_one.parent = thematic_card2
 # idees des ilustrastion(tour-eiffel, canal, parc)
@@ -56,8 +58,9 @@ activity_card_four.save
 
 
 
-thematic_card3 = Card.create!(name: "Regarder une serie")
-thematic_card3.photo.attach(io: file, filename: "regarder_des_series.png", content_type: "image/png")
+thematic_card3 = Card.new(name: "Regarder une serie")
+thematic_card3.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/regarder_des_series.png")), filename: "regarder_des_series.png", content_type: "image/png")
+thematic_card3.save
 activity_card_one = Card.create!(name: "After Time (serie trailer)", video: "https://www.youtube.com/watch?v=eIGGKSHMQOM", outside: false, active: false)
 activity_card_one.parent = thematic_card3
 activity_card_one.save
@@ -93,8 +96,9 @@ activity_card_four.save
 
 
 
-thematic_card4 = Card.create!(name: "Faire du Sport")
-thematic_card4.photo.attach(io: file, filename: "faire_du_sport.png", content_type: "image/png")
+thematic_card4 = Card.new(name: "Faire du Sport")
+thematic_card4.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/faire_du_sport.png")), filename: "faire_du_sport.png", content_type: "image/png")
+thematic_card4.save
 activity_card_one = Card.create!(name: "Hatha yoga", video: "https://www.youtube.com/watch?v=l3oAT3X1eL0", outside: false, active: true)
 activity_card_one.parent = thematic_card4
 activity_card_one.save
@@ -123,17 +127,18 @@ activity_card_four.save
 
 
 
-
-thematic_card5 = Card.create!(name: "Sieste")
-thematic_card5.photo.attach(io: file, filename: "siester.png", content_type: "image/png")
+thematic_card5 = Card.new(name: "Sieste")
+thematic_card5.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/siester.png")), filename: "siester.png", content_type: "image/png")
+thematic_card5.save
 activity_card_one = Card.create!(name: "Music", playlist: "https://open.spotify.com/playlist/37i9dQZF1DWZd79rJ6a7lp", outside: false, active: false)
 activity_card_one.parent = thematic_card5
 activity_card_one.save
 
 
 
-thematic_card6 = Card.create!(name: "Ecoute Sa Playlist Préférée à Fond")
-thematic_card6.photo.attach(io: file, filename: "ecouter_sa_playlist_prefere.png", content_type: "image/png")
+thematic_card6 = Card.new(name: "Ecoute Sa Playlist Préférée à Fond")
+thematic_card6.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/ecouter_sa_playlist_prefere.png")), filename: "ecouter_sa_playlist_prefere.png", content_type: "image/png")
+thematic_card6.save
 activity_card_one = Card.create!(name: "Classic", playlist: "https://open.spotify.com/playlist/1h0CEZCm6IbFTbxThn6Xcs", outside: false, active: true)
 activity_card_one.parent = thematic_card6
 activity_card_one.save
