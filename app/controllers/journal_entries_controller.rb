@@ -21,14 +21,13 @@ class JournalEntriesController < ApplicationController
 
   def recap
     if @journalentry.card.address.present?
-      #@journalentry.card
       @markers = [{ lat: @journalentry.card.latitude, lng: @journalentry.card.longitude, info_window_html: render_to_string(partial: "info_window") }]
     elsif @journalentry.card.website.present?
-      #@journalentry.card.website
+      @journalentry.card.website
     elsif @journalentry.card.playlist.present?
-      #@journalentry.card.playlist
+      @journalentry.card.playlist
     elsif @journalentry.card.video.present?
-      #@journalentry.card.video
+      @journalentry.card.video
     end
   end
 
