@@ -1,12 +1,12 @@
 // Specific CSS for your home-page
-.card-home {
-  width: 270px;
-  height: 100%;
-  transform: rotate(3deg);
-  // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
 
 .container-home {
   height: 100vh;
-  padding: 70px ;
+  padding: 50px ;
+}
+
+.title {
+  padding-top: 0;
+  font-size: 40px;
+  width: 270px;
 }
