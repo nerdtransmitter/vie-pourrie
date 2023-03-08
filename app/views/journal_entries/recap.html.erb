@@ -1,0 +1,59 @@
+<nav class="navbar navbar-light bg-light text-center align-items-center">
+  <div class="container-fluid">
+    <p class="navbar-brand fs-4">L'activite du jour</p>
+  </div>
+</nav>
+
+<div class="container">
+
+  <% if @journalentry.card.address %>
+    <div class="d-flex flex-column justify-content-center align-items-center p-4">
+      <div class="img">
+        <%= cl_image_tag @journalentry.card.photo.key  %>
+      </div>
+      <p><%= @journalentry.card.name %></p>
+      <div style="width: 300px; height: 300px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  <% elsif @journalentry.card.website %>
+    <div class="d-flex flex-column justify-content-center align-items-center p-4">
+      <div class="img">
+        <%= cl_image_tag @journalentry.card.photo.key  %>
+      </div>
+      <p><%= @journalentry.card.name %></p>
+      <p><%=  @journalentry.card.website %></p>
+    </div>
+  <% elsif @journalentry.card.playlist %>
+    <div class="d-flex flex-column justify-content-center align-items-center p-4">
+      <div class="img">
+        <%= cl_image_tag @journalentry.card.photo.key  %>
+      </div>
+      <p><%= @journalentry.card.name %></p>
+      <%=  @journalentry.card.playlist %>
+    </div>
+  <% elsif @journalentry.card.video %>
+    <div class="d-flex flex-column justify-content-center align-items-center p-4">
+      <div class="img">
+        <%= cl_image_tag @journalentry.card.photo.key  %>
+      </div>
+      <p><%= @journalentry.card.name %></p>
+      <%=  @journalentry.card.video %>
+    </div>
+  <% else %>
+    <div class="d-flex flex-column justify-content-center align-items-center p-4">
+      <div class="img">
+        <%= cl_image_tag @journalentry.card.photo.key  %>
+      </div>
+      <p><%= @journalentry.card.name %></p>
+    </div>
+  <% end %>
+
+  <div class="d-flex flex-column justify-content-center align-items-center gap-3 p-3">
+    <button style="width: 150px" type="button" class="btn btn-dark">C'est fait !</button>
+    <button style="width: 150px" type="button" class="btn btn-dark">Pour plus tard</button>
+  </div>
+
+</div>

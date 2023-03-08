@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_153153) do
   create_table "active_storage_blobs", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
-    t.string "content_type"
+    t.string "content_utype"
     t.text "metadata"
     t.string "service_name", null: false
     t.bigint "byte_size", null: false
@@ -58,6 +58,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_153153) do
     t.string "playlist"
     t.string "website"
     t.string "address"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "journal_entries", force: :cascade do |t|
@@ -82,6 +84,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_153153) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "location"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
