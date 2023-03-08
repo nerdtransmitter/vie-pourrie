@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h2>Préférences du jour</h2>
+
+      <div class="">
+        <%= form_with  url: cards_path, method: :get do |f| %>
+        <div>
+          <p class="my-2">A la maison ou a l'exterieur?</p>
+          <div class="d-flex">
+            <div>
+              <%= f.radio_button :outside, true %>
+              <%= f.label :outside, "outside" %>
+            </div>
+            <div>
+              <%= f.radio_button :outside, false %>
+              <%= f.label :inside, "inside" %>
+            </div>
+          </div>
+
+          <div>
+            <p class="my-2">J'ai la flemme ou j'ai envie de bouger?</p>
+            <div class="d-flex">
+            <div>
+              <%= f.radio_button :active, false %>
+              <%= f.label :lazy, "flemme" %>
+            </div>
+            <div>
+              <%= f.radio_button :active, true %>
+              <%= f.label :active, "bouger" %>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <%# <i class="fa-solid fa-tree"></i> %>
+
+          <%= f.hidden_field :user_id, value: current_user.id %>
+
+          <%= f.submit "melanger les cartes", class: "btn btn-primary m-4" %>
+        <%# renvoie cards_path %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

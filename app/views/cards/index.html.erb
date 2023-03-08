@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Cartes du jour</h1>
+  <% @cards.each do |card| %>
+      <h3><%= card.parent.name %></h3>
+      <p>active: <%= card.active %></p>
+      <p>outside: <%= card.outside %></p>
+      <%= cl_image_tag card.parent.photo.key, alt: "intro card", width: 200, class: "card-home" %>
+
+  <% end %>
+</div>
