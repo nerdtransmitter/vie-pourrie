@@ -6,56 +6,56 @@
 
 <div class="container">
 
-  <% if @journalentry.card.address %>
+  <% if @journal_entry.card.address %>
     <div class="d-flex flex-column justify-content-center align-items-center p-4">
       <div class="img">
-        <%= cl_image_tag @journalentry.card.photo.key  %>
+        <%= cl_image_tag @journal_entry.card.photo.key  %>
       </div>
-      <p><%= @journalentry.card.name %></p>
+      <p><%= @journal_entry.card.name %></p>
       <div style="width: 300px; height: 300px;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-  <% elsif @journalentry.card.website %>
+  <% elsif @journal_entry.card.website %>
     <div class="d-flex flex-column justify-content-center align-items-center p-4">
       <div class="img">
-        <%= cl_image_tag @journalentry.card.photo.key  %>
+        <%= cl_image_tag @journal_entry.card.photo.key  %>
       </div>
-      <p><%= @journalentry.card.name %></p>
-      <p><%=  @journalentry.card.website %></p>
+      <p><%= @journal_entry.card.name %></p>
+      <p><%=  @journal_entry.card.website %></p>
     </div>
-  <% elsif @journalentry.card.playlist %>
+  <% elsif @journal_entry.card.playlist %>
     <div class="d-flex flex-column justify-content-center align-items-center p-4">
       <div class="img">
-        <%= cl_image_tag @journalentry.card.photo.key  %>
+        <%= cl_image_tag @journal_entry.card.photo.key  %>
       </div>
-      <p><%= @journalentry.card.name %></p>
-      <%=  @journalentry.card.playlist %>
+      <p><%= @journal_entry.card.name %></p>
+      <%=  @journal_entry.card.playlist %>
     </div>
-  <% elsif @journalentry.card.video %>
+  <% elsif @journal_entry.card.video %>
     <div class="d-flex flex-column justify-content-center align-items-center p-4">
       <div class="img">
-        <%= cl_image_tag @journalentry.card.photo.key  %>
+        <%= cl_image_tag @journal_entry.card.photo.key  %>
       </div>
-      <p><%= @journalentry.card.name %></p>
-      <%=  @journalentry.card.video %>
+      <p><%= @journal_entry.card.name %></p>
+      <%=  @journal_entry.card.video %>
     </div>
   <% else %>
     <div class="d-flex flex-column justify-content-center align-items-center p-4">
       <div class="img">
-        <%= cl_image_tag @journalentry.card.photo.key  %>
+        <%= cl_image_tag @journal_entry.card.photo.key  %>
       </div>
-      <p><%= @journalentry.card.name %></p>
+      <p><%= @journal_entry.card.name %></p>
     </div>
   <% end %>
 
   <div class="d-flex flex-column justify-content-center align-items-center gap-3 p-3">
-  <%= link_to "C'est fait! ", edit_journal_entry_path(@journalentry)  %>
+  <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry)  %>
     <%# <button style="width: 150px" type="button" class="btn btn-dark">C'est fait !</button> %>
-    <%= link_to "Pour plus tard ", card_wishlists_path(@journalentry.card)  %>
-    <%= simple_form_for [@journalentry.card, @wishlist] do |f|%>
+    <%= link_to "Pour plus tard ", card_wishlists_path(@journal_entry.card)  %>
+    <%= simple_form_for [@journal_entry.card, @wishlist] do |f|%>
     <%= f.submit "Pour plus tard!" %>
     <%end %>
     <%# <button style="width: 150px" type="button" class="btn btn-dark">Pour plus tard</button> %>
