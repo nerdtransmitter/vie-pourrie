@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   end
   resources :wishlists, only: :destroy
   resources :journal_entries, only: [:edit, :update, :destroy, :show]
+  get :filters, to: "cards#filters"
 end

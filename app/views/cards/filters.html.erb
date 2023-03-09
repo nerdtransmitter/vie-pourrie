@@ -1,0 +1,59 @@
+<div class="mt-4 container p-3">
+  <div class="justify-content-between align-items-center">
+    <div>
+      <h1 class="text-center mt-4">Préférences du jour</h1>
+      <div class="form">
+        <%= form_with  url: cards_path, method: :get do |f| %>
+          <div class="d-flex flex-column align-items-center justify-content-between mb-4 pt-5">
+            <%# <div class="preferences my-5"> %>
+              <p class="my-4">A la maison ou a l'exterieur?</p>
+              <div class="btns-radio">
+                <div class="radio-btn-div ">
+                  <%= f.radio_button :outside, false, class: "radio-btn" %>
+                  <div class="label-rounded">
+                    <%= f.label :outside do %>
+                      <%= image_tag "house2.png", class: "label-icon" %>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="radio-btn-div">
+                  <%= f.radio_button :outside, true, class: "radio-btn" %>
+                  <div class="label-rounded">
+                    <%= f.label :outside do %>
+                      <%= image_tag "tree.png", class: "label-icon" %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <%# </div> %>
+          </div>
+          <div class="d-flex flex-column align-items-center justify-content-between my-4 pt-3 pb-5">
+            <p class="my-4">Envie de bouger ou la flemme?</p>
+            <div class="btns-radio">
+              <div class="radio-btn-div">
+                <%= f.radio_button :active, true, class: "radio-btn" %>
+                <div class="label-rounded">
+                  <%= f.label :active do %>
+                    <%= image_tag "running man.png", class: "label-icon" %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="radio-btn-div">
+                <%= f.radio_button :active, false, class: "radio-btn" %>
+                <div class="label-rounded">
+                  <%= f.label :lazy do %>
+                    <%= image_tag "bed.png", class: "label-icon" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <div class="w-100 justify-content-center align-items-center d-flex">
+            <%= f.submit "mélanger les cartes", class: "btn btn-purple m-4 text-center" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

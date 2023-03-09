@@ -1,18 +1,21 @@
 class CardsController < ApplicationController
+
   def index
-    @cards = Card.all
+    if params[:outside]
+      if params[:active]
+        @cards = Card.where(outside: params[:outside]).where(active: params[:active])
+      else
+        @cards = Card.where(outside: params[:outside])
+      end
+    else
+      @cards = Card.where(depth: 1)
+    end
   end
 
   def show
     @card = Card.find(params[:id])
   end
 
-  # def edit
-  #   @card = Card.find(params[:id])
-  # end
-
-  # # def update
-  # #   @card.
-  # #   @card = Card.
-  # # end
+  def filters
+  end
 end
