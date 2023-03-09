@@ -74,3 +74,15 @@
   object-fit: cover;
 }
 
+#selected {
+  z-index: 100;
+}
+
+.card-option {
+  height: 100px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+}

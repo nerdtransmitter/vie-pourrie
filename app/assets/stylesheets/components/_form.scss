@@ -1,3 +1,37 @@
 .form-label, .form-control, .form-text {
   font-family: $main-font;
 }
+
+.radio_buttons.form-check-input {
+  opacity: 0;
+}
+
+.image-select {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  font-size: 8px;
+  border-radius: 7px;
+}
+
+label {
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+  p {
+    text-align: end;
+  }
+}
+
+.form-check-label.collection-radio-buttons {
+  width: 100%;
+  display: flex;
+
+}
+.radio_buttons.form-check-input:checked + .form-check-label {
+}
+
+.image-select:has(.radio_buttons.form-check-input:checked ) {
+  border: 2px solid black;
+}

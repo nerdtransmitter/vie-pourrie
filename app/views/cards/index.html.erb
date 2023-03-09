@@ -28,10 +28,26 @@
       <div class="modal-body">
         ...
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" id="modal-footer">
         <%= link_to "shuffle again", cards_path(outside: params[:outside], active: params[:active]) %>
-        <%#= link_to "accept", new_journal_entry_path(parent_card: @card.id, outside: params[:outside], active: params[:active]) %>
+        <%= link_to "accept", new_journal_entry_path(parent_card: @card.parent.id, outside: params[:outside], active: params[:active]) %>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  // Wait for the document to be loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the accept button element
+    const acceptButton = document.querySelector('#modal-footer a[href*="new_journal_entry"]');
+
+    // Add a click event listener to the accept button
+    acceptButton.addEventListener('click', function(event) {
+      // Get the ID of the selected card
+      const selectedCardId = document.querySelector('.card#selected').getAttribute('id');
+      // Update the "parent_card" parameter of the accept button's href attribute
+      acceptButton.href += `?parent_card=${selectedCardId}`;
+    });
+  });
+</script>
