@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+JournalEntry.destroy_all
 Card.destroy_all
 User.destroy_all
 
@@ -178,7 +179,7 @@ activity_card_eight.parent = thematic_card3
 activity_card_eight.save!
 
 journal_sixteen = JournalEntry.create(user: User.last, card: Card.last)
-journal_sexteen.save!
+journal_sixteen.save!
 
 thematic_card4 = Card.new(name: "Faire du sport")
 thematic_card4.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/faire_du_sport.png")), filename: "faire_du_sport.png", content_type: "image/png")
