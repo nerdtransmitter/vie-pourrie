@@ -8,6 +8,7 @@
 
 Card.destroy_all
 User.destroy_all
+JournalEntry.destroy_all
 
 alessia = User.new(email: "alessia@viepourrie.com", password: "auroretest", password_confirmation: "auroretest", username: "Alessia", location: "68 avenue parmentier")
 olga = User.new(email: "olga@viepourrie.com", password: "auroretest", password_confirmation: "auroretest", username: "Olga", location: "68 avenue parmentier")
