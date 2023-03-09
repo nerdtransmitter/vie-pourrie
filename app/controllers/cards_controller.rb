@@ -1,5 +1,4 @@
 class CardsController < ApplicationController
-
   def index
     if params[:outside]
       if params[:active]
