@@ -1,8 +1,7 @@
 class WishlistsController < ApplicationController
   def create
     @wishlist = Wishlist.new
-    @journal_entry = JournalEntry.find(params[:id])
-    @card = @journal_entry.card
+    @card = Card.find(params[:card_id])
     @wishlist.card = @card
     @wishlist.user = current_user
     if @wishlist.save

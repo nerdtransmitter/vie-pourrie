@@ -17,8 +17,8 @@ class JournalEntriesController < ApplicationController
   end
 
   def update
-    @journalentry.update(journalentry_params)
-    redirect_to recap
+    @journalentry.update(journalentrie_params)
+    redirect_to dashboard_path
   end
 
   def recap
@@ -31,6 +31,7 @@ class JournalEntriesController < ApplicationController
     elsif @journalentry.card.video.present?
       @journalentry.card.video
     end
+    @wishlist = Wishlist.new
   end
 
   def edit
@@ -39,7 +40,7 @@ class JournalEntriesController < ApplicationController
   private
 
   def journalentrie_params
-    params.require(:journalentry).permit(:rating, :content, :mood, :card_id)
+    params.require(:journal_entry).permit(:rating, :content, :mood, :card_id)
   end
 
   def set_journalentry

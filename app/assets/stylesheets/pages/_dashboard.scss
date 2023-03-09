@@ -1,0 +1,72 @@
+.card-dashboard {
+  width: 75%;
+    height: 21%;
+    background: #ffff;
+    box-shadow: 0 1px 25px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 13%;
+    left: 41%;
+    padding: 8px 10px;
+}
+
+.card_load {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  float: left;
+  background: linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 
+  40%, #e5e5e5 48%);
+  border-radius: 50%;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load89234 2s infinite;
+}
+
+.card_load_extreme_title {
+  width: 162px;
+  height: 45px;
+  position: relative;
+  float: left;
+  border-radius: 5px;
+  background: linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 
+  40%, #e5e5e5 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load89234 2s infinite;
+  text-align: center;
+ 
+}
+
+
+.card_load_extreme_descripion {
+  width: 269px;
+  height: 78px;
+  position: relative;
+  float: right;
+  border-radius: 5px;
+  background: linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 
+  40%, #e5e5e5 48%);
+  margin-top: 10px;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load89234 2s infinite;
+}
+
+@keyframes load89234 {
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.card-list {
+  position: absolute;
+  top: 291px;
+  left: 14px;
+  width: 218px;
+  transform-style: preserve-3d;
+  border: none;
+  background-image: none;
+  border-radius: 15%;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+}
