@@ -1,0 +1,16 @@
+<h1>My options</h1>
+<div class="container">
+  <%= simple_form_for  @journal_entry do |f| %>
+    <div class="options">
+      <%= f.input :card, as: :radio_buttons, collection: @cards,
+        item_wrapper_tag: :div,
+        item_wrapper_class: "image-select",
+        label_method: lambda { |c| "#{cl_image_tag c.photo.key, width: 100} <p>#{c.name}</p>".html_safe }
+      %>
+    </div>
+    <br>
+    <div class="w-100 justify-content-center align-items-center d-flex">
+      <%= f.submit "C'est parti", class: "btn btn-purple m-4 text-center" %>
+    </div>
+  <% end %>
+</div>
