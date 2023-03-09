@@ -28,8 +28,8 @@ class JournalEntriesController < ApplicationController
   end
 
   def update
-    @journal_entry.update(journal_entry_params)
-    redirect_to recap
+    @journalentry.update(journal_entry_params)
+    redirect_to dashboard_path
   end
 
   def recap
@@ -42,6 +42,7 @@ class JournalEntriesController < ApplicationController
     elsif @journal_entry.card.video.present?
       @journal_entry.card.video
     end
+    @wishlist = Wishlist.new
   end
 
   def edit
