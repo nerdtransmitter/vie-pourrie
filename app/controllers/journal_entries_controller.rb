@@ -2,6 +2,8 @@ class JournalEntriesController < ApplicationController
   before_action :set_journalentry, only: [:show, :update, :recap, :edit]
 
   def new
+    # recuperer parent card + params outside et active
+    # filtrer pour proposer many children @cards
     @journalentry = JournalEntry.new
   end
 
