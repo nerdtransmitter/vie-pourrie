@@ -57,5 +57,4 @@ class JournalEntriesController < ApplicationController
   def set_journal_entry
     @journal_entry = JournalEntry.find(params[:id])
   end
-
 end
