@@ -2,5 +2,8 @@
 @import "home";
 
 body {
-  background-image: linear-gradient(to right, #7f53ac 0, #657ced 100%);
+  background-image: linear-gradient(to top, #f6c0e6 0, #f9dcc4 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
