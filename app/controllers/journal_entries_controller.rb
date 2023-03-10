@@ -28,7 +28,7 @@ class JournalEntriesController < ApplicationController
   end
 
   def update
-    @journalentry.update(journal_entry_params)
+    @journal_entry.update(journal_entry_params)
     redirect_to dashboard_path
   end
 

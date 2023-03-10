@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-4">
-      <%= simple_form_for @journalentry do |f| %>
+      <%= simple_form_for @journal_entry do |f| %>
         <%= f.input :content %>
         <%= f.input :rating, collection: (1..5).to_a, label: "Comment tu te sens?", input_html: {data: {controller: "star-rating"}} %>
         <%= f.submit "Enregistre" %>
