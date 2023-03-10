@@ -14,13 +14,16 @@
 @import "pages/index";
 @import "pages/dashboard";
 @import "pages/options";
+@import "pages/filters";
+@import "pages/home";
+
 
 body {
   background-color: white;
 }
 
 h1, h2, h3 {
-  font-family: $main-font;
+  font-family: 'Lobster', cursive;
 }
 
 h1 {
