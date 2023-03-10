@@ -19,9 +19,9 @@ export default class extends Controller {
   }
 
   displayWishlist() {
-    if (this.journalTarget.classList.contains("card-hidden")) {
+    if (this.wishlistTarget.classList.contains("card-hidden")) {
       this.hideAllCards()
-      this.journalTarget.classList.remove("card-hidden") // make it VISIBLE
+      this.wishlistTarget.classList.remove("card-hidden") // make it VISIBLE
     } else {
       this.hideAllCards()
     }
