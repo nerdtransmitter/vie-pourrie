@@ -23,7 +23,7 @@
 
   <% if @journal_entry.card.address %>
     <div class="d-flex flex-column justify-content-center align-items-center p-4">
-      <div style="width: 300px; height: 300px;"
+      <div style="width: 220px; height: 220px;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
