@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-life w-100 d-flex justify-content-between p-3 me-auto list-inline">
+<div class="navbar background-navbar navbar-expand-sm navbar-light navbar-life w-100 d-flex justify-content-between p-3 me-auto list-inline">
   <%# <div class="d-flex justify-content-between"> %>
     <%# <ul class="navbar-nav me-auto"> %>
       <% if user_signed_in? %>
@@ -9,7 +9,7 @@
           <%= link_to "Tirage", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropup">
-          <button class="dropbtn btn nav-item">Profil</button>
+          <button class="dropbtn btn nav-item profil-typo">Profil</button>
           <div class="dropup-content" aria-labelledby="navbarDropup">
             <%= link_to "Editer mon profil", edit_user_registration_path %>
             <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete} %>

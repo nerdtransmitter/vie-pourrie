@@ -91,3 +91,18 @@
 .btn-select {
   opacity: 0;
 }
+
+.btn-violet {
+  background-color: #3e1359;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  width: 180px;
+  //font-family: $main-font;
+  transition: opacity 0.3s ease;
+}
+
+.btn-violet:hover {
+  background-color: #915db2;
+}
