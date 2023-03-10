@@ -11,7 +11,7 @@
       <%= f.input :card, as: :radio_buttons, collection: @cards,
         item_wrapper_tag: :div,
         item_wrapper_class: "image-select",
-        label_method: lambda { |c| "#{cl_image_tag c.photo.key, width: 100} <p>#{c.name}</p>".html_safe }
+        label_method: lambda { |c| "#{cl_image_tag c.photo.key, width: 100} <h2>#{c.name}</h2>".html_safe }
       %>
     </div>
     <br>

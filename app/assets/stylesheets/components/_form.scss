@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 .form-label, .form-control, .form-text {
-  font-family: $main-font;
 }
 
 .radio_buttons.form-check-input {
@@ -10,8 +10,14 @@
   padding: 10px;
   display: flex;
   flex-direction: row;
-  font-size: 8px;
+  justify-content: space-between;
+  background-color: white;
   border-radius: 7px;
+  h2 {
+    text-align: right;
+  }
+  margin: 20px;
+  box-sizing: content-box;
 }
 
 label {
