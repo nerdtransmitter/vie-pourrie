@@ -1,23 +1,23 @@
-  
+
 <div class="container">
   <div class="card-dashboard">
-    <%= image_tag "olga_user_avatar.JPG", class: "card_load" %>
+    <%= cl_image_tag current_user.photo.key, class: "card_load" %>
     <h4 class="card_load_extreme_title"> Hello  <span class="text-color fw-bolder"><%= current_user.username %></span> !</h4>
     <div class="card_load_extreme_descripion"></div>
   </div>
- 
-    <div class="d-flex flex-column justify-content-between card-list"> 
+
+    <div class="d-flex flex-column justify-content-between card-list">
         <h2><%= link_to "Mon journal", filters_path, class: "text-decoration-none" %></h2>
         <% @journal_entries.each do |entry| %>
           <%= entry.created_at %>
           <%= entry.content %>
-        <% end %> 
+        <% end %>
       <br>
         <h2><%= link_to "My wishlist", filters_path, class: "text-decoration-none" %></h2>
         <% @wishlist_cards.each do |card| %>
           <%= card.name %>
         <% end %>
-    
+
     </div>
 </div>
 <%# wishlists_path(card) %>
