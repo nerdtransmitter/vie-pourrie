@@ -2,11 +2,19 @@ class JournalEntriesController < ApplicationController
   before_action :set_journal_entry, only: [:show, :update, :recap, :edit]
 
   def new
-    # recuperer parent card + params outside et active
     @card = Card.find(params[:parent_card])
-    # outside = params[:outside]
-    # active = params[:active]
-    @cards = @card.children.where(outside: params[:outside]).where(active: params[:active]).shuffle.first(4)
+    if params[:outside]
+      if params[:active]
+        @cards = @card.children.where(outside: params[:outside]).where(active: params[:active]).sample(4)
+      else
+        @cards = @card.children.where(outside: params[:outside]).sample(4)
+      end
+    elsif params[:active]
+      @cards = @card.children.where(active: params[:active]).sample(4)
+    else
+      @cards = @card.children.where(depth: 1).sample(4)
+    end
+
     @selection = Card.where(params[:card])
     # filtrer pour proposer many children @cards
     @journal_entry = JournalEntry.new
