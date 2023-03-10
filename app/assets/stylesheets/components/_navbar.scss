@@ -4,7 +4,15 @@
   position: fixed;
   bottom: 0;
   font-family: $main-font;
+  color: white;
   font-size: 20px;
+}
+
+.profile-typo {
+  font-family: $main-font;
+  color: white;
+  font-size: 20px;
+  text-align: center;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -69,4 +77,8 @@
 button {
   text-decoration: none;
 
+}
+
+.background-navbar {
+  background-color: $medium-purple;
 }

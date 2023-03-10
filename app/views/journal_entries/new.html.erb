@@ -1,7 +1,7 @@
 <h1>My options</h1>
 <div class="container">
   <%= simple_form_for  @journal_entry do |f| %>
-    <div class="options">
+    <div class="options-children">
       <%= f.input :card, as: :radio_buttons, collection: @cards,
         item_wrapper_tag: :div,
         item_wrapper_class: "image-select",

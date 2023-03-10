@@ -1,17 +1,28 @@
-<nav class="navbar navbar-light bg-light text-center align-items-center">
-  <div class="container-fluid">
-    <p class="navbar-brand fs-4">L'activite du jour</p>
+<%# <nav class="navbar navbar-light bg-light text-center align-items-center w-100">
+  <div class="container-fluid background-navbar profile-typo">
+    <p class="navbar-brand fs-4 profile-typo">L'activite du jour</p>
+  </div>
+</nav> %>
+
+<nav class="mb-3">
+  <div class="background-navbar container-fluid p-2 profile-typo">
+    <p class="fs-4 m-0">L'activite du jour</p>
   </div>
 </nav>
 
 <div class="container">
 
+  <div>
+    <%= cl_image_tag @journal_entry.card.photo.key, class: "card-photo" %>
+  </div>
+
+  <div class="title w-100">
+    <p class="activity-typo"><%= @journal_entry.card.name %></p>
+  </div>
+
+
   <% if @journal_entry.card.address %>
     <div class="d-flex flex-column justify-content-center align-items-center p-4">
-      <div class="img">
-        <%= cl_image_tag @journal_entry.card.photo.key  %>
-      </div>
-      <p><%= @journal_entry.card.name %></p>
       <div style="width: 300px; height: 300px;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
@@ -20,44 +31,26 @@
     </div>
   <% elsif @journal_entry.card.website %>
     <div class="d-flex flex-column justify-content-center align-items-center p-4">
-      <div class="img">
-        <%= cl_image_tag @journal_entry.card.photo.key  %>
-      </div>
-      <p><%= @journal_entry.card.name %></p>
-      <p><%=  @journal_entry.card.website %></p>
+      <%= link_to "Voir ! ", @journal_entry.card.website, class: "btn btn-ghost"  %>
     </div>
   <% elsif @journal_entry.card.playlist %>
     <div class="d-flex flex-column justify-content-center align-items-center p-4">
-      <div class="img">
-        <%= cl_image_tag @journal_entry.card.photo.key  %>
-      </div>
-      <p><%= @journal_entry.card.name %></p>
-      <%=  @journal_entry.card.playlist %>
+      <%= link_to "Ecouter ! ", @journal_entry.card.playlist, class: "btn btn-ghost"  %>
     </div>
   <% elsif @journal_entry.card.video %>
-    <div class="d-flex flex-column justify-content-center align-items-center p-4">
-      <div class="img">
-        <%= cl_image_tag @journal_entry.card.photo.key  %>
-      </div>
-      <p><%= @journal_entry.card.name %></p>
-      <%=  @journal_entry.card.video %>
-    </div>
+    <%# <div class="d-flex flex-column justify-content-center align-items-center p-4"> %>
+      <%#= link_to "Regarder ! ", @journal_entry.card.video, class: "btn btn-ghost"  %>
+    <%# </div> %>
+    <iframe width="100%" height="215" class="rounded-3" src="https://www.youtube.com/embed/<%= @journal_entry.card.filter_video_url %>?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   <% else %>
-    <div class="d-flex flex-column justify-content-center align-items-center p-4">
-      <div class="img">
-        <%= cl_image_tag @journal_entry.card.photo.key  %>
-      </div>
-      <p><%= @journal_entry.card.name %></p>
-    </div>
   <% end %>
 
-  <div class="d-flex flex-column justify-content-center align-items-center gap-3 p-3">
-  <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry)  %>
-    <%# <button style="width: 150px" type="button" class="btn btn-dark">C'est fait !</button> %>
-    <%= link_to "Pour plus tard ", card_wishlists_path(@journal_entry.card)  %>
+  <div class="d-flex justify-content-center align-items-center gap-3 p-3">
+    <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry), class: "btn btn-violet"  %>
+      <%# <button style="width: 150px" type="button" class="btn btn-dark">C'est fait !</button> %>
     <%= simple_form_for [@journal_entry.card, @wishlist] do |f|%>
-    <%= f.submit "Pour plus tard!" %>
-    <%end %>
+      <%= f.submit "Pour plus tard!", class: "btn btn-violet"%>
+    <% end %>
     <%# <button style="width: 150px" type="button" class="btn btn-dark">Pour plus tard</button> %>
   </div>
 

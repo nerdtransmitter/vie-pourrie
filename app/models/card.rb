@@ -15,4 +15,15 @@ class Card < ApplicationRecord
   def is_activity?
     level == 1
   end
+
+  def filter_video_url
+    if video
+      match = self.video.match(/\b=.*(\b&|\z)/).to_s
+      if match[-1] == "&"
+        return match[1..-2]
+      else
+        return match[1..-1]
+      end
+    end
+  end
 end
