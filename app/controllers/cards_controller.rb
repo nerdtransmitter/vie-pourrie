@@ -4,7 +4,7 @@ class CardsController < ApplicationController
       if params[:active]
         @cards = Card.where(outside: params[:outside]).where(active: params[:active])
       else
-        @cards = Card.where(outside: params[:outside])
+        @cards = Card.where(outside: params[:outside]) 
       end
     elsif params[:active]
       @cards = Card.where(active: params[:active])
