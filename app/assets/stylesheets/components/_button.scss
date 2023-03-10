@@ -91,3 +91,78 @@
 .btn-select {
   opacity: 0;
 }
+
+// heart button
+.btn-like {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  z-index: 150;
+}
+
+.btn-like::after {
+  content: 'like';
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  font-size: 15px;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s linear;
+  top: 115%;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  transition: .2s linear;
+  z-index: inherit;
+}
+
+.icon path {
+  fill: white;
+  transition: .2s linear;
+}
+
+.btn-like:hover > .icon {
+  transform: scale(1.2);
+}
+
+.btn-like:hover > .icon path {
+  fill: rgb(177, 139, 189);
+}
+
+.btn-like:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: 105%;
+}
+
+.btn-selected {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba($color: black, $alpha: .4);
+  border-radius: 15%;
+  position: absolute;
+  top: -5px;
+}
+
+.btn-selected {
+  transition: transform 0.7s ease-in-out;
+}
+
+.btn-selected:hover {
+  transform: rotate(360deg);
+}
