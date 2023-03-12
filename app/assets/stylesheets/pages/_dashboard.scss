@@ -1,9 +1,8 @@
-// @import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Ubuntu:400,500,700&display=swap');
 
 *{
     margin: 0;
     padding: 0;
-  list-style: none;
+    list-style: none;
   //   font-family: 'Ubuntu', sans-serif;
   //   box-sizing: border-box;
   text-decoration: none;
@@ -26,65 +25,13 @@ a {
 .text {
   margin-left: 66px;
 }
-
 // body{
   //   background: #d5d9df;
   //   width: 100%;
   //   height: 100%;
   // }
-  /*MENU LOGO*/
-.wrapper .top_navbar{
-	width: 100%;
-	height: 70px;
-	display: flex;
-	position: fixed;
-	top: 0;
-}
 
-.wrapper .top_navbar .top_menu{
-    width: calc(100% - 250px);
-    height: 100%;
-    background: #fff;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 3px solid #000000;
-}
-
-.wrapper .top_navbar .top_menu .home_link a{
-    display: block;
-    background: black;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 3px;
-    text-decoration-line: none;
-}
-.wrapper .top_navbar .top_menu .home_link a:hover{
-    background: white;
-    color: black;
-    transition: 0.5s;
-}
-.wrapper .top_navbar .top_menu .right_info .icon_wrap:hover {
-    background: white;
-    color: black;
-    transition: 0.5s;
-    transform: rotate(360deg);
-}
-
-.wrapper .top_navbar .top_menu .right_info{
-	display: flex;
-}
-
-.wrapper .top_navbar .top_menu .right_info .icon_wrap{
-	padding: 8px 15px;
-    border-radius: 200px 200px 200px 200px;
-	background: #a67fbe;;
-    color: #fff;
-    margin: 0 5px;
-    cursor: pointer;
-}
-/*MENU PARTE BAJA*/
+/*MENU */
 .wrapper .sidebar_menu{
   position: fixed;
   top: 125px;
@@ -93,8 +40,9 @@ a {
   width: 50px;
   height: 100%;
   transition: all 0.3s linear;
+  border-radius: 10px;
 }
-.wrapper .sidebar_menu .inner__sidebar_menu{
+.wrapper .sidebar_menu .inner_sidebar_menu{
     position: relative;
     padding-top: 60px;
 
@@ -113,90 +61,14 @@ a {
 .wrapper .sidebar_menu ul li a .icon{
     margin-right: 20px;
 }
-.wrapper .sidebar_menu ul li a:hover{
-    background: linear-gradient(to right,rgba(206, 107, 27, 0.733),
-    rgba(131, 120, 88, 0.199));
-    color: rgb(255, 253, 253);
-    font-size: 25px;
-    transition: 0.5s;
-}
 
-.wrapper .sidebar_menu .hamburger{
-    position: absolute;
-    top: 8px;
-    right: -25px;
-    width: 50px;
-    height: 50px;
-    background: #d5d9df;
-    border-radius: 50%;
-}
-
-.wrapper .sidebar_menu .hamburger .inner_hamburger,
-.wrapper .sidebar_menu .hamburger .inner_hamburger .arrow{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-.wrapper .sidebar_menu .hamburger .inner_hamburger{
-    width: 45px;
-    border-radius: 50%;
-    height: 45px;
-    background: #000000;
-}
-.wrapper .sidebar_menu .hamburger .inner_hamburger .arrow{
-    color: #fff;
-    font-size: 20px;
-}
-
-/*ENTORNO*/
-.wrapper .container{
-  width: calc(100% - 250px);
-  margin-top: 65px;
-  margin-left: 114px;
-  padding: 25px 40px;
-  transition: all 0.3s linear;
-}
-/**/
-.wrapper .container .iten_wrap{
-    display: flex;
-	margin-bottom: 20px;
-}
-
-.wrapper .container .iten_wrap .item{
-    background: #fff;
-	border: 1px solid #e0e0e0;
-	padding: 25px;
-	font-size: 14px;
-	line-height: 22px;
-
-}
-.wrapper .container .iten_wrap .item:first-child{
-    margin-right: 20px;
-}
-.wrapper.active .sidebar_menu{
-    width: 113px;
-}
-
-.wrapper.active .hamburger .fa-caret-square-right{
-    display: block !important;
-}
-.wrapper.active .hamburger .fa-caret-square-left{
-    display: none;
-}
 .wrapper.active .sidebar_menu ul li a .list{
     display: none;
     left: -206px;
 }
 
-.wrapper.active .container{
-    width: calc(100% -  100px);
-    margin-left: 100px;
-}
 
-
-
-/*DASBOARD*/
+/*Card*/
 .card-box.bg-violet.card-hidden {
   position: fixed;
   opacity: 0;
@@ -208,9 +80,11 @@ a {
   top: 125px;
   right: 20px;
   opacity: 1;
-  transition: all 80ms ease;
+  transition: all 05ms ease;
 }
-
+.bg-violet {
+    background-color:#a67fbe !important;
+}
 
 .card-box {
     position: relative;
@@ -221,10 +95,6 @@ a {
     border-radius: 21px 21px 21px 21px;
     -moz-border-radius: 21px 21px 21px 21px;
     -webkit-border-radius: 21px 21px 21px 21px;  
-}
-.card-box:hover {
-    text-decoration: none;
-    color: #ffffff;
 }
 .card-box:hover .icon i {
     font-size: 110px;
@@ -246,19 +116,7 @@ a {
     font-size: 15px;
 }
 
-.card-box:hover .card-box-footer {
-    background: rgba(0, 0, 0, 0.3);
-}
-.bg-violet {
-    background-color:#a67fbe !important;
-}
 
-.row2 {
-    display: -ms-flexbox !important;
-    display: flex;
-    -ms-flex-wrap: wrap !important;
-    flex-wrap: wrap;
-    margin-right: auto;
-    margin-left: auto;
-}
+
+
 

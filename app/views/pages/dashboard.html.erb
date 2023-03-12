@@ -4,14 +4,31 @@
     <%= cl_image_tag current_user.photo.key, class: "avatar-large me-auto bd-highlight" %>
     <h5 class="mt-3">Bonjour,  <span class="text-color fw-bolder"><%= current_user.username %></span> !</h5>
   </div>
-  <p class= "text fst-italic">"Pour pouvoir contempler un arc-en-ciel, il faut d'abord endurer la pluie."</p>
+    <% # Define an array of inspirational messages %>
+    <% messages = [
+        "Pour pouvoir contempler un arc-en-ciel, il faut d'abord endurer la pluie.",
+        "Le succès n'est pas final, l'échec n'est pas fatal : c'est le courage de continuer qui compte.",
+        "La vie est un défi à relever, un bonheur à mériter, une aventure à tenter.",
+        "Il n'y a pas de raccourci pour atteindre un endroit que ça vaut la peine d'aller.",
+        "Le seul endroit où le succès vient avant le travail, c'est dans le dictionnaire.",
+        "Chaque jour est une nouvelle chance de vivre une vie meilleure.",
+        "La réussite n'est pas la clé du bonheur. Le bonheur est la clé de la réussite.",
+        "La vie est un voyage, profitez de chaque instant et apprenez de chaque expérience.",
+        "N'abandonnez jamais vos rêves, car ils peuvent se réaliser un jour.",
+        "La vie est trop courte pour ne pas être heureux.",
+        "Le bonheur ne dépend pas de ce que vous avez, mais de ce que vous êtes.",
+        "Soyez la personne que vous voulez être et vivez la vie que vous voulez vivre."
+      ] %>
+    <% # Display a randomly selected message on each page refresh %>
+    <div class="message text fst-italic">
+      <p><small>"<%= messages.sample %>"</small></p>
+    </div>
 </div> 
-         <!--  -->
 <div class="dashboard-container" data-controller="dashboard">
   <div class="wrapper">
     <div class="main_body">
       <div class="sidebar_menu">
-        <div class="inner__sidebar_menu">
+        <div class="inner_sidebar_menu">
           <ul class="d-flex flex-column align-items-center p-0">
             <li data-action="click->dashboard#displayJournal">
               <p>
@@ -34,12 +51,12 @@
                 </div>
               </div>
             </li>
-            <li>
+            <%# <li>
               <p>
-              <span><%=image_tag "diary.png", width: 48, class: "" %></span>
+              <%# <span><%=image_tag "diary.png", width: 48, class: "" %> 
 
-              </p>
-            </li>
+              <%# </p>
+            </li> %>
             <li data-action="click->dashboard#displayWishlist">
               <p>
                 <span><%=image_tag "heart-shape.png", width: 48, class: "" %></span>
@@ -53,7 +70,6 @@
                 </div>  
               </div>
             </li>
-          
           </ul>
         </div>
       </div>       
