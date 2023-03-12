@@ -143,7 +143,7 @@ journal_eleven = JournalEntry.create(user: User.last, card: Card.last)
 journal_eleven.save!
 
 activity_card_four = Card.create!(name: "Les Petites Victoires", video: "https://www.youtube.com/watch?v=bVaetxYZrCk", outside: false, active: false)
-activity_card_four.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/serie.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
+activity_card_four.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/serie1.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_four.save!
 activity_card_four.parent = thematic_card3
 activity_card_four.save!
@@ -152,7 +152,7 @@ journal_twelve = JournalEntry.create(user: User.last, card: Card.last)
 journal_twelve.save!
 
 activity_card_five = Card.create!(name: "Anne with an E", video: "https://www.youtube.com/watch?v=S5qJXYNNINo", outside: false, active: false)
-activity_card_five.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/serie.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
+activity_card_five.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/serie2.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_five.save!
 activity_card_five.parent = thematic_card3
 activity_card_five.save!
@@ -161,7 +161,7 @@ journal_thirteen = JournalEntry.create(user: User.last, card: Card.last)
 journal_thirteen.save!
 
 activity_card_six = Card.create!(name: "Virgin River", video: "https://www.youtube.com/watch?v=DMNjH5MlQXc", outside: false, active: false)
-activity_card_six.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/serie.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
+activity_card_six.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/serie3.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_six.save!
 activity_card_six.parent = thematic_card3
 activity_card_six.save!
