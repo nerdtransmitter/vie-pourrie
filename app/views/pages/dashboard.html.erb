@@ -32,7 +32,7 @@
           <ul class="d-flex flex-column align-items-center p-0">
             <li data-action="click->dashboard#displayJournal">
               <p>
-                <span><%=image_tag "journal.png", width: 48, class: "" %></span>
+                <span><%=image_tag "journal2.PNG", width: 60, class: "" %></span>
               </p>
               <div data-dashboard-target="journal" class="card-box bg-violet card-hidden">
                 <div class="inner">
@@ -47,19 +47,18 @@
                       <%= entry.content %>
                     </div>
                   </div>
-                  <% end %> 
+                  <% end %>
                 </div>
               </div>
             </li>
             <%# <li>
               <p>
               <%# <span><%=image_tag "diary.png", width: 48, class: "" %> 
-
               <%# </p>
             </li> %>
             <li data-action="click->dashboard#displayWishlist">
               <p>
-                <span><%=image_tag "heart-shape.png", width: 48, class: "" %></span>
+                <span><%=image_tag "like.PNG", width: 60, class: "" %></span>
               </p>
               <div data-dashboard-target="wishlist" class="card-box bg-violet card-hidden">
                 <div class="inner">
@@ -67,19 +66,15 @@
                   <% @wishlist_cards.each do |card| %>
                     <%= card.name %>
                   <% end %>
-                </div>  
+                </div>
               </div>
             </li>
           </ul>
         </div>
-      </div>       
+      </div>
     </div>
-  </div> 
+  </div>
 </div>
 <div class="image">
-<%= image_tag "creativity.png",  class:"raibow" %>
+<%= image_tag "rainbow.PNG", class:"raibow" %>
 </div>
-
-        
-        
-    
