@@ -9,6 +9,6 @@ export default class extends Controller {
         element.style.inset = 'unset'
         element.style.margin = '0 auto'
       });
-    }, 3000);
+    }, 1000);
   }
 }
