@@ -55,14 +55,18 @@
                 </div>
               </div>
             </li>
-
+            <%# <li>
+              <p>
+              <%# <span><%=image_tag "diary.png", width: 48, class: "" %>
+              <%# </p>
+            </li> %>
             <li data-action="click->dashboard#displayWishlist">
               <p>
                 <span><%=image_tag "like.PNG", width: 60, class: "" %></span>
               </p>
               <div data-dashboard-target="wishlist" class="card-box bg-violet card-hidden">
                 <div class="inner">
-                  <h3><%= link_to "My wishlist", filters_path, class: "text-decoration-none tab-underlined" %></h3>
+                  <h3><%= link_to "Ma wishlist", filters_path, class: "text-decoration-none tab-underlined" %></h3>
                   <% @wishlist_cards.each do |card| %>
                     <%= card.name %>
                   <% end %>

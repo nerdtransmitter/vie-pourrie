@@ -9,6 +9,7 @@
 @import "star-rating.js/dist/star-rating.css";
 
 
+
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
@@ -22,8 +23,8 @@ body {
   background-color: white;
 }
 
-h1, h2, h3, h5 {
-  font-family: 'Lobster', cursive;
+h1, h2, h3 {
+  font-family: 'Tilt Warp', cursive;
   color: $purple;
 }
 
@@ -31,4 +32,9 @@ h1 {
   text-align: center !important;
   padding: 10px;
   white-space: pre-wrap;
+}
+
+p, h5 {
+  font-family: 'Jost', sans-serif;
+  color: $purple;
 }
