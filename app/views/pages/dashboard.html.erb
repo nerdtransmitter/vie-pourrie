@@ -31,41 +31,49 @@
       <div class="sidebar_menu">
         <div class="inner_sidebar_menu">
           <ul class="d-flex flex-column align-items-center p-0">
-            <li data-action="click->dashboard#displayJournal">
-              <p>
-                <span><%=image_tag "journal2.PNG", width: 60, class: "" %></span>
+            <li>
+              <p class="p-0">
+                <span><%=image_tag "journal2.PNG", width: 60, class: "", data: { action: "click->dashboard#displayJournal" }%></span>
               </p>
               <div data-dashboard-target="journal" class="card-box bg-violet card-hidden">
-                <div class="inner">
                   <h3><%= link_to "Mon journal d'activité", filters_path, class: "text-decoration-none tab-underlined " %></h3>
-                  <% @journal_entries.each do |entry| %>
-                    <div class="d-flex justify-content-between w-100  ">
-                      <div class="journal-date d-flex flex-column">
-                        <small><%= entry.created_at.strftime("%a") %></small>
-                        <small><%= entry.created_at.strftime("%d") %></small>
-                      </div>
-                      <div class="journal-right text-end">
-                        <small><%= entry.created_at.strftime("at %I:%M%p") %></small>
-                        <div class="text-end" id="entry-content">
-                          <em><%= entry.content %></em>
+                <div class="inner">
+                    <% @journal_entries.each do |entry| %>
+                        <div class="d-flex justify-content-between w-100 ">
+                          <div class="journal-date d-flex flex-column">
+                            <small><%= entry.created_at.strftime("%a") %></small>
+                            <small><%= entry.created_at.strftime("%d") %></small>
+                          </div>
+                          <div class="journal-right text-end">
+                            <small><%= entry.created_at.strftime("at %I:%M%p") %></small>
+                            <div class="text-end" id="entry-content">
+                              <em><%= entry.content %></em>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  <% end %>
+                    <% end %>
                 </div>
               </div>
             </li>
 
-            <li data-action="click->dashboard#displayWishlist">
-              <p>
-                <span><%=image_tag "like.PNG", width: 60, class: "" %></span>
+            <li>
+              <p class="p-0">
+                <span><%=image_tag "like.PNG", width: 60, class: "", data: { action: "click->dashboard#displayWishlist" }%></span>
               </p>
               <div data-dashboard-target="wishlist" class="card-box bg-violet card-hidden">
                 <div class="inner">
                   <h3><%= link_to "My wishlist", filters_path, class: "text-decoration-none tab-underlined" %></h3>
-                  <% @wishlist_cards.each do |card| %>
-                    <%= card.name %>
-                  <% end %>
+                  <div class="d-flex flex-column">
+                    <% @wishlist_cards.each do |card| %>
+                      <div class="card-wishlist">
+                        <%= card.name %>
+                        <%= link_to "Delete",
+                          wishlist_path(card),
+                          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                        %>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </li>

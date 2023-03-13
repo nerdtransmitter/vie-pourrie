@@ -41,11 +41,6 @@ a {
   color: #4a4e69;
   font-family: $message-font;
 }
-// body{
-  //   background: #d5d9df;
-  //   width: 100%;
-  //   height: 100%;
-  // }
 
 /*MENU */
 .wrapper .sidebar_menu{
@@ -98,8 +93,10 @@ a {
   margin-right: 5px;
   opacity: 1;
   transition: all 05ms ease;
-  z-index: 100;
+  z-index: 10000;
+  overflow: scroll;
 }
+
 .bg-violet {
     background-color:#a67fbe !important;
 }
