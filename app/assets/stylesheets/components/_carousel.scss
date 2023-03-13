@@ -9,7 +9,7 @@
   position: absolute;
   left: 0;
   right: 5px !important;
-  padding: 10px 70px;
+  padding: 10px 70px !important;
 }
 
 .carousel-item {
@@ -91,4 +91,8 @@
 
 .carousel-control-next-icon {
   background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path fill="%23fff" d="M2 1v6l4-3L2 1z"/></svg>');
+}
+
+#carouselExampleControls {
+  padding-left: 50px !important;
 }

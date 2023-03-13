@@ -8,7 +8,7 @@
 }
 
 .dashboard-container {
- 
+
 }
 // .image {
 //   position: relative;
@@ -48,7 +48,7 @@ a {
 /*MENU */
 .wrapper .sidebar_menu{
   position: fixed;
-  top: 125px;
+  top: 150px;
   left: 0;
   background: #a67fbe;;
   width: 50px;
@@ -59,8 +59,8 @@ a {
 .wrapper .sidebar_menu .inner_sidebar_menu{
     position: relative;
     padding-top: 60px;
-
 }
+
 .wrapper .sidebar_menu ul li a{
     color: #fff;
     font-size: 25px;
@@ -69,9 +69,11 @@ a {
     white-space: nowrap;
     text-decoration-line: none;
 }
+
 .wrapper .sidebar_menu ul li a .span{
     display: inline-block;
 }
+
 .wrapper .sidebar_menu ul li a .icon{
     margin-right: 20px;
 }
@@ -88,10 +90,11 @@ a {
   opacity: 0;
   right: 100vw;
 }
+
 .card-box.bg-violet {
   position: fixed;
   margin: auto;
-  top: 125px;
+  top: 140px;
   left: 55px;
   margin-right: 5px;
   opacity: 1;
@@ -135,5 +138,10 @@ a {
 }
 
 #inner-wishlist {
-  padding-right: 46px;
+  padding-right: 44px;
+  width: 100%;
+}
+
+.dashboard-hello {
+  padding: 0;
 }
