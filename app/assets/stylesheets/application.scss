@@ -8,6 +8,21 @@
 @import "font-awesome";
 @import "star-rating.js/dist/star-rating.css";
 
+.gl-star-rating .gl-emote-bg {
+  transition: fill 0.15s ease-in-out;
+}
+.gl-star-rating [data-value]:not(.gl-active) .gl-emote-bg {
+  fill: #DCDCE6;
+}
+
+.gl-star-rating .gl-emote {
+  transform: scale(.9);
+  transition: transform 0.25s ease-in-out;
+}
+.gl-star-rating .gl-selected .gl-emote {
+  transform: scale(1.1);
+}
+
 
 
 // Your CSS partials
