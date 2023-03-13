@@ -11,5 +11,6 @@ class PagesController < ApplicationController
   def dashboard
     @wishlist_cards = current_user.cards
     @journal_entries = current_user.journal_entries
+    # @wishlist = Wishlist.find(params[:id])
   end
 end

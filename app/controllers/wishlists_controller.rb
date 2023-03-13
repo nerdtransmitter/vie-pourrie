@@ -10,4 +10,9 @@ class WishlistsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @wishlist = Wishlist.find(params[:id])
+    @wishlist.destroy
+  end
 end

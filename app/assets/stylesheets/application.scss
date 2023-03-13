@@ -23,9 +23,10 @@ body {
   background-color: white;
 }
 
-h1, h2, h3 {
-  font-family: 'Tilt Warp', cursive;
+h1, h2, h3, h5 {
+  font-family: $headers-font;
   color: $purple;
+
 }
 
 h1 {
