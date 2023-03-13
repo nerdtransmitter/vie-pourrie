@@ -1,8 +1,8 @@
 
 <div class="container d-flex flex-column justify-content-center ">
   <div class="card-name text-center pt-5 px-5">
-    <h3>Carte du jour :</h3>
-    <h2 class="text-align fw-bolder"><%= @card.parent.name %></h2>
+    <h3 class="card-of-today">&#10041; Carte du jour &#10041;</h3>
+    <h2 class="text-align fw-bolder card-of-today"><%= @card.parent.name %></h2>
   </div>
   <div class="cards ">
     <% @cards.each do |card| %>
@@ -21,6 +21,9 @@
       </div>
     <% end %>
   </div>
+  <%= simple_form_for [@card.parent, @wishlist] do |f|%>
+      <%= f.submit "Pour plus tard!", class: "btn btn-violet"%>
+  <% end %>
 </div>
 
 <div class="modal fade" id="open-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

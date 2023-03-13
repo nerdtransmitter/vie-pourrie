@@ -2,9 +2,9 @@
   border-radius: 7px;
   background-color: $purple;
   color: white;
-  font-family: $main-font;
-  font-size: 24px;
-  font-weight: lighter;
+  font-family: 'Jost', sans-serif;
+  font-size: 19px;
+  //font-weight: lighter;
   padding: 8px 48px;
 }
 
@@ -27,17 +27,6 @@
   opacity: 0;
 }
 
-.label-rounded {
-  border-radius: 50%;
-  background-color: white;
-  height: 80px;
-  width: 80px;
-  z-index: -1;
-  // margin-top: 10px; /* add margin to separate from radio button */
-  // display: flex;
-  justify-content: space-around;
-  display: flex;
-}
 .radio-btn:checked + .label-rounded {
   background-color: white;
   border: 1px solid black;
