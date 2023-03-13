@@ -36,7 +36,7 @@
                 <span><%=image_tag "journal2.PNG", width: 60, class: "", data: { action: "click->dashboard#displayJournal" }%></span>
               </p>
               <div data-dashboard-target="journal" class="card-box bg-violet card-hidden">
-                  <h3><%= link_to "Mon journal d'activité", filters_path, class: "text-decoration-none tab-underlined " %></h3>
+                  <h3 class="text-white">Mon journal d'activité</h3>
                 <div class="inner">
                     <% @journal_entries.each do |entry| %>
                         <div class="d-flex justify-content-between w-100 ">
@@ -60,19 +60,32 @@
                 <span><%=image_tag "like.PNG", width: 60, class: "", data: { action: "click->dashboard#displayWishlist" }%></span>
               </p>
               <div data-dashboard-target="wishlist" class="card-box bg-violet card-hidden">
-                <div class="inner">
+
+                <div class="inner" id="inner-wishlist">
                   <h3><%= link_to "My wishlist", filters_path, class: "text-decoration-none tab-underlined" %></h3>
-                  <div class="d-flex flex-column">
-                    <% @wishlist_cards.each do |card| %>
-                      <div class="card-wishlist">
-                        <%= card.name %>
-                        <%= link_to "Delete",
-                          wishlist_path(card),
-                          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-                        %>
+                  <div id="carouselExampleControls" class="carousel slide carousel-container" data-bs-ride="carousel">
+                      <div class="carousel-inner p-4 carousel-items">
+                        <% @wishlists.each_with_index do |wish, index| %>
+                          <div class="carousel-item card-wishlist p-0 <%= 'active' if index == 0 %>">
+                             <%= cl_image_tag wish.card.photo.key, width: 200 %>
+                            <%= link_to wish,
+                              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                              class: "btn ml-4" do %>
+                              <i class="fas fa-trash-alt"></i>
+                            <% end %>
+                          </div>
+                        <% end %>
                       </div>
-                    <% end %>
-                  </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+
                 </div>
               </div>
             </li>
@@ -83,5 +96,5 @@
   </div>
 </div>
 <div class="image">
-<%= image_tag "rainbow.PNG", class:"rainbow" %>
-e</div>
+  <%= image_tag "rainbow.PNG", class:"rainbow" %>
+</div>
