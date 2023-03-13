@@ -27,17 +27,6 @@
   opacity: 0;
 }
 
-.label-rounded {
-  border-radius: 50%;
-  background-color: white;
-  height: 80px;
-  width: 80px;
-  z-index: -1;
-  // margin-top: 10px; /* add margin to separate from radio button */
-  // display: flex;
-  justify-content: space-around;
-  display: flex;
-}
 .radio-btn:checked + .label-rounded {
   background-color: white;
   border: 1px solid black;

@@ -19,6 +19,7 @@ class CardsController < ApplicationController
       @cards = Card.where(depth: 1)
     end
     @card = @cards.sample
+    @wishlist = Wishlist.new
   end
 
   def show
