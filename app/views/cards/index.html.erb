@@ -1,14 +1,16 @@
 
-<div class="container d-flex flex-column justify-content-center ">
+<div class="container d-flex flex-column justify-content-around position-relative full-height">
   <div class="card-name text-center px-5">
     <h3>Carte du jour :</h3>
     <h2 class="text-align fw-bolder"><%= @card.parent.name %></h2>
   </div>
-  <div class="cards ">
+  <div class="cards d-flex position-absolute justify-content-center align-items-center" data-controller="cards">
     <% @cards.each do |card| %>
-      <div class="card-name">
-      </div>
-      <div class="card" id="<%= "selected" if card == @card %>">
+      <% x = 100 + (0..50).to_a.sample %>
+      <% y = 100 + (0..50).to_a.sample %>
+      <% x_move = ["top", "bottom"].sample %>
+      <% y_move = ["left", "right"].sample %>
+      <div class="card position-absolute" id="<%= "selected" if card == @card %>" style="<%= x_move %>:<%= x %>vh; <%= y_move %>:<%= y %>vw; transform: rotate(<%= (-20..20).to_a.sample %>deg);" data-cards-target="card">
         <% if card == @card %>
           <button type="button" class="btn-selected" data-bs-toggle="modal" data-bs-target="#open-modal">
               <%= cl_image_tag card.parent.photo.key, alt: "card", class: "card-inner" %>

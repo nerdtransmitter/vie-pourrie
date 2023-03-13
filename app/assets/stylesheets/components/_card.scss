@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
+
+.full-height {
+  height: 100vh;
+}
 .card-home {
   width: 270px;
   height: 100%;
@@ -9,12 +13,16 @@
 
 .cards {
   width: 100%;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  height: 400px;
+  height: 100vh;
   padding-top: 10px;
+  overflow: hidden;
+  padding: 0;
+  top: 0;
+  left: 0;
 }
 
 // .card {
@@ -59,11 +67,18 @@
   position: absolute;
   top: 20px;
   width: 200px;
+  height: fit-content;
+  min-height: 280px;
   transform-style: preserve-3d;
   border: none;
   background-image: none;
   border-radius: 15%;
   box-shadow: 0 0 4px 0 rgba(3, 3, 3, 0.1);
+  transition: all 1000ms ease;
+  background-color: transparent;
+  .card-inner {
+    padding:0;
+  }
 }
 
 .flip-card-inner {
@@ -82,7 +97,9 @@
   z-index: 100;
   position: absolute;
   // transform: scale(1.5) translate(-100%, -100%);
-  transform: rotate3d(1, 2, 3, 0deg)
+  transform: rotate3d(1, 2, 3, 0deg);
+  margin-top: 50px !important;
+
 }
 
 .card-option {
@@ -100,8 +117,7 @@ button {
 }
 
 .card-name {
-  margin-top: 50px;
-  height: 125px;
+  height: 300px;
   box-sizing: border-box;
   h2, h3 {
     font-family: 'Lobster', cursive;
