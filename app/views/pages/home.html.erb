@@ -3,12 +3,14 @@
     <h1 class="title text-center">Quand la vie c'est pourri</h1>
   </div>
 
-<div class="card-holder">
-  <div class="cardflip -front">
-    <%=image_tag "carte_home.png" %>
-  </div>
-  <div class="cardflip -back">
-    <%=image_tag "carte_merde.png" %>
+<div class="flip-card" data-controller="flip-card">
+  <div class="flip-card-inner card-holder" data-flip-card-target="card" data-action="click->flip-card#flip">
+    <div class="flip-card-front cardflip-front">
+      <%=image_tag "carte_home.png" %>
+    </div>
+    <div class="flip-card-back  cardflip-back">
+      <%=image_tag "carte_merde.png" %>
+    </div>
   </div>
 </div>
 
@@ -16,7 +18,7 @@
   <%# <div class="text-center">
     <%= image_tag "carte_merde.png", alt: "intro card", width: 200, class: "card-home" %>
   <%# </div> %>
-  
+
   <div class="text-center mt-2">
     <%= link_to "commencer", filters_path, class: "btn btn-purple" %>
   </div>
