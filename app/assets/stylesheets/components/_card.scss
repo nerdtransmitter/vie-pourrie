@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-.cards {
-  position: relative;
-}
 
 .card-home {
   width: 270px;
@@ -16,7 +13,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  height: 600px;
+  height: 400px;
   padding-top: 10px;
 }
 
@@ -70,6 +67,12 @@
 }
 
 .flip-card-inner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-inner {
   width: 100%;
   height: 100%;
   object-fit: cover;
