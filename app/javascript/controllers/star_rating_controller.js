@@ -13,7 +13,7 @@ export default class extends Controller {
       clearable: true,
       maxStars: 5,
       prebuilt: true,
-      stars: null,
+      stars: ['😠','😔','😐','🙂','😀'],
       tooltip: 'Comment tu te sens?',
   })
   }

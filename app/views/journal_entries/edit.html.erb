@@ -2,7 +2,6 @@
   <div class="row">
     <div class="col-xs-4">
       <div class="card-content">
-        
           <%= simple_form_for @journal_entry do |f| %>
             <%= f.input :content, class: "w-75 p-3"  %>
             <%= f.input :rating, collection: ['😠','😔','😐','🙂','😀'], label: "Comment tu te sens?", input_html: {data: {controller: "star-rating"}} %>
@@ -12,3 +11,5 @@
     </div>
   </div>
 </div>
+
+
