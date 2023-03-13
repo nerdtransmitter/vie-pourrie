@@ -1,29 +1,45 @@
-
 *{
     margin: 0;
-    padding: 0;
+    padding: 2px;
     list-style: none;
   //   font-family: 'Ubuntu', sans-serif;
   //   box-sizing: border-box;
   text-decoration: none;
 }
 
-.image {
-  position: relative;
-}
-.raibow{
+// .image {
+//   position: relative;
+//   bottom: 50px;
+// }
+.rainbow{
   position: absolute;
-  top: 435px;
-  left: 173px;
-  height: 147px;
+  bottom: 65px;
+  right: 20px;
+  height: 130px;
   transform: rotate(1deg);
-  }
+  z-index: -5;
+}
+
+.journal-date {
+  border-right: 2px solid lightblue;
+  box-sizing: border-box;
+  padding-right: 20px;
+  width: 50px;
+  height: 50px;
+  padding-top: 0;
+}
 
 a {
   color: #000000;
 }
-.text {
-  margin-left: 66px;
+
+.message-text {
+  margin-right: 2px;
+  margin-left: 20px;
+  line-height: 16px;
+  text-align: end;
+  color: #4a4e69;
+  font-family: $message-font;
 }
 // body{
   //   background: #d5d9df;
@@ -78,9 +94,11 @@ a {
   position: fixed;
   margin: auto;
   top: 125px;
-  right: 20px;
+  left: 55px;
+  margin-right: 5px;
   opacity: 1;
   transition: all 05ms ease;
+  z-index: 100;
 }
 .bg-violet {
     background-color:#a67fbe !important;
@@ -89,9 +107,9 @@ a {
 .card-box {
     position: relative;
     color: #fff;
-    padding: 20px 10px 40px;
-    margin: 20px 0px;
-    height: 445px;
+    padding: 10px 10px ;
+    margin: 50px 0px 10px;
+    height: 100%;
     border-radius: 21px 21px 21px 21px;
     -moz-border-radius: 21px 21px 21px 21px;
     -webkit-border-radius: 21px 21px 21px 21px;
@@ -102,7 +120,7 @@ a {
     -webkit-transition: 1s;
 }
 .card-box .inner {
-    padding: 5px 10px 0 10px;
+  padding: 5px 10px 0 10px;
 }
 .card-box h3 {
     font-size: 27px;
