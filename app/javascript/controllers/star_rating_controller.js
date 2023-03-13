@@ -12,8 +12,9 @@ export default class extends Controller {
       },
       clearable: true,
       maxStars: 5,
+      prebuilt: true,
       stars: null,
-      tooltip: 'Comment tu te sens ?',
+      tooltip: 'Comment tu te sens?',
   })
   }
 }
