@@ -23,7 +23,7 @@
     <div class="message text fst-italic">
       <p><small>"<%= messages.sample %>"</small></p>
     </div>
-</div> 
+</div>
 <div class="dashboard-container" data-controller="dashboard">
   <div class="wrapper">
     <div class="main_body">
@@ -36,7 +36,7 @@
               </p>
               <div data-dashboard-target="journal" class="card-box bg-violet card-hidden">
                 <div class="inner">
-                  <h3><%= link_to "Mon journal d'activite", filters_path, class: "text-decoration-none tab-underlined " %></h3>
+                  <h3><%= link_to "Mon journal d'activité", filters_path, class: "text-decoration-none tab-underlined " %></h3>
                   <% @journal_entries.each do |entry| %>
                   <div class="d-flex justify-content-between w-100 p-2 ">
                     <div class="journal-left ">
@@ -53,7 +53,7 @@
             </li>
             <%# <li>
               <p>
-              <%# <span><%=image_tag "diary.png", width: 48, class: "" %> 
+              <%# <span><%=image_tag "diary.png", width: 48, class: "" %>
               <%# </p>
             </li> %>
             <li data-action="click->dashboard#displayWishlist">
@@ -62,7 +62,7 @@
               </p>
               <div data-dashboard-target="wishlist" class="card-box bg-violet card-hidden">
                 <div class="inner">
-                  <h3><%= link_to "My wishlist", filters_path, class: "text-decoration-none tab-underlined" %></h3>
+                  <h3><%= link_to "Ma wishlist", filters_path, class: "text-decoration-none tab-underlined" %></h3>
                   <% @wishlist_cards.each do |card| %>
                     <%= card.name %>
                   <% end %>

@@ -5,7 +5,7 @@
       <div class="form">
         <%= form_with  url: cards_path, method: :get do |f| %>
           <div class="d-flex flex-column align-items-center justify-content-between mb-4 pt-5">
-              <p class="my-4">A la maison ou a l'exterieur?</p>
+              <p class="my-4">À la maison ou à l'exterieur?</p>
               <div class="btns-radio">
                 <div class="radio-btn-div ">
                   <%= f.radio_button :outside, false, class: "radio-btn" %>
@@ -15,7 +15,11 @@
                     <% end %>
                   </div>
                 </div>
-                <div class="radio-btn-div">
+                <div class="radio-btn-div ">
+                  <div data-controller="geolocalisation" class="d-none">
+                    <%= f.text_field :lng, data: {geolocalisation_target: "lng"} %>
+                    <%= f.text_field :lat, data: {geolocalisation_target: "lat"} %>
+                  </div>
                   <%= f.radio_button :outside, true, class: "radio-btn" %>
                   <div class="label-rounded">
                     <%= f.label :outside do %>
@@ -48,7 +52,7 @@
           </div>
           <%= f.hidden_field :user_id, value: current_user.id %>
           <div class="w-100 justify-content-center align-items-center d-flex">
-            <%= f.submit "mélanger les cartes", class: "btn btn-purple m-4 text-center" %>
+            <%= f.submit "Mélanger les cartes", class: "btn btn-purple m-4 text-center" %>
           </div>
         <% end %>
       </div>

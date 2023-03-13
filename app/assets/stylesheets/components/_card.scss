@@ -101,9 +101,13 @@ button {
   margin-top: 50px;
   height: 125px;
   box-sizing: border-box;
-  h2, h3 {
-    font-family: 'Lobster', cursive;
+  h3 {
+    font-family: 'Jost', sans-serif;
+  }
+  h2 {
+    font-family: 'Tilt Warp', cursive;
     letter-spacing: 1px;
+    margin-top: 30px;
   }
   color: $purple ;
 }
