@@ -3,7 +3,7 @@
   <div class="d-flex mt-2">
     <%= cl_image_tag current_user.photo.key, class: "avatar-large me-auto bd-highlight" %>
     <div>
-      <h5 class="text-end">Bonjour,  <span class="text-color fw-bolder"><%= current_user.username %></span> !</h5>
+      <h5 class="text-end">Bonjour,  <span class="text-color fw-bolder"><%= current_user.username %></span> !!</h5>
       <% # Define an array of inspirational messages %>
       <% messages = [
           "Pour pouvoir contempler un arc-en-ciel, il faut d'abord endurer la pluie.",
@@ -32,7 +32,6 @@
       <div class="sidebar_menu">
         <div class="inner_sidebar_menu">
           <ul class="d-flex flex-column align-items-center p-0">
-
             <li data-action="click->dashboard#displayJournal">
               <p>
                 <span><%=image_tag "journal2.PNG", width: 60, class: "" %></span>
@@ -79,4 +78,4 @@
 </div>
 <div class="image">
 <%= image_tag "rainbow.PNG", class:"rainbow" %>
-</div>
+e</div>
