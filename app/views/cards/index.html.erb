@@ -20,10 +20,10 @@
         <% end %>
       </div>
     <% end %>
-    <%# <%= simple_form_for [@card.parent, @wishlist] do |f|%>
-      <%#  <%= f.submit "Pour plus tard!", class: "btn btn-violet"%>
-    <%#  <% end %>
   </div>
+  <%= simple_form_for [@card.parent, @wishlist] do |f|%>
+      <%= f.submit "Pour plus tard!", class: "btn btn-violet"%>
+  <% end %>
 </div>
 
 <div class="modal fade" id="open-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
