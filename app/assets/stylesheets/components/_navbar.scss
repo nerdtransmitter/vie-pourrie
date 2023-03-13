@@ -15,6 +15,11 @@
   text-align: center;
 }
 
+.nav-item {
+  color: white;
+  font-size: 18px;
+  padding: 0 10px;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -79,6 +84,11 @@ button {
 
 }
 
-.background-navbar {
+.background-navbar2 {
   background-color: $medium-purple;
+}
+
+.background-navbar {
+  background-image: url(navbarforme.png);
+  background-size: cover;
 }

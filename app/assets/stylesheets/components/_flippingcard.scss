@@ -1,0 +1,41 @@
+.card-holder {
+  position: relative;
+  height: 350px;
+  width: 250px;
+  perspective: 1000px;
+}
+
+.cardflip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.cardflip.-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.cardflip.-back {
+  transform: rotateY(-180deg);
+}
+
+.cardflip.-front img,
+.cardflip.-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardflip:hover .-front {
+  transform: rotateY(180deg);
+}
+
+.cardflip:hover .-back {
+  transform: rotateY(0deg);
+}
