@@ -22,7 +22,7 @@ export default class extends Controller {
           case 4: { el.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="gl-emote" style="pointer-events: none;"><circle class="gl-emote-bg" fill="#FFD885" cx="12" cy="12" r="10"></circle><path fill="#393939" d="M16.8 14.4c.32 0 .59.2.72.45.12.25.11.56-.08.82a6.78 6.78 0 01-10.88 0 .78.78 0 01-.05-.87c.14-.23.37-.4.7-.4zM15.67 8a1.6 1.6 0 011.5 1.86A1.6 1.6 0 1115.68 8zM8.32 8a1.6 1.6 0 011.21 2.73A1.6 1.6 0 118.33 8z"></path></svg>'; break; }
         }
       },
-      tooltip: 'Comment tu te sens?',
+      tooltip: false,
   })
   }
 }
