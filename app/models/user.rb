@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :wishlists
   has_many :journal_entries
   has_many :cards, through: :wishlists
+  has_many :moods
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
