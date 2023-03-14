@@ -372,8 +372,8 @@ thematic_card5 = Card.new(name: "Siester")
 thematic_card5.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/siester.png")), filename: "siester.png", content_type: "image/png")
 thematic_card5.save
 
-activity_card_one = Card.create!(name: "Playlist pour la sieste", playlist: "https://open.spotify.com/playlist/37i9dQZF1DWZd79rJ6a7lp", outside: false, active: false)
-activity_card_one.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/sieste2.png")), filename: "marcher_prendre_lair.png", content_type: "image/png")
+activity_card_one = Card.create!(name: "Siester avec une playlist", playlist: "https://open.spotify.com/playlist/37i9dQZF1DWZd79rJ6a7lp", outside: false, active: false)
+activity_card_one.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/siesteplaylist.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_one.save!
 activity_card_one.parent = thematic_card5
 activity_card_one.save!
@@ -381,6 +381,16 @@ activity_card_one.save!
 journal_twenty_three = JournalEntry.create(user: User.last, card: Card.last)
 journal_twenty_three.save!
 
+##### A RENOMMER + ILLU
+activity_card_two = Card.create!(name: "Siester avec de l'ASMR orage", playlist: "https://open.spotify.com/episode/18zoyfCK89e09qGGAEAQDH?si=YqqFLX0NTwWTrPrv-WUf7w", outside: false, active: false)
+activity_card_two.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/siesteasmr.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
+activity_card_two.save!
+activity_card_two.parent = thematic_card5
+activity_card_two.save!
+
+journal_twenty_three_bis = JournalEntry.create(user: User.last, card: Card.last)
+journal_twenty_three_bis.save!
+######
 
 thematic_card6 = Card.new(name: "Écouter sa playlist préférée à fond")
 thematic_card6.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/ecouter_sa_playlist_prefere.png")), filename: "ecouter_sa_playlist_prefere.png", content_type: "image/png")

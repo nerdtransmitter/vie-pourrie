@@ -1,11 +1,11 @@
+<div class="fond-blanc">
+  <nav class="mb-3">
+    <div class="background-navbar3 container-fluid p-2 profile-typo">
+      <p class="navbar-small-title fs-4 m-0 w-100">Activité du jour</p>
+    </div>
+  </nav>
 
-<div class="container">
-  <div class="swiper">
-    <nav class="mb-3">
-      <div class="background-navbar3 container-fluid p-2 profile-typo">
-        <p class="navbar-small-title fs-4 m-0">Activité du jour</p>
-      </div>
-    </nav>
+  <div class="container">
 
     <div class="justify-content-center mt-4">
       <%= cl_image_tag @journal_entry.card.photo.key, class: "card-photo" %>
@@ -18,7 +18,7 @@
 
     <% if @journal_entry.card.address %>
       <div class="d-flex flex-column justify-content-center align-items-center">
-        <div style="width: 280px; height: 180px;" class="label-none"
+        <div style="width: 350px; height: 230px;" class="label-none"
           data-controller="map"
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -40,7 +40,5 @@
     <div class="d-flex justify-content-center align-items-center gap-3 p-3">
       <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry), class: "btn btn-ghost2 mt-3 text-center"  %>
     </div>
-
   </div>
-
 </div>
