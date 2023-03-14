@@ -5,10 +5,7 @@ export default class extends Controller {
   static targets = ["card"]
   connect() {
 
-    
-    setTimeout(() => {
-      console.log("testtest")
-
+setTimeout(() => {
       this.cardTargets.forEach(element => {
         element.classList.add("centering")
       });

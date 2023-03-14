@@ -49,7 +49,7 @@
 }
 
 .card:nth-child(4) {
-  transform: rotate(-2deg);
+  transform: rotate(-1deg);
   z-index: 1;
 }
 
@@ -75,27 +75,87 @@
   border-radius: 15%;
   box-shadow: 0 0 4px 0 rgba(3, 3, 3, 0.1);
   background-color: transparent;
-  &.centering {
-    inset: unset !important;
-    margin: 0 auto;
+
+  &.position-1000 {
+    inset: unset;
+    margin-top: 200vh;
+    margin-left: 200vh;
+    animation: 2s centering-1000 1s ease-in-out forwards
   }
-  &.transition-1000 {
-    transition: all 1000ms ease;
+  // &.position-2000 {
+  //   inset: unset;
+  //   margin-top: 200vh;
+  //   margin-left: 200vh;
+  //   animation: 4s centering-2000 1s ease-in-out forwards;
+  // }
+  &.position-3000 {
+    inset: unset;
+    margin-top: 200vh;
+    margin-left: 200vh;
+    animation: 5s centering-3000 1s ease-in-out forwards;
   }
-  &.transition-2000 {
-    transition: all 2000ms ease;
+  // &.position-4000 {
+  //   inset: unset;
+  //   margin-top: 200vh;
+  //   margin-left: 200vh;
+  //   animation: 6s centering-4000 1s ease-in-out forwards;
+  // }
+  &.position-5000 {
+    inset: unset;
+    margin-top: 200vh;
+    margin-left: 200vh;
+    animation: 7s centering-5000 1s ease-in-out forwards;
   }
-  &.transition-3000 {
-    transition: all 3000ms ease;
-  }
-  &.transition-4000 {
-    transition: all 4000ms ease;
-  }
-  &.transition-5000 {
-    transition: all 5000ms ease;
-  }
+
+
   .card-inner {
     padding:0;
+  }
+}
+
+@keyframes centering-1000 {
+  from {
+    margin-top: 200vh;
+    margin-left: 200vh;
+  }
+  to {
+    margin: 0 auto;
+  }
+}
+// @keyframes centering-2000 {
+//   from {
+//     margin-right: 200vh;
+//     margin-bottom: 200vh;
+//   }
+//   to {
+//     margin: 0 auto;
+//   }
+// }
+@keyframes centering-3000 {
+  from {
+    margin-top: 150vh;
+    margin-right: 100vh;
+  }
+  to {
+    margin: 0 auto;
+  }
+}
+// @keyframes centering-4000 {
+//   from {
+//     margin-top: 200vh;
+//     margin-left: 200vh;
+//   }
+//   to {
+//     margin: 0 auto;
+//   }
+// }
+@keyframes centering-5000 {
+  from {
+    margin-bottom: 400vh;
+    margin-right: 200vh;
+  }
+  to {
+    margin: 0 auto;
   }
 }
 
