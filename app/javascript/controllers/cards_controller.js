@@ -6,10 +6,10 @@ export default class extends Controller {
   connect() {
 
 
-    // setTimeout(() => {
-    //   this.cardTargets.forEach(element => {
-    //     element.classList.add("centering")
-    //   });
-    // }, 3000);
+    setTimeout(() => {
+      this.cardTargets.forEach(element => {
+        element.classList.add("centering")
+      });
+    }, 3000);
   }
 }
