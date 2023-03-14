@@ -1,5 +1,5 @@
 class JournalEntriesController < ApplicationController
-  before_action :set_journal_entry, only: [:show, :update, :recap, :edit]
+  before_action :set_journal_entry, only: [:show, :update, :recap, :edit, :destroy]
 
   def new
     @card = Card.find(params[:parent_card])
@@ -54,6 +54,11 @@ class JournalEntriesController < ApplicationController
   end
 
   def edit
+  end
+
+  def destroy
+    @journal_entry.destroy
+    redirect_to dashboard_path
   end
 
   private

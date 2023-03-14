@@ -39,18 +39,32 @@
     <h3 class="text-white">Mon journal d'activité</h3>
     <div class="inner">
         <% @journal_entries.each do |entry| %>
+          <div class="card-entry">
             <div class="d-flex justify-content-between w-100 ">
               <div class="journal-date d-flex flex-column">
                 <small><%= entry.created_at.strftime("%a") %></small>
                 <small><%= entry.created_at.strftime("%d") %></small>
               </div>
-              <div class="journal-right text-end">
-                <small><%= entry.created_at.strftime("at %I:%M%p") %></small>
-                <div class="text-end" id="entry-content">
-                  <em><%= entry.content %></em>
+              <div class="w-100">
+                <div class="d-flex justify-content-between">
+                  <small><%= entry.created_at.strftime("at %I:%M%p") %></small>
+                  <h6 class="p-0"><%= entry.card.name %></h6>
+                </div>
+                <div class="w-100 text-end">
+                  <em class=""><%= entry.content %></em>
                 </div>
               </div>
             </div>
+
+            <div class="entry-btns">
+              <%= link_to entry,
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                class: "btn ml-4" do %>
+                <i class="fas fa-trash-alt "></i>
+              <% end %>
+            </div>
+
+          </div>
         <% end %>
     </div>
   </div>
