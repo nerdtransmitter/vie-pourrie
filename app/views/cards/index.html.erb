@@ -34,8 +34,8 @@
       <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">X</button>
       <div class="text-center">Quand t'es prêt.e 👇</div>
       <div class="modal-footer d-flex justify-content-center">
-        <%= link_to "Remélanger ?", cards_path(outside: params[:outside], active: params[:active]) %>
-        <%= link_to "C'est parti !", new_journal_entry_path(parent_card: @card.parent.id, outside: params[:outside], active: params[:active]) %>
+        <%= link_to "Remélanger", cards_path(outside: params[:outside], active: params[:active], lat: params[:lat], lng: params[:lng]), class: "btn btn-secondary btn-sm" %>
+        <%= link_to "C'est parti", new_journal_entry_path(parent_card: @card.parent.id, outside: params[:outside], active: params[:active]), class: "btn btn-success btn-sm"%>
       </div>
     </div>
   </div>

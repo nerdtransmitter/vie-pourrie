@@ -14,5 +14,10 @@ class WishlistsController < ApplicationController
   def destroy
     @wishlist = Wishlist.find(params[:id])
     @wishlist.destroy
+    redirect_to dashboard_path
+  end
+
+  def index
+    @wishlists = current_user.wishlists
   end
 end

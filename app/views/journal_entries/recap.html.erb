@@ -41,11 +41,6 @@
 
   <div class="d-flex justify-content-center align-items-center gap-3 p-3">
     <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry), class: "btn btn-violet"  %>
-      <%# <button style="width: 150px" type="button" class="btn btn-dark">C'est fait !</button> %>
-    <%= simple_form_for [@journal_entry.card, @wishlist] do |f|%>
-      <%= f.submit "Pour plus tard!", class: "btn btn-violet"%>
-    <% end %>
-    <%# <button style="width: 150px" type="button" class="btn btn-dark">Pour plus tard</button> %>
   </div>
 
 </div>

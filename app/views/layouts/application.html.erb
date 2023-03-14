@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="p-0 m-0">
   <head>
     <title>ViePourrie</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,10 +32,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
-    <%= render 'shared/ios_pwa_links' %>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+
   </head>
 
-  <body>
+  <body class="p-0 m-0">
     <%= render "shared/flashes" %>
     <%= yield %>
     <% if params[:action] != "home" %>

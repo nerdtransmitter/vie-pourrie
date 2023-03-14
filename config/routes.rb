@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :cards, only: [:show, :index] do
     resources :wishlists, only: :create
   end
-  resources :wishlists, only: :destroy
+  resources :wishlists, only: %i[destroy index]
   resources :journal_entries, only: [:new, :edit, :create, :update, :destroy, :show]
   get :filters, to: "cards#filters"
 end
