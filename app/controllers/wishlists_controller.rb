@@ -16,4 +16,8 @@ class WishlistsController < ApplicationController
     @wishlist.destroy
     redirect_to dashboard_path
   end
+
+  def index
+    @wishlists = current_user.wishlists
+  end
 end
