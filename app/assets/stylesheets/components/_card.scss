@@ -74,8 +74,26 @@
   background-image: none;
   border-radius: 15%;
   box-shadow: 0 0 4px 0 rgba(3, 3, 3, 0.1);
-  transition: all 1000ms ease;
   background-color: transparent;
+  &.centering {
+    inset: unset !important;
+    margin: 0 auto;
+  }
+  &.transition-1000 {
+    transition: all 1000ms ease;
+  }
+  &.transition-2000 {
+    transition: all 2000ms ease;
+  }
+  &.transition-3000 {
+    transition: all 3000ms ease;
+  }
+  &.transition-4000 {
+    transition: all 4000ms ease;
+  }
+  &.transition-5000 {
+    transition: all 5000ms ease;
+  }
   .card-inner {
     padding:0;
   }

@@ -6,11 +6,12 @@
   </div>
   <div class="cards d-flex position-absolute justify-content-center align-items-center" data-controller="cards">
     <% @cards.each do |card| %>
-      <% x = 100 + (0..50).to_a.sample %>
-      <% y = 100 + (0..50).to_a.sample %>
+      <% x = 120 + (0..50).to_a.sample %>
+      <% y = 120 + (0..50).to_a.sample %>
       <% x_move = ["top", "bottom"].sample %>
       <% y_move = ["left", "right"].sample %>
-      <div class="card position-absolute" id="<%= "selected" if card == @card %>" style="<%= x_move %>:<%= x %>vh; <%= y_move %>:<%= y %>vw; transform: rotate(<%= (-20..20).to_a.sample %>deg);" data-cards-target="card">
+
+      <div class="card position-absolute transition-<%=[1000,2000,3000,4000,5000].sample %>" id="<%= "selected" if card == @card %>" style="<%= x_move %>:<%= x %>vh; <%= y_move %>:<%= y %>vw; transform: rotate(<%=(-20..20).to_a.sample %>deg); " data-cards-target="card">
         <% if card == @card %>
           <button type="button" class="btn-selected" data-bs-toggle="modal" data-bs-target="#open-modal">
               <%= cl_image_tag card.parent.photo.key, alt: "card", class: "card-inner" %>

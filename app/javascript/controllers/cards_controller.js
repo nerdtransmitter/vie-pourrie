@@ -4,11 +4,14 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["card"]
   connect() {
+
+    
     setTimeout(() => {
+      console.log("testtest")
+
       this.cardTargets.forEach(element => {
-        element.style.inset = 'unset'
-        element.style.margin = '0 auto'
+        element.classList.add("centering")
       });
-    }, 1000);
+    }, 3000);
   }
 }
