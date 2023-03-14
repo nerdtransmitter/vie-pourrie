@@ -1,8 +1,9 @@
 <div class="container">
   <div class="d-flex justify-content-center align-items-center" style="height:100vh">
+  
       <div class="card-content">
           <%= simple_form_for @journal_entry do |f| %>
-            <%= f.input :content, class: "w-75 p-3"  %>
+            <%= f.input :content, label: "Comment c'était?", class: "w-75 p-3 ", input_html: {style: "height:15vh"}  %>
             <%= f.input :rating, collection: (1..5).to_a, label: "Comment tu te sens?", input_html: {data: {controller: "star-rating"}} %>
             <%= f.submit "Enregistre", class:"btn-violet mb-3" %>
           <% end %>

@@ -1,5 +1,5 @@
 <div class="container ">
-  <div class="d-flex ">
+  <div class="d-flex mt-3">
     <%= cl_image_tag current_user.photo.key, class: "avatar-large me-auto bd-highlight" %>
     <div class="dashboard-hello">
       <h5 class="">Bonjour,  <span class="text-color fw-bolder"><%= current_user.username %></span> !👋</h5>
@@ -93,12 +93,13 @@
             </li>
             <li>
               <p class="p-0">
-                  <span><%=image_tag "journal2.PNG", width: 50, class: "", data: { action: "click->dashboard#displayJournal" }%></span>
+                  <span><%=image_tag "emotional.png", width: 50, data: { action: "click->dashboard#displayMood" }%></span>
               </p>
-              <div data-dashboard-target="rating" class="card-box bg-violet card-hidden">
-                <h3 class="text-white">Historique de ton Esprit</h3>
+              <div data-dashboard-target="mood" class="card-box bg-violet card-hidden">
+                <h3 class="text-white">Ton Esprit</h3>
                 <div class="inner">
-                  <% @rating.each do |rating| %>
+                  <% @journal_entries.each do |journal_entry| %>
+                  <%= journal_entry.rating %>
                   <% end %>
                 </div>
               </div>
