@@ -29,6 +29,7 @@
   width: 50px;
   height: 50px;
   padding-top: 0;
+  font-family: $monospace-font;
 }
 
 a {
@@ -36,17 +37,29 @@ a {
 }
 
 .message-text {
-  margin-right: 2px;
+  margin-right: 10px;
   // margin-left: 20px;
-  line-height: 16px;
+  line-height: 18px;
   text-align: end;
   color: #4a4e69;
-  font-family: $message-font;
   padding: 10px;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(14, 27, 150, 0.8);
   font-weight: bolder;
+  color: white;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  p {
+    font-family: $quote-font;
+    font-size: 16px;
+    color: white;
+
+  }
+
+  i {
+    font-size: 20px;
+    color: white;
+
+  }
 }
 
 /*MENU */
@@ -113,7 +126,7 @@ a {
 }
 
 .bg-violet {
-    background-color:#a67fbe !important;
+    // background-color: rgba(166, 127, 190, .6) !important;
 }
 
 .card-box {
@@ -153,8 +166,6 @@ a {
   h1 {
     color: white;
   }
-
-
 }
 
 .dashboard-hello {
@@ -162,9 +173,39 @@ a {
 }
 
 .card-entry {
-  background-color: white;
+  background-color: rgba(255, 255, 255, .8);
   border-radius: 15px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  margin-bottom: 5px;
-  color:rgba(0, 0, 0, 0.3)
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.6) 0px 30px 60px -30px;
+  // box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+  margin-bottom: 10px;
+  color:rgba(0, 0, 0, 0.6);
+  padding: 5px;
+  h6 {
+    margin-bottom: 0;
+  }
+}
+
+#text {
+  display: none;
+  color: white;
+}
+
+.entry-rating {
+  font-size: 12px;
+  color: gold
+}
+
+.journal-title {
+  position: absolute;
+  top: 140px;
+  text-align: center;
+  z-index: 1000000 !important;
+  letter-spacing: 1px;
+  color: white;
+  text-shadow: rgba(6, 24, 44, 0.9) 0px 0px 6px !important;
+  width: 100%;
+}
+
+.hello-mssg {
+
 }
