@@ -1,6 +1,11 @@
+.navbar-small-title {
+  color: #76498c;
+}
+
 .swiper {
-  width: 290px;
-  height: 400px;
+  width: 320px;
+  height: 530px;
+  margin-top: 20px;
   background-color: white;
   border-radius: 10px;
 }
@@ -12,4 +17,31 @@
 .title-swip {
   padding: 13px;
   text-align: center;
+  position: relative;
+  height: fit-content;
+  h2 {
+    color: #76498c;
+    padding: 5px;
+    font-size: 18px;
+  }
+}
+
+.background-navbar3 {
+  background-color: #decee7;
+}
+
+.btn-ghost2 {
+  color: $medium-purple;
+  bottom: 90px;
+  background-color: #decee7;
+  padding: 8px 24px;
+  border-radius: 50px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost2:hover {
+  color: $medium-purple;
+}
+.inner-card-option {
+  height: 400px;
 }
