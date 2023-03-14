@@ -1,6 +1,6 @@
 
 <div class="container d-flex flex-column justify-content-center ">
-  <div class="card-name text-center pt-5 px-5">
+  <div class="card-name text-center px-5">
     <h3 class="card-of-today">&#10041; Carte du jour &#10041;</h3>
     <h2 class="text-align fw-bolder card-of-today"><%= @card.parent.name %></h2>
   </div>
@@ -30,8 +30,8 @@
   <div class="modal-dialog modal-window">
     <div class="modal-content  d-flex flex-column">
 
-      <h1><%= @card.parent.name %></h1>
-      <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">fermer</button>
+      <h1><%= @card.parent.name %> ?</h1>
+      <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">X</button>
       <div class="text-center">Quand t'es prêt.e 👇</div>
       <div class="modal-footer d-flex justify-content-center">
         <%= link_to "Remélanger", cards_path(outside: params[:outside], active: params[:active], lat: params[:lat], lng: params[:lng]), class: "btn btn-secondary btn-sm" %>
