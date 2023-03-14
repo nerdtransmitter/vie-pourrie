@@ -2,8 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
+    # @journal_entry = JournalEntry.find(params[:id])
     @mood = Mood.new
-
     # Create a new Mood object and set the appropriate attributes
     # Save the Mood object to the database
     # Redirect to the appropriate page

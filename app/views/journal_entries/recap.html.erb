@@ -47,7 +47,49 @@
     <div class="d-flex justify-content-center align-items-center gap-3 p-3">
       <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry), class: "btn btn-ghost2 mt-3 text-center"  %>
     </div>
+  <% elsif @journal_entry.card.website %>
+    <div class="d-flex flex-column justify-content-center align-items-center p-4">
+      <%= link_to "Voir ! ", @journal_entry.card.website, class: "btn btn-ghost"  %>
+    </div>
+  <% elsif @journal_entry.card.playlist %>
+    <div class="d-flex flex-column justify-content-center align-items-center p-4">
+      <%= link_to "Ecouter ! ", @journal_entry.card.playlist, class: "btn btn-ghost"  %>
+    </div>
+  <% elsif @journal_entry.card.video %>
+    <%# <div class="d-flex flex-column justify-content-center align-items-center p-4"> %>
+      <%#= link_to "Regarder ! ", @journal_entry.card.video, class: "btn btn-ghost"  %>
+    <%# </div> %>
+    <iframe width="100%" height="215" class="rounded-3" src="https://www.youtube.com/embed/<%= @journal_entry.card.filter_video_url %>?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <% else %>
+  <% end %>
 
-  <%# </div> %>
-
+  <div class="d-flex justify-content-center align-items-center gap-3 p-3">
+    <%# <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry), class: "btn btn-violet"  %>
+    <button type="button" class="btn btn-violet" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+     C'est fait!
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="card-content">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Comment c'était?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <%= simple_form_for @journal_entry do |f| %>
+                <%= f.input :content, label: "Description", class: "w-75 p-3 ", input_html: {style: "height:15vh"}  %>
+                <%= f.input :rating, collection: (1..5).to_a, label: "Comment tu te sens?", input_html: {data: {controller: "star-rating"}} %>
+              </div>
+              <div class="modal-footer">
+                <%= f.submit "Enregistre", class:"btn-violet mb-3" %>
+              </div>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
 </div>
