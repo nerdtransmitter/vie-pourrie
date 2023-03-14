@@ -1,9 +1,9 @@
 
-<div class="container d-flex flex-column justify-content-around position-relative full-height">
+<%# <div class="container d-flex flex-column justify-content-around position-relative full-height">
   <div class="card-name text-center px-5">
     <h3>Carte du jour :</h3>
     <h2 class="text-align fw-bolder"><%= @card.parent.name %></h2>
-  </div>
+  <%# </div> %>
   <div class="cards d-flex position-absolute justify-content-center align-items-center" data-controller="cards">
     <% @cards.each do |card| %>
       <% x = 120 + (0..50).to_a.sample %>
@@ -11,7 +11,7 @@
       <% x_move = ["top", "bottom"].sample %>
       <% y_move = ["left", "right"].sample %>
 
-      <div class="card position-absolute transition-<%=[1000,2000,3000,4000,5000].sample %>" id="<%= "selected" if card == @card %>" style="<%= x_move %>:<%= x %>vh; <%= y_move %>:<%= y %>vw; transform: rotate(<%=(-20..20).to_a.sample %>deg); " data-cards-target="card">
+      <div class="card position-absolute position-<%= ["1000", "2000", "3000", "4000", "5000"].sample%>" id="<%= "selected" if card == @card %>" style="transform: rotate(<%=(-20..20).to_a.sample %>deg); " data-cards-target="card">
         <% if card == @card %>
           <button type="button" class="btn-selected" data-bs-toggle="modal" data-bs-target="#open-modal">
               <%= cl_image_tag card.parent.photo.key, alt: "card", class: "card-inner" %>
@@ -24,10 +24,10 @@
       </div>
     <% end %>
   </div>
-  <%= simple_form_for [@card.parent, @wishlist] do |f|%>
-      <%= f.submit "Pour plus tard!", class: "btn btn-violet"%>
-  <% end %>
-</div>
+    <%= simple_form_for [@card.parent, @wishlist] do |f|%>
+    <%= f.submit "Pour plus tard!", class: "btn btn-violet "%>
+    <% end %>
+
 
 <div class="modal fade" id="open-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-window">
@@ -43,19 +43,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  // Wait for the document to be loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    // Get the accept button element
-    const acceptButton = document.querySelector('#modal-footer a[href*="new_journal_entry"]');
-
-    // Add a click event listener to the accept button
-    acceptButton.addEventListener('click', function(event) {
-      // Get the ID of the selected card
-      const selectedCardId = document.querySelector('.card#selected').getAttribute('id');
-      // Update the "parent_card" parameter of the accept button's href attribute
-      acceptButton.href += `?parent_card=${selectedCardId}`;
-    });
-  });
-</script>

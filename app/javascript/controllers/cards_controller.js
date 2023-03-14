@@ -5,13 +5,11 @@ export default class extends Controller {
   static targets = ["card"]
   connect() {
 
-    
-    setTimeout(() => {
-      console.log("testtest")
 
-      this.cardTargets.forEach(element => {
-        element.classList.add("centering")
-      });
-    }, 3000);
+    // setTimeout(() => {
+    //   this.cardTargets.forEach(element => {
+    //     element.classList.add("centering")
+    //   });
+    // }, 3000);
   }
 }
