@@ -6,6 +6,28 @@
 </nav>
 
 <div class="container">
+  <div class="swiper" data-controller="swiper">
+    <div class="swiper-wrapper">
+      <% @cards.each do |card| %>
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <%= card %>
+          <div class="swipcard">
+            <%= cl_image_tag(card.photo.key, width: 280) %>
+          </div>
+            <div class="title-swip">
+              <h2><%= card.name %></h2>
+            </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="swiper-scrollbar"></div>
+  </div>
+
+
+<!-- Form de base -->
+
   <%= simple_form_for  @journal_entry do |f| %>
     <div class="options-children">
       <%= f.input :card, as: :radio_buttons, collection: @cards,
@@ -19,4 +41,5 @@
       <%= f.submit "C'est parti", class: "btn btn-purple m-4 text-center" %>
     </div>
   <% end %>
+
 </div>

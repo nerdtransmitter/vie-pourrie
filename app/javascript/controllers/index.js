@@ -7,11 +7,11 @@ import { application } from "./application"
 import DashboardController from "./dashboard_controller"
 application.register("dashboard", DashboardController)
 
-import GeolocalisationController from "./geolocalisation_controller"
-application.register("geolocalisation", GeolocalisationController)
-
 import FlipCardController from "./flip_card_controller"
 application.register("flip-card", FlipCardController)
+
+import GeolocalisationController from "./geolocalisation_controller"
+application.register("geolocalisation", GeolocalisationController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
@@ -21,3 +21,6 @@ application.register("map", MapController)
 
 import StarRatingController from "./star_rating_controller"
 application.register("star-rating", StarRatingController)
+
+import SwiperController from "./swiper_controller"
+application.register("swiper", SwiperController)

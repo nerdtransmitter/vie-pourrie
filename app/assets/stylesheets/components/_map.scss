@@ -1,0 +1,30 @@
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+.mapboxgl-popup {
+  width: 150px;
+  height: 100px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Jost', sans-serif;
+  & h2 {
+    color: rebeccapurple;
+  }
+  & h1 {
+    font-size: 12px;
+    padding: none;
+  }
+}
+
+.mapboxgl-popup-tip {
+  display: none;
+}
+
+.mapboxgl-canvas {
+  width: 100% !important;
+  height: auto;
+}
