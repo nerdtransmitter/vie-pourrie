@@ -4,8 +4,14 @@
 
 import { application } from "./application"
 
+import CardsController from "./cards_controller"
+application.register("cards", CardsController)
+
 import DashboardController from "./dashboard_controller"
 application.register("dashboard", DashboardController)
+
+import DotController from "./dot_controller"
+application.register("dot", DotController)
 
 import FlipCardController from "./flip_card_controller"
 application.register("flip-card", FlipCardController)

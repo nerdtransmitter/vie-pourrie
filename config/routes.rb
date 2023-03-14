@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :wishlists, only: %i[destroy index]
   resources :journal_entries, only: [:new, :edit, :create, :update, :destroy, :show]
   get :filters, to: "cards#filters"
+  resources :moods, only: %i[new create edit update destroy]
 end

@@ -4,7 +4,7 @@
 
 .swiper {
   width: 320px;
-  height: 530px;
+  height: 550px;
   margin-top: 20px;
   background-color: white;
   border-radius: 10px;
@@ -44,4 +44,17 @@
 }
 .inner-card-option {
   height: 400px;
+}
+
+.cards-dot {
+  display: flex;
+  top: 78%;
+  color: gray;
+  z-index: 1;
+  left: 163px;
+  position: fixed;
+}
+.dot {
+  font-size: 8px;
+  margin: 3px;
 }

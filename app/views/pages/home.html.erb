@@ -19,7 +19,51 @@
     <%= image_tag "carte_merde.png", alt: "intro card", width: 200, class: "card-home" %>
   <%# </div> %>
 
-  <div class="text-center mt-2">
+  <%# <div class="text-center mt-2">
     <%= link_to "commencer", filters_path, class: "btn btn-purple" %>
-  </div>
+  <%# </div>  %>
 </div>
+
+
+<div class="text-center mt-2">
+  <%# <%= link_to "commencer", filters_path, class: "btn btn-purple" %>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Commencer
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Comment tu te sent aujourd'hui</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body tag-selecteor">
+          <%= simple_form_for @mood do |f| %>
+              <%= f.input :emotion,
+                as: :check_boxes,
+                collection: [['Heureux', 'heureux'],
+                            ['Triste', 'triste'],
+                            ['Stressé', 'stressé'],
+                            ['Calme', 'calme'],
+                            ['En colère', 'en colère'],
+                            ['Excité', 'excité'],
+                            ['Anxieux', 'anxieux']],
+                input_html: { class: "tag-selector" },
+                item_wrapper_class: 'tag-item' %>
+              <%= f.button :submit, "Submit" %>
+              <%# <div class="form-check form-check-inline ">
+                <%= f.check_box :tag_item, { multiple: true, checked: @journal_entry.tag_item.include?(emotion) }, emotion, id: emotion %>
+                <%# <%= f.label emotion, class: 'form-check-label', for: emotion %>
+              <%# </div>  %>
+
+          <% end %>
+        </div>
+        </div>
+        <div class="modal-footer">
+					<%= link_to "Continue", filters_path, class: "btn btn-purple" %>
+        </div>
+      </div>
+    </div>
+  </div>
