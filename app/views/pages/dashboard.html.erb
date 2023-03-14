@@ -55,7 +55,7 @@
               <div class="w-100">
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="d-flex align-items-center">
-                    <%= cl_image_tag entry.card.photo.key, width: 35, height: 35 %>
+                    <%= cl_image_tag entry.card.photo.key, width: 40, height: 40, class: "entry-icon" %>
                     <h6 class="entry-card-name p-2"><%= entry.card.name %></h6>
                   </div>
                   <div class="entry-rating d-flex justify-content center">
@@ -64,9 +64,7 @@
                     <% end %>
                   </div>
                 </div>
-                <div class="w-100 text-end">
-                  <em class=""><%= entry.content %></em>
-                </div>
+                <p class="w-100 text-start"><%= entry.content %></p>
               </div>
             </div>
 

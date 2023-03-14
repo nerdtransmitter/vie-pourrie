@@ -8,6 +8,9 @@
 
 .dashboard-container {
   margin-top: 40px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 // .image {
 //   position: relative;
@@ -110,8 +113,7 @@ a {
 
 .card-box.bg-violet {
   position: fixed;
-  margin: auto;
-
+  width: 100%;
   top: 160px;
   // left: 55px;
   margin: 0 10px;
@@ -145,7 +147,7 @@ a {
     -webkit-transition: 1s;
 }
 .card-box .inner {
-
+  margin: 10px 20px;
 }
 .card-box h3 {
     font-size: 27px;
@@ -180,6 +182,7 @@ a {
   margin-bottom: 10px;
   color:rgba(0, 0, 0, 0.6);
   padding: 5px;
+  position: relative;
   h6 {
     margin-bottom: 0;
   }
@@ -208,4 +211,10 @@ a {
 
 .hello-mssg {
 
+}
+
+.entry-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
 }

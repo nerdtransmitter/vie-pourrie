@@ -254,6 +254,12 @@ Devise.setup do |config|
   # only the current scope. By default, Devise signs out all scopes.
   # config.sign_out_all_scopes = true
 
+  config.omniauth :spotify, ENV["SPOTIFY_CLIENT_ID"], ENV["SPOTIFY_CLIENT_SECRET"], scope: %w(
+    playlist-read-private
+    user-read-private
+    user-read-email
+  ).join(' ')
+
   # ==> Navigation configuration
   # Lists the formats that should be treated as navigational. Formats like
   # :html should redirect to the sign in page when the user does not have
