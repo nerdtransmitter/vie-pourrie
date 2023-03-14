@@ -3,12 +3,15 @@
     <%# <ul class="navbar-nav me-auto"> %>
       <% if user_signed_in? %>
         <li class="nav-item">
+        <%# <span> <%=image_tag "book.png", class:"img-book" %> </span> 
           <%= link_to "Journal", dashboard_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
+         <%# <span> <%=image_tag "Vector.png", class:"img-vector" %> </span> 
           <%= link_to "Tirage", filters_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropup">
+        <%# <span> <%=image_tag "profile.png", class:"img-profile" %> </span> 
           <button class="dropbtn btn nav-item profil-typo">Profil</button>
           <div class="dropup-content" aria-labelledby="navbarDropup">
             <%= link_to "Editer mon profil", edit_user_registration_path %>
