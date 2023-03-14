@@ -8,15 +8,15 @@
 }
 
 .dashboard-container {
-
+  margin-top: 40px;
 }
 // .image {
 //   position: relative;
 //   bottom: 50px;
 // }
-.rainbow{
+.rainbow {
   position: absolute;
-  bottom: 65px;
+  bottom: 70px;
   right: 20px;
   height: 130px;
   transform: rotate(1deg);
@@ -38,11 +38,16 @@ a {
 
 .message-text {
   margin-right: 2px;
-  margin-left: 20px;
+  // margin-left: 20px;
   line-height: 16px;
   text-align: end;
   color: #4a4e69;
   font-family: $message-font;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, .8);
+  font-weight: bolder;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 /*MENU */
@@ -75,12 +80,12 @@ a {
 }
 
 .wrapper .sidebar_menu ul li a .icon{
-    margin-right: 20px;
+    // margin-right: 20px;
 }
 
 .wrapper.active .sidebar_menu ul li a .list{
-    display: none;
-    left: -206px;
+    // display: none;
+    // left: -206px;
 }
 
 
@@ -94,13 +99,17 @@ a {
 .card-box.bg-violet {
   position: fixed;
   margin: auto;
-  top: 140px;
-  left: 55px;
-  margin-right: 5px;
+  top: 160px;
+  // left: 55px;
+  margin: 0 10px;
   opacity: 1;
   transition: all 05ms ease;
   z-index: 10000;
   overflow: scroll;
+
+  h3 {
+    top: -10px
+  }
 }
 
 .bg-violet {
@@ -111,8 +120,8 @@ a {
     position: relative;
     color: #fff;
     padding: 10px 10px ;
-    margin: 50px 0px 10px;
-    height: 100%;
+    margin: 50px 0px;
+    height: 65%;
     border-radius: 21px 21px 21px 21px;
     -moz-border-radius: 21px 21px 21px 21px;
     -webkit-border-radius: 21px 21px 21px 21px;
@@ -123,7 +132,7 @@ a {
     -webkit-transition: 1s;
 }
 .card-box .inner {
-  padding: 5px 10px 0 10px;
+
 }
 .card-box h3 {
     font-size: 27px;
@@ -131,17 +140,23 @@ a {
     margin: 0 0 8px 0;
     white-space: nowrap;
     padding: 0;
-    text-align: left;
+    text-align: center;
 }
 .card-box p {
     font-size: 15px;
 }
 
 #inner-wishlist {
-  padding-right: 44px;
+  // padding-right: 44px;
   width: 100%;
+
+  h1 {
+    color: white;
+  }
+
+
 }
 
 .dashboard-hello {
-  padding: 0;
+
 }
