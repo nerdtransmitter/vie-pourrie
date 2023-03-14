@@ -4,17 +4,17 @@
       <% if user_signed_in? %>
         <li class="nav-item">
           <%= link_to dashboard_path, class: "nav-link" do %>
-            <%= image_tag "journal-nav.png", width: 35 %>
+            <%= image_tag "nav-journal.png", width: 35 %>
           <% end %>
         </li>
         <li class="nav-item">
           <%= link_to filters_path, class: "nav-link" do %>
-            <%= image_tag "cards.png", width: 35 %>
+            <%= image_tag "nav-tirage.png", width: 35 %>
           <% end %>
         </li>
         <li class="nav-item">
           <%= link_to wishlists_path, class: "nav-link" do %>
-            <%= image_tag "wishlist-nav.png", width: 35 %>
+            <%= image_tag "nav-wishlist.png", width: 35 %>
           <% end %>
         </li>
       <% else %>

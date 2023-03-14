@@ -372,7 +372,7 @@ thematic_card5 = Card.new(name: "Siester")
 thematic_card5.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/siester.png")), filename: "siester.png", content_type: "image/png")
 thematic_card5.save
 
-activity_card_one = Card.create!(name: "Playlist pour la sieste", playlist: "https://open.spotify.com/playlist/37i9dQZF1DWZd79rJ6a7lp", outside: false, active: false)
+activity_card_one = Card.create!(name: "Playlist pour la sieste", playlist: "37i9dQZF1DWZd79rJ6a7lp", outside: false, active: false)
 activity_card_one.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/sieste2.png")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_one.save!
 activity_card_one.parent = thematic_card5
@@ -386,7 +386,7 @@ thematic_card6 = Card.new(name: "Écouter sa playlist préférée à fond")
 thematic_card6.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/ecouter_sa_playlist_prefere.png")), filename: "ecouter_sa_playlist_prefere.png", content_type: "image/png")
 thematic_card6.save
 
-activity_card_one = Card.create!(name: "Playlist Classic", playlist: "https://open.spotify.com/playlist/1h0CEZCm6IbFTbxThn6Xcs", outside: false, active: false)
+activity_card_one = Card.create!(name: "Playlist Classic", playlist: "1h0CEZCm6IbFTbxThn6Xcs", outside: false, active: false)
 activity_card_one.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/music1.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_one.save!
 activity_card_one.parent = thematic_card6
@@ -395,7 +395,7 @@ activity_card_one.save!
 journal_twenty_four = JournalEntry.create(user: User.last, card: Card.last)
 journal_twenty_four.save!
 
-activity_card_two = Card.create!(name: "Playlist Pop", playlist:"https://open.spotify.com/playlist/008G1BbvK1NQvbAV8MHvDz", outside: false, active: true)
+activity_card_two = Card.create!(name: "Playlist Pop", playlist:"008G1BbvK1NQvbAV8MHvDz", outside: false, active: true)
 activity_card_two.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/music2.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_two.save!
 activity_card_two.parent = thematic_card6
@@ -404,7 +404,7 @@ activity_card_two.save!
 journal_twenty_six = JournalEntry.create(user: User.last, card: Card.last)
 journal_twenty_six.save!
 
-activity_card_three = Card.create!(name: "Playlist Pop", playlist:"https://open.spotify.com/track/0yLdNVWF3Srea0uzk55zFn", outside: false, active: false)
+activity_card_three = Card.create!(name: "Playlist Méditation", playlist:"37i9dQZF1DWZqd5JICZI0u", outside: false, active: false)
 activity_card_three.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/music3.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_three.save!
 activity_card_three.parent = thematic_card6
@@ -413,7 +413,7 @@ activity_card_three.save!
 journal_twenty_seven = JournalEntry.create(user: User.last, card: Card.last)
 journal_twenty_seven.save!
 
-activity_card_four = Card.create!(name: "Playlist Jazz", playlist:"https://open.spotify.com/playlist/37i9dQZF1DXe0UXHUfHinR", outside: false, active: true)
+activity_card_four = Card.create!(name: "Playlist Jazz", playlist:"37i9dQZF1DXe0UXHUfHinR", outside: false, active: true)
 activity_card_four.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/music4.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_four.save!
 activity_card_four.parent = thematic_card6
@@ -422,7 +422,7 @@ activity_card_four.save!
 journal_twenty_eight = JournalEntry.create(user: User.last, card: Card.last)
 journal_twenty_eight.save!
 
-activity_card_six = Card.create!(name: "Playlist Jazz", playlist:"https://open.spotify.com/playlist/37i9dQZF1DXdwTUxmGKrdN", outside: false, active: true)
+activity_card_six = Card.create!(name: "Playlist Jazz", playlist:"37i9dQZF1DXdwTUxmGKrdN", outside: false, active: true)
 activity_card_six.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/music2.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_six.save!
 activity_card_six.parent = thematic_card6
@@ -431,7 +431,7 @@ activity_card_six.save!
 journal_twenty_nine = JournalEntry.create(user: User.last, card: Card.last)
 journal_twenty_nine.save!
 
-activity_card_seven = Card.create!(name: "Playlist Méditation", playlist:"https://open.spotify.com/artist/5pDpKXDZXe97W5nPVRQo8A", outside: false, active: true)
+activity_card_seven = Card.create!(name: "Playlist Dance", playlist:"37i9dQZF1EIhIsNBs86Fmu", outside: false, active: true)
 activity_card_seven.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/music1.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_seven.save!
 activity_card_seven.parent = thematic_card6
@@ -440,7 +440,7 @@ activity_card_seven.save
 journal_thirty = JournalEntry.create(user: User.last, card: Card.last)
 journal_thirty.save!
 
-activity_card_eight = Card.create!(name: "Playlist Méditation", playlist:"https://open.spotify.com/album/6GMlQBylzCYzGyuTCY0VJE", outside: false, active: false)
+activity_card_eight = Card.create!(name: "Playlist Douce", playlist:"37i9dQZF1EIcNUtFW3CJZc", outside: false, active: false)
 activity_card_eight.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/music4.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_eight.save!
 activity_card_eight.parent = thematic_card6
