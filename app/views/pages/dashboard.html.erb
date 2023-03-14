@@ -1,99 +1,56 @@
-<div class="container ">
-  <div class="d-flex ">
-    <%= cl_image_tag current_user.photo.key, class: "avatar-large me-auto bd-highlight" %>
-    <div class="dashboard-hello">
-      <h5 class="">Bonjour,  <span class="text-color fw-bolder"><%= current_user.username %></span> !</h5>
-      <% messages = [
-          "Pour pouvoir contempler un arc-en-ciel, il faut d'abord endurer la pluie.",
-          "Le succès n'est pas final, l'échec n'est pas fatal : c'est le courage de continuer qui compte.",
-          "La vie est un défi à relever, un bonheur à mériter, une aventure à tenter.",
-          "Il n'y a pas de raccourci pour atteindre un endroit que ça vaut la peine d'aller.",
-          "Le seul endroit où le succès vient avant le travail, c'est dans le dictionnaire.",
-          "Chaque jour est une nouvelle chance de vivre une vie meilleure.",
-          "La réussite n'est pas la clé du bonheur. Le bonheur est la clé de la réussite.",
-          "La vie est un voyage, profitez de chaque instant et apprenez de chaque expérience.",
-          "N'abandonnez jamais vos rêves, car ils peuvent se réaliser un jour.",
-          "La vie est trop courte pour ne pas être heureux.",
-          "Le bonheur ne dépend pas de ce que vous avez, mais de ce que vous êtes.",
-          "Soyez la personne que vous voulez être et vivez la vie que vous voulez vivre."
-        ] %>
-      <%# Display a randomly selected message on each page refresh %>
-      <div class="message fst-italic">
-        <p><small>"<%= messages.sample %>"</small></p>
-      </div>
+<div class="">
+  <div class="d-flex align-items-center justify-content-end">
+    <span><%=image_tag "journal2.PNG", width: 50, class: "me-auto", data: { action: "click->dashboard#displayJournal" }%></span>
+
+    <h5 class="pt-2">Bonjour,  <span class="text-color fw-bolder"><%= current_user.username %></span> !</h5>
+    <div class="dropdown btn-profile">
+      <button class="btn btn-profile dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        <%= cl_image_tag current_user.photo.key, class: "avatar-large me-auto bd-highlight" %>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><%= link_to "Editer mon profil", edit_user_registration_path, class: "dropdown-item" %></li>
+        <li><%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
+      </ul>
     </div>
+  </div>
+  <% messages = [
+      "Pour pouvoir contempler un arc-en-ciel, il faut d'abord endurer la pluie.",
+      "Le succès n'est pas final, l'échec n'est pas fatal: c'est le courage de continuer qui compte.",
+      "La vie est un défi à relever, un bonheur à mériter, une aventure à tenter.",
+      "Il n'y a pas de raccourci pour atteindre un endroit que ça vaut la peine d'aller.",
+      "Le seul endroit où le succès vient avant le travail, c'est dans le dictionnaire.",
+      "Chaque jour est une nouvelle chance de vivre une vie meilleure.",
+      "La réussite n'est pas la clé du bonheur. Le bonheur est la clé de la réussite.",
+      "La vie est un voyage, profitez de chaque instant et apprenez de chaque expérience.",
+      "N'abandonnez jamais vos rêves, car ils peuvent se réaliser un jour.",
+      "La vie est trop courte pour ne pas être heureux.",
+      "Le bonheur ne dépend pas de ce que vous avez, mais de ce que vous êtes.",
+      "Soyez la personne que vous voulez être et vivez la vie que vous voulez vivre."
+    ] %>
+      <%# Display a randomly selected message on each page refresh %>
+  <div class="message-text mx-4 fst-italic justify-content-center">
+    <p class="m-0 fw-bolder text-center"><small>"<%= messages.sample %>"</small></p>
   </div>
 </div>
 
 <div class="dashboard-container mt-5" data-controller="dashboard">
-  <div class="wrapper">
-    <div class="main_body">
-      <div class="sidebar_menu">
-        <div class="inner_sidebar_menu">
-          <ul class="d-flex flex-column align-items-center p-0">
-            <li>
-              <p class="p-0">
-                <span><%=image_tag "journal2.PNG", width: 50, class: "", data: { action: "click->dashboard#displayJournal" }%></span>
-              </p>
-              <div data-dashboard-target="journal" class="card-box bg-violet card-hidden">
-                  <h3 class="text-white">Mon journal d'activité</h3>
-                <div class="inner">
-                    <% @journal_entries.each do |entry| %>
-                        <div class="d-flex justify-content-between w-100 ">
-                          <div class="journal-date d-flex flex-column">
-                            <small><%= entry.created_at.strftime("%a") %></small>
-                            <small><%= entry.created_at.strftime("%d") %></small>
-                          </div>
-                          <div class="journal-right text-end">
-                            <small><%= entry.created_at.strftime("at %I:%M%p") %></small>
-                            <div class="text-end" id="entry-content">
-                              <em><%= entry.content %></em>
-                            </div>
-                          </div>
-                        </div>
-                    <% end %>
+  <div class="card-box bg-violet">
+    <h3 class="text-white">Mon journal d'activité</h3>
+    <div class="inner">
+        <% @journal_entries.each do |entry| %>
+            <div class="d-flex justify-content-between w-100 ">
+              <div class="journal-date d-flex flex-column">
+                <small><%= entry.created_at.strftime("%a") %></small>
+                <small><%= entry.created_at.strftime("%d") %></small>
+              </div>
+              <div class="journal-right text-end">
+                <small><%= entry.created_at.strftime("at %I:%M%p") %></small>
+                <div class="text-end" id="entry-content">
+                  <em><%= entry.content %></em>
                 </div>
               </div>
-            </li>
-            <li>
-              <p class="p-0">
-                <span><%=image_tag "like.PNG", width: 45, class: "", data: { action: "click->dashboard#displayWishlist" }%></span>
-              </p>
-              <div data-dashboard-target="wishlist" class="card-box bg-violet card-hidden">
-
-                <div class="inner" id="inner-wishlist">
-                  <h3><%= link_to "My wishlist", filters_path, class: "text-decoration-none tab-underlined" %></h3>
-                  <div id="carouselExampleControls" class="carousel slide carousel-container w-100" data-bs-ride="carousel">
-                      <div class="carousel-inner p-4 carousel-items">
-                        <% @wishlists.each_with_index do |wish, index| %>
-                          <div class="carousel-item card-wishlist p-0 <%= 'active' if index == 0 %>">
-                            <%= link_to new_journal_entry_path(parent_card: wish.card.id, outside: params[:outside], active: params[:active]) do %>
-                              <%= cl_image_tag wish.card.photo.key, width: 200 %>
-                            <% end %>
-                            <%= link_to wish,
-                              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-                              class: "btn ml-4" do %>
-                              <i class="fas fa-trash-alt"></i>
-                            <% end %>
-                          </div>
-                        <% end %>
-                      </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
-                    </div>
-
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+            </div>
+        <% end %>
     </div>
   </div>
 </div>
