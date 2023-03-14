@@ -3,7 +3,7 @@
   <div class="d-flex align-items-center justify-content-end">
     <span><%=image_tag "journal2.PNG", width: 50, class: "me-auto", data: { action: "click->dashboard#displayJournal" }%></span>
 
-    <h5 class="pt-2">Bonjour,  <span class="text-color fw-bolder"><%= current_user.username %></span> !</h5>
+    <h3 class="pt-2 hello-mssg">Bonjour, <span class="text-color fw-bolder"><%= current_user.username %></span> !</h3>
     <div class="dropdown btn-profile">
       <button class="btn btn-profile dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         <%= cl_image_tag current_user.photo.key, class: "avatar-large me-auto bd-highlight" %>
@@ -14,6 +14,8 @@
       </ul>
     </div>
   </div>
+    <%# <h3 class="">Bienvenue dans ton journal</h3> %>
+
   <% messages = [
       "Pour pouvoir contempler un arc-en-ciel, il faut d'abord endurer la pluie.",
       "Le succès n'est pas final, l'échec n'est pas fatal: c'est le courage de continuer qui compte.",
@@ -30,25 +32,37 @@
     ] %>
       <%# Display a randomly selected message on each page refresh %>
   <div class="message-text mx-4 fst-italic justify-content-center">
-    <p class="m-0 fw-bolder text-center"><small>"<%= messages.sample %>"</small></p>
+    <p class="m-0 fw-bolder text-center"><i class="fa-solid fa-quote-left"></i> <small><%= messages.sample %></small> <i class="fa-solid fa-quote-right"></i></p>
   </div>
+  <br>
 </div>
-
+<br>
 <div class="dashboard-container mt-5" data-controller="dashboard">
   <div class="card-box bg-violet">
-    <h3 class="text-white">Mon journal d'activité</h3>
     <div class="inner">
         <% @journal_entries.each do |entry| %>
           <div class="card-entry">
             <div class="d-flex justify-content-between w-100 ">
-              <div class="journal-date d-flex flex-column">
+              <div class="journal-date d-flex flex-column  justify-content-center align-items-center px-2 py-5 me-2">
                 <small><%= entry.created_at.strftime("%a") %></small>
                 <small><%= entry.created_at.strftime("%d") %></small>
+                  <%= link_to entry,
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                    class: "btn text-start" do %>
+                    <small><i class="fas fa-trash-alt text-secondary"></i></small>
+                  <% end %>
               </div>
               <div class="w-100">
-                <div class="d-flex justify-content-between">
-                  <small><%= entry.created_at.strftime("at %I:%M%p") %></small>
-                  <h6 class="p-0"><%= entry.card.name %></h6>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex align-items-center">
+                    <%= cl_image_tag entry.card.photo.key, width: 35, height: 35 %>
+                    <h6 class="entry-card-name p-2"><%= entry.card.name %></h6>
+                  </div>
+                  <div class="entry-rating d-flex justify-content center">
+                    <%= entry.rating.to_i.times do  %>
+                      <i class="fa-solid fa-star"></i>
+                    <% end %>
+                  </div>
                 </div>
                 <div class="w-100 text-end">
                   <em class=""><%= entry.content %></em>
@@ -56,13 +70,7 @@
               </div>
             </div>
 
-            <div class="entry-btns">
-              <%= link_to entry,
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-                class: "btn ml-4" do %>
-                <i class="fas fa-trash-alt "></i>
-              <% end %>
-            </div>
+
 
           </div>
         <% end %>
