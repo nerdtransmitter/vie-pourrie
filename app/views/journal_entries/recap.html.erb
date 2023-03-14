@@ -40,7 +40,32 @@
   <% end %>
 
   <div class="d-flex justify-content-center align-items-center gap-3 p-3">
-    <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry), class: "btn btn-violet"  %>
+    <%# <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry), class: "btn btn-violet"  %>
+    <button type="button" class="btn btn-violet" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+     C'est fait!
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="card-content">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Comment c'était?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <%= simple_form_for @journal_entry do |f| %>
+                <%= f.input :content, label: "Description", class: "w-75 p-3 ", input_html: {style: "height:15vh"}  %>
+                <%= f.input :rating, collection: (1..5).to_a, label: "Comment tu te sens?", input_html: {data: {controller: "star-rating"}} %>
+              </div>
+              <div class="modal-footer">
+                <%= f.submit "Enregistre", class:"btn-violet mb-3" %>
+              </div>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
   </div>
-
+  
 </div>
