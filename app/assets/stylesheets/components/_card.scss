@@ -75,6 +75,7 @@
   border-radius: 15%;
   box-shadow: 0 0 4px 0 rgba(3, 3, 3, 0.1);
   background-color: transparent;
+
   &.position-1000 {
     inset: unset;
     margin-top: 200vh;
@@ -196,9 +197,13 @@ button {
 .card-name {
   height: 300px;
   box-sizing: border-box;
-  h2, h3 {
-    font-family: 'Lobster', cursive;
+  h3 {
+    font-family: 'Jost', sans-serif;
+  }
+  h2 {
+    font-family: 'Tilt Warp', cursive;
     letter-spacing: 1px;
+    margin-top: 30px;
   }
   color: $purple ;
 }

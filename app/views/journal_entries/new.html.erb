@@ -1,22 +1,37 @@
 
-<nav class="mb-3">
-  <div class="background-navbar2 container-fluid p-2 profile-typo">
-    <p class="fs-4 m-0">Mes options</p>
+<div class="container" data-controller="dot">
+  <div class="swiper" data-controller="swiper">
+    <nav class="mb-3">
+      <div class="background-navbar3 container-fluid p-2 profile-typo">
+        <p class="navbar-small-title fs-4 m-0">C'est quoi mes options ?</p>
+      </div>
+    </nav>
+    <div class="cards-dot">
+      <% @cards.each_with_index do |_card, index| %>
+        <i class="dot fa-solid fa-circle" data-dot-number="<%= index + 1 %>" data-dot-target="dot" ></i>
+      <% end %>
+    </div>
+    <div class="swiper-wrapper d-flex" >
+      <% @cards.each_with_index do |card, index| %>
+        <!-- Slides -->
+        <div class="swiper-slide" data-card-number="<%= index + 1 %>" data-dot-target="card">
+          <div class="d-flex inner-card-option flex-column justify-content-between align-items-center">
+            <div class="justify-content-center mt-4">
+              <%= cl_image_tag(card.photo.key, width: 260) %>
+            </div>
+            <div class="swipcontent">
+              <div class="title-swip mt-2 d-flex flex-column justify-content-center align-item-end">
+                <h2 class=""><%= card.name %></h2>
+                  <%= simple_form_for  @journal_entry do |f| %>
+                    <%= f.input :card, label: false, input_html: {value: card.id, class: "d-none"} %>
+                    <%= f.submit "C'est parti !", class: "btn btn-ghost2 mt-3 text-center" %>
+                  <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="swiper-pagination"></div>
   </div>
-</nav>
-
-<div class="container">
-  <%= simple_form_for  @journal_entry do |f| %>
-    <div class="options-children">
-      <%= f.input :card, as: :radio_buttons, collection: @cards,
-        item_wrapper_tag: :div,
-        item_wrapper_class: "image-select",
-        label_method: lambda { |c| "#{cl_image_tag c.photo.key, width: 100} <h2>#{c.name}</h2>".html_safe }
-      %>
-    </div>
-    <br>
-    <div class="w-100 justify-content-center align-items-center d-flex">
-      <%= f.submit "C'est parti", class: "btn btn-purple m-4 text-center" %>
-    </div>
-  <% end %>
 </div>

@@ -2,9 +2,9 @@
   border-radius: 7px;
   background-color: $purple;
   color: white;
-  font-family: $main-font;
-  font-size: 16px;
-  font-weight: lighter;
+  font-family: 'Jost', sans-serif;
+  font-size: 19px;
+  //font-weight: lighter;
   padding: 8px 48px;
 }
 
@@ -180,4 +180,9 @@
 
 .btn-selected:hover {
   transform: rotate(360deg);
+}
+
+.btn-profile {
+  background-color: transparent;
+  border: none;
 }

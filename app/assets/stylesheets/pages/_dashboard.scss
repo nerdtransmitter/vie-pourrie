@@ -1,19 +1,24 @@
 *{
     margin: 0;
-
     list-style: none;
   //   font-family: 'Ubuntu', sans-serif;
   //   box-sizing: border-box;
   text-decoration: none;
 }
 
+.dashboard-container {
+  margin-top: 40px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
 // .image {
 //   position: relative;
 //   bottom: 50px;
 // }
-.rainbow{
+.rainbow {
   position: absolute;
-  bottom: 65px;
+  bottom: 70px;
   right: 20px;
   height: 130px;
   transform: rotate(1deg);
@@ -27,6 +32,7 @@
   width: 50px;
   height: 50px;
   padding-top: 0;
+  font-family: $monospace-font;
 }
 
 a {
@@ -34,23 +40,35 @@ a {
 }
 
 .message-text {
-  margin-right: 2px;
-  margin-left: 20px;
-  line-height: 16px;
+  margin-right: 10px;
+  // margin-left: 20px;
+  line-height: 18px;
   text-align: end;
   color: #4a4e69;
-  font-family: $message-font;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(14, 27, 150, 0.8);
+  font-weight: bolder;
+  color: white;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  p {
+    font-family: $quote-font;
+    font-size: 16px;
+    color: white;
+
+  }
+
+  i {
+    font-size: 20px;
+    color: white;
+
+  }
 }
-// body{
-  //   background: #d5d9df;
-  //   width: 100%;
-  //   height: 100%;
-  // }
 
 /*MENU */
 .wrapper .sidebar_menu{
   position: fixed;
-  top: 125px;
+  top: 150px;
   left: 0;
   background: #a67fbe;;
   width: 50px;
@@ -61,8 +79,8 @@ a {
 .wrapper .sidebar_menu .inner_sidebar_menu{
     position: relative;
     padding-top: 60px;
-
 }
+
 .wrapper .sidebar_menu ul li a{
     color: #fff;
     font-size: 25px;
@@ -71,16 +89,18 @@ a {
     white-space: nowrap;
     text-decoration-line: none;
 }
+
 .wrapper .sidebar_menu ul li a .span{
     display: inline-block;
 }
+
 .wrapper .sidebar_menu ul li a .icon{
-    margin-right: 20px;
+    // margin-right: 20px;
 }
 
 .wrapper.active .sidebar_menu ul li a .list{
-    display: none;
-    left: -206px;
+    // display: none;
+    // left: -206px;
 }
 
 
@@ -90,26 +110,33 @@ a {
   opacity: 0;
   right: 100vw;
 }
+
 .card-box.bg-violet {
   position: fixed;
-  margin: auto;
-  top: 125px;
-  left: 55px;
-  margin-right: 5px;
+  width: 100%;
+  top: 160px;
+  // left: 55px;
+  margin: 0 10px;
   opacity: 1;
   transition: all 05ms ease;
-  z-index: 100;
+  z-index: 10000;
+  overflow: scroll;
+
+  h3 {
+    top: -10px
+  }
 }
+
 .bg-violet {
-    background-color:#a67fbe !important;
+    // background-color: rgba(166, 127, 190, .6) !important;
 }
 
 .card-box {
     position: relative;
     color: #fff;
     padding: 10px 10px ;
-    margin: 50px 0px 10px;
-    height: 100%;
+    margin: 50px 0px;
+    height: 65%;
     border-radius: 21px 21px 21px 21px;
     -moz-border-radius: 21px 21px 21px 21px;
     -webkit-border-radius: 21px 21px 21px 21px;
@@ -120,7 +147,7 @@ a {
     -webkit-transition: 1s;
 }
 .card-box .inner {
-  padding: 5px 10px 0 10px;
+  margin: 10px 20px;
 }
 .card-box h3 {
     font-size: 27px;
@@ -128,8 +155,66 @@ a {
     margin: 0 0 8px 0;
     white-space: nowrap;
     padding: 0;
-    text-align: left;
+    text-align: center;
 }
 .card-box p {
     font-size: 15px;
+}
+
+#inner-wishlist {
+  // padding-right: 44px;
+  width: 100%;
+
+  h1 {
+    color: white;
+  }
+}
+
+.dashboard-hello {
+
+}
+
+.card-entry {
+  background-color: rgba(255, 255, 255, .8);
+  border-radius: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.6) 0px 30px 60px -30px;
+  // box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+  margin-bottom: 10px;
+  color:rgba(0, 0, 0, 0.6);
+  padding: 5px;
+  position: relative;
+  h6 {
+    margin-bottom: 0;
+  }
+}
+
+#text {
+  display: none;
+  color: white;
+}
+
+.entry-rating {
+  font-size: 12px;
+  color: gold
+}
+
+.journal-title {
+  position: absolute;
+  top: 140px;
+  text-align: center;
+  z-index: 1000000 !important;
+  letter-spacing: 1px;
+  color: white;
+  text-shadow: rgba(6, 24, 44, 0.9) 0px 0px 6px !important;
+  width: 100%;
+}
+
+.hello-mssg {
+
+}
+
+.entry-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
 }

@@ -8,6 +8,35 @@
 @import "font-awesome";
 @import "star-rating.js/dist/star-rating.css";
 
+.gl-star-rating .gl-emote-bg {
+  transition: fill 0.15s ease-in-out;
+}
+.gl-star-rating [data-value]:not(.gl-active) .gl-emote-bg {
+  fill: #DCDCE6;
+}
+
+.gl-star-rating .gl-emote {
+  transform: scale(.9);
+  transition: transform 0.25s ease-in-out;
+}
+.gl-star-rating .gl-selected .gl-emote {
+  transform: scale(1.1);
+}
+
+:root {
+    --gl-star-color: #fdd835;                     /* if using SVG images */
+    --gl-star-color-inactive: #dcdce6;            /* if using SVG images */
+    --gl-star-empty: url(../img/star-empty.svg);  /* if using background images */
+    --gl-star-full: url(../img/star-full.svg);    /* if using background images */
+    --gl-star-size: 48px;
+    --gl-tooltip-border-radius: 4px;
+    --gl-tooltip-font-size: 0.875rem;
+    --gl-tooltip-font-weight: 400;
+    --gl-tooltip-line-height: 1;
+    --gl-tooltip-margin: 24px;
+    --gl-tooltip-padding: .5em 1em;
+    --gl-tooltip-size: 6px;
+}
 
 // Your CSS partials
 @import "components/index";
@@ -23,12 +52,18 @@ body {
 }
 
 h1, h2, h3, h5 {
-  font-family: 'Lobster', cursive;
+  font-family: $headers-font;
   color: $purple;
+
 }
 
 h1 {
   text-align: center !important;
   padding: 10px;
   white-space: pre-wrap;
+}
+
+p, h5 {
+  font-family: 'Jost', sans-serif;
+  color: $purple;
 }
