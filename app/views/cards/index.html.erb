@@ -1,16 +1,15 @@
-<div class="container">
-  <div class="cards d-flex position-absolute justify-content-center align-items-center" data-controller="cards">
-    <% @cards.each do |card| %>
-      <% x = 120 + (0..50).to_a.sample %>
-      <% y = 120 + (0..50).to_a.sample %>
-      <% x_move = ["top", "bottom"].sample %>
-      <% y_move = ["left", "right"].sample %>
+<div class="container d-flex flex-column justify-content-between align-items-center">
+  <div class="cards mb-5" data-controller="cards">
+    <% @cards.each_with_index do |card, index| %>
 
-      <div class="card position-absolute position-<%= ["1000", "3000", "5000"].sample%>" id="<%= "selected" if card == @card %>" style="transform: rotate(<%=(-20..20).to_a.sample %>deg); " data-cards-target="card">
-        <% if card == @card %>
-          <button type="button" class="btn-selected" data-bs-toggle="modal" data-bs-target="#open-modal">
-              <%= cl_image_tag card.parent.photo.key, alt: "card", class: "card-inner" %>
+      <div class="card" data-cards-target="card" id="<%= humanize(index % 5) %>" >
+        <% if card.id == "one" %>
+          <% card == @card %>
+          <button type="button" class="btn-selected" data-bs-toggle="modal" data-bs-target="#open-modal" id="selected">
+              <%= cl_image_tag card.parent.photo.key, alt: "card", class: "card-inner selected" %>
           </button>
+            <%= @cards.size %>
+            <%= index %>
 
           <!-- Modal -->
         <% else %>
@@ -19,11 +18,11 @@
       </div>
     <% end %>
   </div>
-
-
+  <div class="form-later">
     <%= simple_form_for [@card.parent, @wishlist] do |f|%>
-      <%= f.submit "Pour plus tard!", class: "btn btn-violet "%>
+      <%= f.submit "Pour plus tard!", class: "btn btn-ghost", id: "btn-later" %>
     <% end %>
+  </div>
 
 </div>
 
