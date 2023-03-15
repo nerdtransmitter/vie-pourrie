@@ -136,7 +136,7 @@ journal_five.save!
 ## A RENOMMER
 
 activity_card_one_bis = Card.create!(name: "Balade au Jardin du Luxembourg", address: "2 rue Auguste-Comte, 75006 Paris", outside: true, active: true)
-activity_card_one_bis.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/Se_faire_balade.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
+activity_card_one_bis.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/se_faire_balade.png")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_one_bis.save!
 activity_card_one_bis.parent = thematic_card2
 activity_card_one_bis.save!
