@@ -3,10 +3,6 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="dashboard"
 export default class extends Controller {
   static targets = ["journal", "wishlist", "mood"]
-
-  connect() {
-  }
-
   // au click on veut display la card correspondante
   displayJournal() {
     // add card hidden on every target
@@ -17,7 +13,6 @@ export default class extends Controller {
       this.hideAllCards()
     }
   }
-
   displayWishlist() {
     if (this.wishlistTarget.classList.contains("card-hidden")) {
       this.hideAllCards()
