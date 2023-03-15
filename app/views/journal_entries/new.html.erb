@@ -1,33 +1,31 @@
 
 <div class="container" data-controller="dot">
-  <div class="swiper" data-controller="swiper">
-    <nav class="mb-3">
-      <div class="background-navbar3 container-fluid p-2 profile-typo">
-        <p class="navbar-small-title fs-4 m-0">C'est quoi mes options ?</p>
-      </div>
-    </nav>
-    <div class="cards-dot">
-    </div>
-    <div class="swiper-wrapper d-flex" >
+  <div id="carouselExampleControls" class="carousel slide carousel-container w-100" data-bs-ride="carousel">
+    <div class="carousel-inner p-4 carousel-items align-items-center justify-content-center">
       <% @cards.each_with_index do |card, index| %>
-        <!-- Slides -->
-        <div class="swiper-slide" data-card-number="<%= index + 1 %>" data-dot-target="card">
-          <div class="d-flex inner-card-option flex-column justify-content-between align-items-center">
+        <div class="carousel-item card-wishlist p-0 <%= 'active' if index == 0 %>">
+          <div class="d-flex flex-column justify-content-center align-items-center">
             <div class="justify-content-center mt-4">
               <%= cl_image_tag(card.photo.key, width: 260) %>
             </div>
-            <div class="swipcontent">
-              <div class="title-swip mt-2 d-flex flex-column justify-content-center align-item-end">
-                <h2 class=""><%= card.name %></h2>
-                  <%= simple_form_for  @journal_entry do |f| %>
-                    <%= f.input :card, label: false, input_html: {value: card.id, class: "d-none"} %>
-                    <%= f.submit "C'est parti !", class: "btn btn-ghost2 mt-3 text-center" %>
-                  <% end %>
-              </div>
+            <div class="title-swip mt-2 d-flex flex-column justify-content-center align-item-end">
+              <h2 class=""><%= card.name %></h2>
+                <%= simple_form_for  @journal_entry do |f| %>
+                  <%= f.input :card, label: false, input_html: {value: card.id, class: "d-none"} %>
+                  <%= f.submit "C'est parti !", class: "btn btn-ghost2 mt-3 text-center" %>
+                <% end %>
             </div>
           </div>
         </div>
       <% end %>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </div>

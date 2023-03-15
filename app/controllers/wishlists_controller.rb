@@ -5,7 +5,7 @@ class WishlistsController < ApplicationController
     @wishlist.card = @card
     @wishlist.user = current_user
     if @wishlist.save
-      redirect_to dashboard_path
+      redirect_to wishlists_path
     else
       render :new, status: :unprocessable_entity
     end
