@@ -7,9 +7,6 @@
       </div>
     </nav>
     <div class="cards-dot">
-      <% @cards.each_with_index do |_card, index| %>
-        <i class="dot fa-solid fa-circle" data-dot-number="<%= index + 1 %>" data-dot-target="dot" ></i>
-      <% end %>
     </div>
     <div class="swiper-wrapper d-flex" >
       <% @cards.each_with_index do |card, index| %>
@@ -32,6 +29,5 @@
         </div>
       <% end %>
     </div>
-    <div class="swiper-pagination"></div>
   </div>
 </div>
