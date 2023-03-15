@@ -45,7 +45,7 @@
     C'est fait!
     </button>
     <!-- Modal -->
-    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal w-100 fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="card-content">
           <div class="modal-content">
@@ -59,7 +59,7 @@
                 <%= f.input :rating, collection: (1..5).to_a, label: "Comment tu te sens?", input_html: {data: {controller: "star-rating"}} %>
               </div>
               <div class="modal-footer">
-                <%= f.submit "Enregistre", class:"btn-violet mb-3" %>
+                <%= f.submit "Enregistrer", class:"btn-violet mb-3" %>
               </div>
               <% end %>
             </div>

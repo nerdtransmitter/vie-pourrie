@@ -37,7 +37,11 @@ class JournalEntriesController < ApplicationController
 
   def update
     @journal_entry.update(journal_entry_params)
-    redirect_to dashboard_path
+    if @journal_entry.save
+      redirect_to dashboard_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def recap
@@ -50,7 +54,6 @@ class JournalEntriesController < ApplicationController
     elsif @journal_entry.card.video.present?
       @journal_entry.card.video
     end
-    @wishlist = Wishlist.new
   end
 
   def edit
