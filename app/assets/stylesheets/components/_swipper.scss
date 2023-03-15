@@ -4,7 +4,7 @@
 
 .swiper {
   width: 320px;
-  height: 550px;
+  height: 570px;
   margin-top: 20px;
   background-color: white;
   border-radius: 10px;
@@ -15,7 +15,7 @@
 }
 
 .title-swip {
-  padding: 13px;
+  padding: 25px;
   text-align: center;
   position: relative;
   height: fit-content;
@@ -32,7 +32,7 @@
 
 .btn-ghost2 {
   color: $medium-purple;
-  bottom: 90px;
+  bottom: 70px;
   background-color: #decee7;
   padding: 8px 24px;
   border-radius: 50px;
@@ -57,4 +57,24 @@
 .dot {
   font-size: 8px;
   margin: 3px;
+}
+
+.fleche {
+  width: 90px;
+  margin-top: 151px;
+  padding: 29px;
+}
+
+.btn-ghost3 {
+  color: $medium-purple;
+  bottom: 70px;
+  border: 1px solid $light-purple;
+  //background-color: #decee7;
+  padding: 8px 24px;
+  border-radius: 50px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost3:hover {
+  color: $purple;
 }

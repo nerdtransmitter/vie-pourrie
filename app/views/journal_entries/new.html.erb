@@ -1,6 +1,11 @@
 
-<div class="container" data-controller="dot">
-  <div id="carouselExampleControls" class="carousel slide carousel-container w-100" data-bs-ride="carousel">
+<div class="container swiper" data-controller="dot">
+  <div id="carouselExampleControls" class="carousel slide carousel-container w-100" data-bs-interval="false">
+  <nav class="mb-3">
+    <div class="background-navbar3 container-fluid p-2 profile-typo">
+      <p class="navbar-small-title fs-4 m-0 w-100">On choisit quoi ?</p>
+    </div>
+  </nav>
     <div class="carousel-inner p-4 carousel-items align-items-center justify-content-center">
       <% @cards.each_with_index do |card, index| %>
         <div class="carousel-item card-wishlist p-0 <%= 'active' if index == 0 %>">
@@ -8,24 +13,24 @@
             <div class="justify-content-center mt-4">
               <%= cl_image_tag(card.photo.key, width: 260) %>
             </div>
-            <div class="title-swip mt-2 d-flex flex-column justify-content-center align-item-end">
+            <div class="title-swip mt-5 d-flex flex-column justify-content-center align-item-end">
               <h2 class=""><%= card.name %></h2>
                 <%= simple_form_for  @journal_entry do |f| %>
                   <%= f.input :card, label: false, input_html: {value: card.id, class: "d-none"} %>
-                  <%= f.submit "C'est parti !", class: "btn btn-ghost2 mt-3 text-center" %>
+                  <%= f.submit "C'est parti !", class: "btn btn-ghost3 mt-3 text-center" %>
                 <% end %>
             </div>
           </div>
         </div>
       <% end %>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+      <span class="sr-only">Previous</span>
+      <%= image_tag "boutonl.png", class: "fleche" %>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+      <span class="sr-only">Next</span>
+      <%= image_tag "boutonr.png", class: "fleche" %>
+    </a>
   </div>
 </div>

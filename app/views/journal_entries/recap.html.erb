@@ -1,20 +1,18 @@
-<div class="fond-blanc">
-  <nav class="mb-3">
+<div class="">
+  <nav class="">
     <div class="background-navbar3 container-fluid p-2 profile-typo">
       <p class="navbar-small-title fs-4 m-0 w-100">Activité du jour</p>
     </div>
   </nav>
 </div>
-<div class="container">
+<div class="container fond-blanc">
   <%# <div class="swiper"> %>
 
-
-
-  <div class="justify-content-center mt-4">
+  <div class="justify-content-center">
     <%= cl_image_tag @journal_entry.card.photo.key, class: "card-photo" %>
   </div>
 
-  <div class="title-swip title w-100 mt-3">
+  <div class="title-swip title w-100 mt-2">
     <p class="activity-typo"><%= @journal_entry.card.name %></p>
   </div>
 
@@ -42,7 +40,7 @@
 
   <div class="d-flex justify-content-center align-items-center gap-3 p-3">
     <%# <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry), class: "btn btn-violet"  %>
-    <button type="button" class="btn btn-violet text-center" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+    <button type="button" class="btn btn-ghost3 text-center" data-bs-toggle="modal" data-bs-target="#feedbackModal">
     C'est fait!
     </button>
     <!-- Modal -->
