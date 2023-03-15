@@ -14,19 +14,23 @@
     </div>
   </div>
 
-  <%# <div class="text-center">
-    <%= image_tag "carte_merde.png", alt: "intro card", width: 200, class: "card-home" %>
-  <%# </div> %>
-
-  <%# <div class="text-center mt-2">
-    <%= link_to "commencer", filters_path, class: "btn btn-purple" %>
-  <%# </div>  %>
 </div>
 <div class="text-center mt-2">
   <!-- Button trigger modal -->
+  
+  <% if user_signed_in? %>
   <button type="button" class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Commencer
- </button>
+  </button>
+  <% else %>
+    <%= form_tag(new_user_session_path, method: "get") do %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= hidden_field_tag :return_to, request.url %>
+      <button type="button" class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="event.preventDefault(); document.forms[0].submit();"> 
+        Commencer
+      </button>
+    <% end %>
+  <% end %>
   <!-- Modal -->
     <div class="modal fade rounded " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -37,7 +41,7 @@
             </div>
             <div class="tag-selecteor mt-5">
               <%= simple_form_for @mood do |f| %>
-                <h5 class="modal-title fs-3 mb-4" id="exampleModalLabel">Tu te sens comment aujourd'hui, <span class="text-color fw-bolder"><%= current_user.username %></span>?</h5>
+              <h5 class="modal-title fs-3 mb-4" id="exampleModalLabel">Tu te sens comment aujourd'hui, <span class="text-color fw-bolder"><%= current_user.username%></span>?</h5> 
                   <%= f.input :emotion,
                     as: :check_boxes,
                     collection: [['Heureux(e)', 'heureux'],
