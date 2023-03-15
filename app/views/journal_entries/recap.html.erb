@@ -4,69 +4,45 @@
       <p class="navbar-small-title fs-4 m-0 w-100">Activité du jour</p>
     </div>
   </nav>
-
+</div>
 <div class="container">
   <%# <div class="swiper"> %>
-    <nav class="mb-3">
-      <div class="background-navbar3 container-fluid p-2 profile-typo">
-        <p class="navbar-small-title fs-4 m-0">Activité du jour</p>
+
+
+
+  <div class="justify-content-center mt-4">
+    <%= cl_image_tag @journal_entry.card.photo.key, class: "card-photo" %>
+  </div>
+
+  <div class="title-swip title w-100 mt-3">
+    <p class="activity-typo"><%= @journal_entry.card.name %></p>
+  </div>
+
+
+  <% if @journal_entry.card.address %>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <div style="width: 350px; height: 230px;" class="label-none"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    </nav>
-
-
-    <div class="justify-content-center mt-4">
-      <%= cl_image_tag @journal_entry.card.photo.key, class: "card-photo" %>
-    </div>
-
-    <div class="title-swip title w-100 mt-3">
-      <p class="activity-typo"><%= @journal_entry.card.name %></p>
-    </div>
-
-
-    <% if @journal_entry.card.address %>
-      <div class="d-flex flex-column justify-content-center align-items-center">
-        <div style="width: 350px; height: 230px;" class="label-none"
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-      </div>
-    <% elsif @journal_entry.card.website %>
-      <div class="d-flex flex-column justify-content-center align-items-center p-4">
-        <%= link_to "Voir ! ", @journal_entry.card.website, class: "btn btn-ghost"  %>
-      </div>
-    <% elsif @journal_entry.card.playlist %>
-      <div class="embed-playlist">
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/<%= @journal_entry.card.playlist %>?utm_source=generator&view=coverart" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-    <% elsif @journal_entry.card.video %>
-      <iframe width="100%" height="215" class="rounded-3" src="https://www.youtube.com/embed/<%= @journal_entry.card.filter_video_url %>?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <% else %>
-    <% end %>
-
-    <div class="d-flex justify-content-center align-items-center gap-3 p-3">
-      <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry), class: "btn btn-ghost2 mt-3 text-center"  %>
     </div>
   <% elsif @journal_entry.card.website %>
     <div class="d-flex flex-column justify-content-center align-items-center p-4">
       <%= link_to "Voir ! ", @journal_entry.card.website, class: "btn btn-ghost"  %>
     </div>
   <% elsif @journal_entry.card.playlist %>
-    <div class="d-flex flex-column justify-content-center align-items-center p-4">
-      <%= link_to "Ecouter ! ", @journal_entry.card.playlist, class: "btn btn-ghost"  %>
+    <div class="embed-playlist">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/<%= @journal_entry.card.playlist %>?utm_source=generator&view=coverart" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   <% elsif @journal_entry.card.video %>
-    <%# <div class="d-flex flex-column justify-content-center align-items-center p-4"> %>
-      <%#= link_to "Regarder ! ", @journal_entry.card.video, class: "btn btn-ghost"  %>
-    <%# </div> %>
     <iframe width="100%" height="215" class="rounded-3" src="https://www.youtube.com/embed/<%= @journal_entry.card.filter_video_url %>?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <% else %>
   <% end %>
 
   <div class="d-flex justify-content-center align-items-center gap-3 p-3">
     <%# <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry), class: "btn btn-violet"  %>
-    <button type="button" class="btn btn-violet" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-     C'est fait!
+    <button type="button" class="btn btn-violet text-center" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+    C'est fait!
     </button>
     <!-- Modal -->
     <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -91,5 +67,5 @@
       </div>
     </div>
   </div>
- 
+
 </div>
