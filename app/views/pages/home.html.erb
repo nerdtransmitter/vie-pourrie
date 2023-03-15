@@ -34,37 +34,42 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
+          <%= image_tag "rainbow.PNG", width: 50  %>
           <h1 class="modal-title fs-5" id="exampleModalLabel">Comment tu te sent aujourd'hui</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body tag-selecteor">
-        <img class="" src="rainbow.PNG" alt="rainbow">
-        <%# <%= image_tag "rainbow.PNG",  %> 
-          <%= simple_form_for @mood do |f| %>
-              <%= f.input :emotion,
-                as: :check_boxes,
-                collection: [['Heureux', 'heureux'],
-                            ['Triste', 'triste'],
-                            ['Stressé', 'stressé'],
-                            ['Calme', 'calme'],
-                            ['En colère', 'en colère'],
-                            ['Excité', 'excité'],
-                            ['Anxieux', 'anxieux']],
-                input_html: { class: "tag-selector" },
-                item_wrapper_class: 'tag-item' %>
 
-					      <%= link_to "Continue", filters_path, class: "btn btn-purple" %> 
+        <div class="modal-body">
+          <%= image_tag "rainbow.PNG", width: 50  %>
 
-              <%# <%= f.button :submit, "Submit", filters_path, class: "btn btn-purple" %> 
-              <%# <div class="form-check form-check-inline ">
-                <%= f.check_box :tag_item, { multiple: true, checked: @journal_entry.tag_item.include?(emotion) }, emotion, id: emotion %>
-                <%# <%= f.label emotion, class: 'form-check-label', for: emotion %>
-              <%# </div>  %>
-          <% end %>
+          <div class="tag-selecteor">
+            <%= simple_form_for @mood do |f| %>
+                <%= f.input :emotion,
+                  as: :check_boxes,
+                  collection: [['Heureux', 'heureux'],
+                              ['Triste', 'triste'],
+                              ['Stressé', 'stressé'],
+                              ['Calme', 'calme'],
+                              ['En colère', 'en colère'],
+                              ['Excité', 'excité'],
+                              ['Anxieux', 'anxieux']],
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+
+                  <%= link_to "Continue", filters_path, class: "btn btn-purple" %>
+
+                <%# <%= f.button :submit, "Submit", filters_path, class: "btn btn-purple" %>
+                <%# <div class="form-check form-check-inline ">
+                  <%= f.check_box :tag_item, { multiple: true, checked: @journal_entry.tag_item.include?(emotion) }, emotion, id: emotion %>
+                  <%# <%= f.label emotion, class: 'form-check-label', for: emotion %>
+                <%# </div>  %>
+            <% end %>
+          </div>
         </div>
-        </div>
+
+      </div>
         <%# <div class="modal-footer">
         <%# </div> %>
-      </div>
     </div>
   </div>
+</div>
