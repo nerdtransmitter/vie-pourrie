@@ -36,8 +36,15 @@
       <div class="text-center">Quand t'es prêt.e 👇</div>
       <div class="modal-footer d-flex justify-content-center">
 
-        <%= link_to "Remélanger", cards_path(outside: params[:outside], active: params[:active], lat: params[:lat], lng: params[:lng]), class: "btn btn-secondary btn-sm" %>
-        <%= link_to "On y va", new_journal_entry_path(parent_card: @card.parent.id, outside: params[:outside], active: params[:active]), class: "btn btn-success btn-sm"%>
+      <%= link_to cards_path(outside: params[:outside], active: params[:active], lat: params[:lat], lng: params[:lng]) do %>
+        <i class="fa-solid fa-arrows-rotate modal-icon" ></i>
+        <%# <%= image_tag("card.png", width: 45) %> 
+      <% end %>
+
+      <%= link_to new_journal_entry_path(parent_card: @card.parent.id, outside: params[:outside], active: params[:active]) do %>
+        <i class="fa-solid fa-check modal-icon"></i>
+        <%# <%= image_tag("like.png", width: 45) %>
+      <% end %>
       </div>
     </div>
   </div>
