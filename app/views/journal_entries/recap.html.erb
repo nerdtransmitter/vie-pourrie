@@ -1,18 +1,18 @@
-<div class="fond-blanc">
-  <nav class="mb-3">
+<div class="">
+  <nav class="">
     <div class="background-navbar3 container-fluid p-2 profile-typo">
       <p class="navbar-small-title fs-4 m-0 w-100">Activité du jour</p>
     </div>
   </nav>
 </div>
-<div class="container">
+<div class="container fond-blanc">
   <%# <div class="swiper"> %>
 
   <div class="justify-content-center mt-4">
     <%= cl_image_tag @journal_entry.card.photo.key, class: "card-photo" %>
   </div>
 
-  <div class="title-swip title w-100 mt-3">
+  <div class="title-swip title w-100 mt-2">
     <p class="activity-typo"><%= @journal_entry.card.name %></p>
   </div>
 
@@ -49,8 +49,6 @@
         <div class="round"></div>
       </label>
     </div>
-   
-    
     <!-- Modal -->
     <div class="modal w-100 fade" data-modal-target="modal" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
