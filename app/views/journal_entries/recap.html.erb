@@ -8,7 +8,7 @@
 <div class="container fond-blanc">
   <%# <div class="swiper"> %>
 
-  <div class="justify-content-center">
+  <div class="justify-content-center mt-4">
     <%= cl_image_tag @journal_entry.card.photo.key, class: "card-photo" %>
   </div>
 
@@ -38,33 +38,40 @@
     <iframe width="100%" height="215" class="rounded-3" src="https://www.youtube.com/embed/<%= @journal_entry.card.filter_video_url %>?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   <% end %>
 
-  <div class="d-flex justify-content-center align-items-center gap-3 p-3">
+  <div class="d-flex justify-content-center align-items-center gap-3 p-3 mt-5" data-controller="modal" >
     <%# <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry), class: "btn btn-violet"  %>
-    <button type="button" class="btn btn-ghost3 text-center" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-    C'est fait!
-    </button>
+    <div class="love" >
+      <input id="switch" type="checkbox" data-modal-target="checkbox" data-action="change->modal#love">
+      <label class="love-heart" for="switch">
+        <i class="left"></i>
+        <i class="right"></i>
+        <i class="bottom"></i>
+        <div class="round"></div>
+      </label>
+    </div>
     <!-- Modal -->
-    <div class="modal w-100 fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal w-100 fade" data-modal-target="modal" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="card-content">
+        <%# <div class="card-content"> %>
           <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Comment c'était?</h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Comment c'était?</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
+            </div>
               <div class="modal-body">
                 <%= simple_form_for @journal_entry do |f| %>
                 <%= f.input :content, label: "Description", class: "w-75 p-3 ", input_html: {style: "height:15vh"}  %>
                 <%= f.input :rating, collection: (1..5).to_a, label: "Comment tu te sens?", input_html: {data: {controller: "star-rating"}} %>
               </div>
+
               <div class="modal-footer">
-                <%= f.submit "Enregistrer", class:"btn-violet mb-3" %>
+                <%= f.submit "Enregistrer", class:"btn-violet" %>
               </div>
               <% end %>
-            </div>
-        </div>
+          </div>
+        <%# </div> %>
       </div>
     </div>
   </div>
-
 </div>
+
