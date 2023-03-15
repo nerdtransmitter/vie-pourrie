@@ -14,6 +14,7 @@
   text-align: center;
   justify-content: space-evenly;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .radio-btn {
@@ -27,31 +28,23 @@
   opacity: 0;
 }
 
-.radio-btn:checked + .label-rounded {
-  background-color: white;
-  border: 1px solid black;
-}
-
-.radio-btn-div i {
-  font-size: 30px;
-  cursor: pointer;
-  text-align: center;
-  // padding: 8px 12px;
-  background-color: red;
-}
+// .radio-btn:checked + .label-icon {
+//   background-color: white;
+//   border: 2px solid black;
+// }
 
 .radio-btn-div label {
   cursor: pointer;
   border-radius: 50%;
 }
 
-.label-icon {
-  height: 80%;
-  background-color: transparent;
-  text-align: center;
-  left: 2.5px;
-  margin-top: 8px;
-}
+// .label-icon {
+//   height: 80%;
+//   background-color: transparent;
+//   text-align: center;
+//   left: 2.5px;
+//   margin-top: 8px;
+// }
 
 .label-icon1 {
   height: 60%;
@@ -72,17 +65,19 @@
 }
 
 .btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+  color: palevioletred;
+  border: 1px solid palevioletred;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
+  font-size: 16px;
 }
 
 .btn-ghost:hover {
   opacity: 1;
+  color: palevioletred;
 }
 
 .btn-select {
@@ -166,11 +161,11 @@
   margin: 0;
   padding: 0;
   appearance: none;
-  transform: scale(1.1);
-  box-shadow: 0 0 8px rgba($color: black, $alpha: .4);
+  // box-shadow: 0 0 8px rgba($color: rgb(166, 227, 143), $alpha: .8);
   border-radius: 15%;
   position: absolute;
   top: -5px;
+  z-index: 10000;
 }
 
 .btn-selected {

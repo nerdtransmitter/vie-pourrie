@@ -1,16 +1,18 @@
 <div class="">
-  <div class="d-flex align-items-center justify-content-end">
-    <span><%=image_tag "journal2.PNG", width: 50, class: "me-auto", data: { action: "click->dashboard#displayJournal" }%></span>
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <%=image_tag "journal2.PNG", width: 50, height: 50, class: "text-start ms-3", data: { action: "click->dashboard#displayJournal" }%>
 
-    <h3 class="pt-2 hello-mssg">Bonjour, <span class="text-color fw-bolder"><%= current_user.username %></span> !</h3>
-    <div class="dropdown btn-profile">
-      <button class="btn btn-profile dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        <%= cl_image_tag current_user.photo.key, class: "avatar-large me-auto bd-highlight" %>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><%= link_to "Editer mon profil", edit_user_registration_path, class: "dropdown-item" %></li>
-        <li><%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
-      </ul>
+    <div class="d-flex align-items-center justify-content-end me-3">
+      <h4 class="pt-2 hello-mssg">Bonjour, <span class="fw-bolder"><%= current_user.username %></span> !</h4>
+      <div class="dropdown btn-profile">
+        <button class="btn btn-profile " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <%= cl_image_tag current_user.photo.key, class: "avatar-large me-auto bd-highlight" %>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><%= link_to "Editer mon profil", edit_user_registration_path, class: "dropdown-item" %></li>
+          <li><%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
+        </ul>
+      </div>
     </div>
   </div>
     <%# <h3 class="">Bienvenue dans ton journal</h3> %>
@@ -37,38 +39,40 @@
 </div>
 <br>
 <div class="dashboard-container mt-5" data-controller="dashboard">
+  <%# <div id="gradient-overlay">
+  </div> %>
   <div class="card-box bg-violet">
     <div class="inner">
-        <% @journal_entries.each do |entry| %>
-          <div class="card-entry">
-            <div class="d-flex justify-content-between w-100 ">
-              <div class="journal-date d-flex flex-column  justify-content-center align-items-center px-2 py-5 me-2">
-                <small><%= entry.created_at.strftime("%a") %></small>
-                <small><%= entry.created_at.strftime("%d") %></small>
-                  <%= link_to entry,
-                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-                    class: "btn text-start" do %>
-                    <small><i class="fas fa-trash-alt text-secondary"></i></small>
-                  <% end %>
-              </div>
-              <div class="w-100">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="d-flex align-items-center">
-                    <%= cl_image_tag entry.card.photo.key, width: 40, height: 40, class: "entry-icon" %>
-                    <h6 class="entry-card-name p-2"><%= entry.card.name %></h6>
-                  </div>
-                  <div class="entry-rating d-flex justify-content center">
-                    <%= entry.rating.to_i.times do  %>
-                      <i class="fa-solid fa-star"></i>
-                    <% end %>
-                  </div>
-                </div>
-                <p class="w-100 text-start"><%= entry.content %></p>
-              </div>
+      <% @journal_entries.each do |entry| %>
+        <div class="card-entry">
+          <div class="d-flex justify-content-between w-100 ">
+            <div class="journal-date d-flex flex-column  justify-content-center align-items-center px-2 py-5 me-2">
+              <small><%= entry.created_at.strftime("%a") %></small>
+              <small><%= entry.created_at.strftime("%d") %></small>
+                <%= link_to entry,
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                  class: "btn text-start" do %>
+                  <small><i class="fas fa-trash-alt text-secondary"></i></small>
+                <% end %>
             </div>
-
+            <div class="w-100">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                  <%= cl_image_tag entry.card.photo.key, width: 40, height: 40, class: "entry-icon" %>
+                  <h6 class="entry-card-name p-2"><%= entry.card.name %></h6>
+                </div>
+                <div class="entry-rating d-flex justify-content center">
+                  <%= entry.rating.to_i.times do  %>
+                    <i class="fa-solid fa-star"></i>
+                  <% end %>
+                </div>
+              </div>
+              <p class="w-100 text-start"><%= entry.content %></p>
+            </div>
           </div>
-        <% end %>
+
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
