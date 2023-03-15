@@ -156,7 +156,7 @@ journal_six_bis.save!
 ##
 
 
-activity_card_two = Card.create!(name: "Faire du vélo", outside: true, active: true)
+activity_card_two = Card.create!(name: "Faire du vélo", outside: true, address: "13 Quai de l'Hôtel de ville, 75004 Paris", active: true)
 activity_card_two.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/velo.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_two.save!
 activity_card_two.parent = thematic_card2
