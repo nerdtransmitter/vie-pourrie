@@ -15,24 +15,21 @@
   </div> %>
 </div>
 
-
-
-
-  <div class="flip-card" data-controller="flip-card">
-    <div class="flip-card-inner card-holder" data-flip-card-target="card" data-action="click->flip-card#flip">
-      <div class="flip-card-front cardflip-front">
-        <%=image_tag "carte_home.png" %>
-      </div>
-      <div class="flip-card-back  cardflip-back">
-        <%=image_tag "carte_merde.png" %>
-      </div>
+<div class="flip-card" data-controller="flip-card">
+  <div class="flip-card-inner card-holder" data-flip-card-target="card" data-action="click->flip-card#flip">
+    <div class="flip-card-front cardflip-front">
+      <%=image_tag "carte_home.png" %>
+    </div>
+    <div class="flip-card-back  cardflip-back">
+      <%=image_tag "carte_merde.png" %>
     </div>
   </div>
+</div>
 
 </div>
 <div class="text-center mt-2">
   <!-- Button trigger modal -->
-  
+
   <% if user_signed_in? %>
   <button type="button" class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Commencer
@@ -41,7 +38,7 @@
     <%= form_tag(new_user_session_path, method: "get") do %>
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <%= hidden_field_tag :return_to, request.url %>
-      <button type="button" class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="event.preventDefault(); document.forms[0].submit();"> 
+      <button type="button" class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="event.preventDefault(); document.forms[0].submit();">
         Commencer
       </button>
     <% end %>
@@ -56,7 +53,7 @@
             </div>
             <div class="tag-selecteor mt-5">
               <%= simple_form_for @mood do |f| %>
-              <h5 class="modal-title fs-3 mb-4" id="exampleModalLabel">Tu te sens comment aujourd'hui, <span class="text-color fw-bolder"><%= current_user.username%></span>?</h5> 
+              <h5 class="modal-title fs-3 mb-4" id="exampleModalLabel">Tu te sens comment aujourd'hui, <span class="text-color fw-bolder"><%= current_user.username%></span>?</h5>
                   <%= f.input :emotion,
                     as: :check_boxes,
                     collection: [['Heureux(e)', 'heureux'],
@@ -76,5 +73,3 @@
       </div>
     </div>
 </div>
-
-
