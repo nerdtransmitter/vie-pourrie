@@ -14,10 +14,10 @@
               <%= cl_image_tag(card.photo.key, height: 200 ) %>
             </div>
             <div class="title-swip mt-5 d-flex flex-column justify-content-center align-item-end">
-              <h2 class=""><%= card.name %></h2>
+              <h3 class=""><%= card.name %></h3>
                 <%= simple_form_for  @journal_entry do |f| %>
                   <%= f.input :card, label: false, input_html: {value: card.id, class: "d-none"} %>
-                  <%= f.submit "C'est parti !", class: "btn btn-ghost4 mt-3 text-center" %>
+                  <%= f.submit "C'est parti !", class: "btn btn-ghost4 mt-3 text-center fw-bolder" %>
                 <% end %>
             </div>
           </div>
