@@ -1,16 +1,12 @@
 <div class="container d-flex flex-column justify-content-between align-items-center">
-  <div class="cards mb-5" data-controller="cards">
+  <div class="cards mb-5" data-controller="">
     <% @cards.each_with_index do |card, index| %>
 
-      <div class="card" data-cards-target="card" id="<%= humanize(index % 5) %>" >
-        <% if card.id == "one" %>
-          <% card == @card %>
-          <button type="button" class="btn-selected" data-bs-toggle="modal" data-bs-target="#open-modal" id="selected">
-              <%= cl_image_tag card.parent.photo.key, alt: "card", class: "card-inner selected" %>
+      <div class="card" data-cards-target="card" id="<%= card == @card ? 'selected' : humanize(index % 5) %>" >
+        <% if card == @card %>
+          <button type="button" class="btn-selected" data-bs-toggle="modal" data-bs-target="#open-modal" >
+              <%= cl_image_tag card.parent.photo.key, alt: "card", class: "card-inner" %>
           </button>
-            <%= @cards.size %>
-            <%= index %>
-
           <!-- Modal -->
         <% else %>
           <%= cl_image_tag card.parent.photo.key, alt: "card", class: "card-inner" %>
