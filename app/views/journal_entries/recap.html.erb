@@ -1,9 +1,9 @@
 <div class="">
     <%# <div class="background-navbar3 container-fluid p-2 profile-typo"> %>
-      <h2 class="m-0 w-100 text-center p-2 title-activité"><%= @journal_entry.card.name %></h2>
+      <h2 class="m-0 w-100 text-center p-3 title-activité"><%= @journal_entry.card.name %></h2>
     <%# </div> %>
 </div>
-<div class="container fond-blanc">
+<div class="container fond-blanc 100vh pt-4 mt-4">
   <%# <div class="swiper"> %>
   <div class="d-flex justify-content-center">
     <%= cl_image_tag @journal_entry.card.photo.key, class: "card-photo my-2" %>
@@ -50,13 +50,13 @@
               <%# <h1 class="modal-title fs-5" id="exampleModalLabel">Alors, <br>ça t'a plu?</h1> %>
                <%= image_tag "solei.PNG", width: 150,  class:"modal-title fs-5", id:"exampleModalLabel"%>
             </div>
-              <div class="modal-body fw-semibold">
+              <div class="modal-body fw-semibold ">
                 <%= simple_form_for @journal_entry do |f| %>
-                  <%= f.input :content, label: "Alors, ça t'a plu?", class: "w-75 p-3 ", input_html: {style: "height:15vh bold"}  %>
+                  <%= f.input :content, label: "Alors, ça t'a plu?", class: "w-100 p-3 ", input_html: {style: "height:15vh bold"}  %>
                   <%= f.input :rating, collection: (1..5).to_a, label: "Comment tu te sens?", input_html: {data: {controller: "star-rating"}} %>
+                  <%= f.submit "Enregistrer", class:"btn-violet w-80 " %>
               </div>
               <div class="modal-footer">
-                  <%= f.submit "Enregistrer", class:"btn-violet" %>
               </div>
               <% end %>
           </div>
