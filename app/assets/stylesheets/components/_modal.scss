@@ -49,7 +49,7 @@
     width: 329px;
     position: absolute;
     top: -7%;
-    left: 50%;
+    left: 43%;
     transform: translate(-50%, -50%);
     padding: 2em;
     background: #e4cef0;
@@ -105,7 +105,11 @@ a {
 .modal-icon:hover {
   background-color: beige;
 }
- 
+
 label[for="mood_emotion"] {
   display: none;
+}
+
+.modal-index {
+  z-index: 2000000;
 }
