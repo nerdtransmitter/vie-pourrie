@@ -34,7 +34,17 @@
   <button type="button" class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Commencer
   </button>
-  <div class="modal fade rounded " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <% else %>
+    <%= form_tag(new_user_session_path, method: "get") do %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= hidden_field_tag :return_to, request.url %>
+      <button type="button" class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="event.preventDefault(); document.forms[0].submit();">
+        Commencer
+      </button>
+    <% end %>
+  <% end %>
+  <!-- Modal -->
+    <div class="modal fade rounded " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content-home height:600px">
           <div class="modal-body">
@@ -62,15 +72,4 @@
         </div>
       </div>
     </div>
-
-  <% else %>
-    <%= form_tag(new_user_session_path, method: "get") do %>
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <%= hidden_field_tag :return_to, request.url %>
-      <button type="button" class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="event.preventDefault(); document.forms[0].submit();">
-        Commencer
-      </button>
-    <% end %>
-  <% end %>
-
 </div>
