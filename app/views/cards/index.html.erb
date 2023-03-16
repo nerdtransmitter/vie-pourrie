@@ -1,17 +1,12 @@
-<div class="container">
-  <div class="cards d-flex position-absolute justify-content-center align-items-center" data-controller="cards">
-    <% @cards.each do |card| %>
-      <% x = 120 + (0..50).to_a.sample %>
-      <% y = 120 + (0..50).to_a.sample %>
-      <% x_move = ["top", "bottom"].sample %>
-      <% y_move = ["left", "right"].sample %>
+<div class="container d-flex flex-column justify-content-between align-items-center">
+  <div class="cards mb-5" data-controller="">
+    <% @cards.each_with_index do |card, index| %>
 
-      <div class="card position-absolute position-<%= ["1000", "3000", "5000"].sample%>" id="<%= "selected" if card == @card %>" style="transform: rotate(<%=(-20..20).to_a.sample %>deg); " data-cards-target="card">
+      <div class="card" data-cards-target="card" id="<%= card == @card ? 'selected' : humanize(index % 5) %>" >
         <% if card == @card %>
-          <button type="button" class="btn-selected" data-bs-toggle="modal" data-bs-target="#open-modal">
+          <button type="button" class="btn-selected" data-bs-toggle="modal" data-bs-target="#open-modal" >
               <%= cl_image_tag card.parent.photo.key, alt: "card", class: "card-inner" %>
           </button>
-
           <!-- Modal -->
         <% else %>
           <%= cl_image_tag card.parent.photo.key, alt: "card", class: "card-inner" %>
@@ -19,16 +14,16 @@
       </div>
     <% end %>
   </div>
-
-
+  <div class="form-later">
     <%= simple_form_for [@card.parent, @wishlist] do |f|%>
-      <%= f.submit "Pour plus tard!", class: "btn btn-violet "%>
+      <%= f.submit "Pour plus tard!", class: "btn btn-ghost", id: "btn-later" %>
     <% end %>
+  </div>
 
 </div>
 
 
-<div class="modal fade" id="open-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal modal-index fade" id="open-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-window">
     <div class="modal-content  d-flex flex-column">
 
@@ -37,8 +32,14 @@
       <div class="text-center">Quand t'es prêt.e 👇</div>
       <div class="modal-footer d-flex justify-content-center">
 
-        <%= link_to "Remélanger", cards_path(outside: params[:outside], active: params[:active], lat: params[:lat], lng: params[:lng]), class: "btn btn-secondary btn-sm" %>
-        <%= link_to "On y va", new_journal_entry_path(parent_card: @card.parent.id, outside: params[:outside], active: params[:active]), class: "btn btn-success btn-sm"%>
+      <%= link_to cards_path(outside: params[:outside], active: params[:active], lat: params[:lat], lng: params[:lng]) do %>
+        <i class="fa-solid fa-arrows-rotate modal-icon" ></i>
+        <%# <%= image_tag("card.png", width: 45) %>
+      <% end %>
+
+      <%= link_to new_journal_entry_path(parent_card: @card.parent.id, outside: params[:outside], active: params[:active]) do %>
+        <i class="fa-solid fa-check modal-icon"></i>
+      <% end %>
       </div>
     </div>
   </div>

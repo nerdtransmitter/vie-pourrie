@@ -1,33 +1,43 @@
 <div class="container container-home d-flex flex-column align-items-center justify-content-between">
   <div class="align-items-center">
-    <h1 class="title text-center">Quand la vie c'est pourri</h1>
-  </div>
+    <%# <h1 class="title text-center">Quand la vie c'est pourri</h1> %>
+    <%# <div class="container-blobs">
+      <h1 class="title"><span>THE<br>BLOBS</span></h1>
 
-  <div class="flip-card" data-controller="flip-card">
-    <div class="flip-card-inner card-holder" data-flip-card-target="card" data-action="click->flip-card#flip">
-      <div class="flip-card-front cardflip-front">
-        <%=image_tag "carte_home.png" %>
-      </div>
-      <div class="flip-card-back  cardflip-back">
-        <%=image_tag "carte_merde.png" %>
-      </div>
+      <div class="blobs_1"></div>
+      <div class="blobs_2"></div>
+      <div class="blobs_3"></div>
+      <div class="blobs_4"></div>
+      <div class="blobs_5"></div>
+      <div class="blobs_6"></div>
+      <div class="blobs_7"></div>
+    </div>
+  </div> %>
+</div>
+
+ <div class="images">
+      <%= image_tag('blabla.png', class: "img-blabla") %>
+      <%= image_tag('lini.png', class: "img-lini") %>
+  </div>
+<div class="flip-card" data-controller="flip-card">
+  <div class="flip-card-inner card-holder" data-flip-card-target="card" data-action="click->flip-card#flip">
+    <div class="flip-card-front cardflip-front">
+      <%=image_tag "carte_home.png" %>
+    </div>
+    <div class="flip-card-back  cardflip-back">
+      <%=image_tag "carte_merde.png" %>
     </div>
   </div>
+</div>
 
-  <%# <div class="text-center">
-    <%= image_tag "carte_merde.png", alt: "intro card", width: 200, class: "card-home" %>
-  <%# </div> %>
-
-  <%# <div class="text-center mt-2">
-    <%= link_to "commencer", filters_path, class: "btn btn-purple" %>
-  <%# </div>  %>
 </div>
 <div class="text-center mt-2">
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Commencer
- </button>
-  <!-- Modal -->
+
+  <% if user_signed_in? %>
+    <button type="button" class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Commencer
+    </button>
     <div class="modal fade rounded " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content-home height:600px">
@@ -37,8 +47,10 @@
             </div>
             <div class="tag-selecteor mt-5">
               <%= simple_form_for @mood do |f| %>
-                <h5 class="modal-title fs-3 mb-4" id="exampleModalLabel">Tu te sens comment aujourd'hui, <span class="text-color fw-bolder"></span>?</h5>
+                <h5 class="modal-title fs-3 mb-4" id="exampleModalLabel">
+                Tu te sens comment aujourd'hui, <span class="text-color fw-bolder"><%= current_user.username%></span>?</h5>
                   <%= f.input :emotion,
+                    label: " ",
                     as: :check_boxes,
                     collection: [['Heureux(e)', 'heureux'],
                                 ['Triste', 'triste'],
@@ -49,11 +61,21 @@
                                 ['Anxieux(es)', 'anxieux']],
                     input_html: { class: "tag-selector" },
                     item_wrapper_class: 'tag-item' %>
-                    <%= link_to "Continue", filters_path, class: "btn btn-purple mt-3" %>
+                <%= link_to "Continue", filters_path, class: "btn btn-purple mt-3" %>
               <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
+  <% else %>
+    <%= form_tag(new_user_session_path, method: "get") do %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= hidden_field_tag :return_to, request.url %>
+      <button type="button" class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="event.preventDefault(); document.forms[0].submit();">
+        Commencer
+      </button>
+    <% end %>
+  <% end %>
+  <!-- Modal -->
 </div>

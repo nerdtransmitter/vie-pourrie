@@ -60,7 +60,9 @@
 
   <body class="">
     <%= render "shared/flashes" %>
-    <%= yield %>
+    <div class="app-content">
+      <%= yield %>
+    </div>
     <% if params[:action] != "home" %>
       <%= render "shared/navbar" %>
     <% end %>

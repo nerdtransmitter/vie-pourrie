@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+.form {
+  height: 400px;
+
+  h1 {
+    font-family: 'Jost', sans-serif;
+  }
+}
+
+.label-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .7);
+}
+
+.radio-btn-div:hover .label-icon {
+  background-color: white;
+}
+
+.radio-btn:checked  + label .label-icon {
+  background-color: white;
+  // border: 1px solid $card-light-green;
+  // box-shadow: rgba(240, 46, 170, 0.4) 5px 5px 5px;
+  // box-shadow: rgba(242, 40, 209, 0.27) 0px 0px 0.25em, rgba(239, 37, 209, 0.05) 0px 0.25em 1em;
+  box-shadow: rgba(240, 46, 170, 0.5) 0px 5px 15px;
+}
+
+// .preferences {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   height: 300px;
+// }
+
+.chat-bubble {
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 20px;
+  text-align: start;
+  margin-bottom: 20px;
+  width: 275px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+  .chat-q {
+    margin-bottom: 0;
+  }
+}

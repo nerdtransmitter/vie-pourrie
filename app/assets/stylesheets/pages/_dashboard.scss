@@ -11,11 +11,9 @@
   align-items: center;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
-// .image {
-//   position: relative;
-//   bottom: 50px;
-// }
+
 .rainbow {
   position: absolute;
   bottom: 70px;
@@ -26,7 +24,7 @@
 }
 
 .journal-date {
-  border-right: 2px solid lightblue;
+  border-right: 2px solid rgba(14, 27, 150, 0.8);
   box-sizing: border-box;
   padding-right: 20px;
   width: 50px;
@@ -40,16 +38,16 @@ a {
 }
 
 .message-text {
-  margin-right: 10px;
+
   // margin-left: 20px;
   line-height: 18px;
   text-align: end;
-  color: #4a4e69;
   padding: 10px;
-  border-radius: 15px;
+  // border-radius: 25px;
+  border-radius: 7px;
   background-color: rgba(14, 27, 150, 0.8);
+  // background-color: lightblue;
   font-weight: bolder;
-  color: white;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   p {
     font-family: $quote-font;
@@ -61,7 +59,6 @@ a {
   i {
     font-size: 20px;
     color: white;
-
   }
 }
 
@@ -76,10 +73,10 @@ a {
   transition: all 0.3s linear;
   border-radius: 10px;
 }
-.wrapper .sidebar_menu .inner_sidebar_menu{
-    position: relative;
-    padding-top: 60px;
-}
+// .wrapper .sidebar_menu .inner_sidebar_menu{
+//     position: relative;
+//     padding-top: 60px;
+// }
 
 .wrapper .sidebar_menu ul li a{
     color: #fff;
@@ -105,11 +102,12 @@ a {
 
 
 /*Card*/
-.card-box.bg-violet.card-hidden {
-  position: fixed;
-  opacity: 0;
-  right: 100vw;
-}
+
+// .card-box.bg-violet.card-hidden {
+//   position: fixed;
+//   opacity: 0;
+//   right: 100vw;
+// }
 
 .card-box.bg-violet {
   position: fixed;
@@ -121,7 +119,7 @@ a {
   transition: all 05ms ease;
   z-index: 10000;
   overflow: scroll;
-
+  mask-image: linear-gradient(transparent, white 3%);
   h3 {
     top: -10px
   }
@@ -134,9 +132,8 @@ a {
 .card-box {
     position: relative;
     color: #fff;
-    padding: 10px 10px ;
     margin: 50px 0px;
-    height: 65%;
+    height: 85%;
     border-radius: 21px 21px 21px 21px;
     -moz-border-radius: 21px 21px 21px 21px;
     -webkit-border-radius: 21px 21px 21px 21px;
@@ -158,7 +155,7 @@ a {
     text-align: center;
 }
 .card-box p {
-    font-size: 15px;
+    font-size: 12px;
 }
 
 #inner-wishlist {
@@ -174,15 +171,36 @@ a {
 
 }
 
+#gradient-overlay {
+
+}
+
+#gradient-overlay {
+  // background: linear-gradient(0deg, #EFC9CE, white);
+  z-index: 2000000;
+  position: fixed;
+  top: 140px;
+  opacity: .6;
+  height: 15px;
+  width: 100%;
+  content: linear-gradient(0deg, #f2eced,transparent,#F5DCD9 50%);
+  box-shadow: 0 0 5px 10px #F5DCD9
+  // .overlay {
+  //   height
+  // }
+}
+
 .card-entry {
   background-color: rgba(255, 255, 255, .8);
   border-radius: 15px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.6) 0px 30px 60px -30px;
   // box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
   margin-bottom: 10px;
-  color:rgba(0, 0, 0, 0.6);
+  // color:rgba(0, 0, 0, 0.6);
+  color: darkslategray;
   padding: 5px;
   position: relative;
+
   h6 {
     margin-bottom: 0;
   }

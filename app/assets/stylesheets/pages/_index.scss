@@ -7,6 +7,13 @@ body {
   background-attachment: fixed;
   background-size: cover;
   h1 {
-    color: $purple;
+    color: palevioletred;
   }
+}
+
+// card animation
+
+.form-later {
+  bottom: 140px;
+  position: absolute;
 }
