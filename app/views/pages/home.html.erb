@@ -15,6 +15,10 @@
   </div> %>
 </div>
 
+ <div class="images">
+      <%= image_tag('blabla.png', class: "img-blabla") %>
+      <%= image_tag('lini.png', class: "img-lini") %>
+  </div>
 <div class="flip-card" data-controller="flip-card">
   <div class="flip-card-inner card-holder" data-flip-card-target="card" data-action="click->flip-card#flip">
     <div class="flip-card-front cardflip-front">
@@ -53,8 +57,10 @@
             </div>
             <div class="tag-selecteor mt-5">
               <%= simple_form_for @mood do |f| %>
-              <h5 class="modal-title fs-3 mb-4" id="exampleModalLabel">Tu te sens comment aujourd'hui, <span class="text-color fw-bolder"><%= current_user.username%></span>?</h5>
+                <h5 class="modal-title fs-3 mb-4" id="exampleModalLabel">
+                Tu te sens comment aujourd'hui, <span class="text-color fw-bolder"><%= current_user.username%></span>?</h5>
                   <%= f.input :emotion,
+                    label: " ",
                     as: :check_boxes,
                     collection: [['Heureux(e)', 'heureux'],
                                 ['Triste', 'triste'],
@@ -65,7 +71,7 @@
                                 ['Anxieux(es)', 'anxieux']],
                     input_html: { class: "tag-selector" },
                     item_wrapper_class: 'tag-item' %>
-                    <%= link_to "Continue", filters_path, class: "btn btn-purple mt-3" %>
+                <%= link_to "Continue", filters_path, class: "btn btn-purple mt-3" %>
               <% end %>
             </div>
           </div>
