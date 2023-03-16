@@ -37,7 +37,7 @@
             </div>
             <div class="tag-selecteor mt-5">
               <%= simple_form_for @mood do |f| %>
-                <h5 class="modal-title fs-3 mb-4" id="exampleModalLabel">Tu te sens comment aujourd'hui, <span class="text-color fw-bolder"><%= current_user.username %></span>?</h5>
+                <h5 class="modal-title fs-3 mb-4" id="exampleModalLabel">Tu te sens comment aujourd'hui, <span class="text-color fw-bolder"></span>?</h5>
                   <%= f.input :emotion,
                     as: :check_boxes,
                     collection: [['Heureux(e)', 'heureux'],
@@ -57,5 +57,3 @@
       </div>
     </div>
 </div>
-
-
