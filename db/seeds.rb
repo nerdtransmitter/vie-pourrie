@@ -423,8 +423,8 @@ activity_card_two.save!
 activity_card_two.parent = thematic_card6
 activity_card_two.save!
 
-journal_twenty_six = JournalEntry.create(user: User.last, card: Card.last)
-journal_twenty_six.save!
+# journal_twenty_six = JournalEntry.create(user: User.last, card: Card.last)
+# journal_twenty_six.save!
 
 activity_card_three = Card.create!(name: "Playlist de méditation", playlist:"37i9dQZF1DWZqd5JICZI0u", outside: false, active: false)
 activity_card_three.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/music2.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
