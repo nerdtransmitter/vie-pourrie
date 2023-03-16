@@ -1,7 +1,7 @@
-<div class="inner w-100 mt-3" id="inner-wishlist">
+<div class="inner w-100 mt-5" id="inner-wishlist">
   <h1 class="">Ma <%= image_tag "like.PNG", width: 90 %> Wishlist</h1>
   <div id="carouselExampleControls" class="carousel slide carousel-container w-100" data-bs-ride="carousel">
-    <div class="carousel-inner p-4 carousel-items align-items-center justify-content-center">
+    <div class="carousel-inner p-5 carousel-items align-items-center justify-content-center">
       <% @wishlists.each_with_index do |wish, index| %>
         <div class="carousel-item card-wishlist p-0 <%= 'active' if index == 0 %>">
           <div class="d-flex flex-column justify-content-center align-items-center">
@@ -11,19 +11,19 @@
             <%= link_to wish,
               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
               class: "btn ml-4" do %>
-              <i class="fas fa-trash-alt text-white"></i>
+              <i class="fa-sharp fa-solid fa-trash-can"></i>
             <% end %>
           </div>
         </div>
       <% end %>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+      <span class="sr-only">Previous</span>
+      <%= image_tag "boutonl.png", class: "fleche2" %>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+      <span class="sr-only">Next</span>
+      <%= image_tag "boutonr.png", class: "fleche2" %>
+    </a>
   </div>
 </div>
