@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 
 .container-home {
-  height: 89vh;
+  height: 82vh;
   padding: 50px ;
 }
 
@@ -11,6 +11,24 @@
   width: 270px;
 }
 
+.images{
+  position: relative;
+}
+.img-blabla{
+  position: absolute;
+  top: 385px;
+  left: 78px;
+  height: 122px;
+  transform: rotate(289deg);
+}
+
+.img-lini {
+  position: absolute;
+  top: -82px;
+  left: -228px;
+  height: 335px;
+  transform: rotate(290deg);
+}
 // @import url('https://fonts.googleapis.com/css?family=Titan+One');
 
 // body{text-align:center}
