@@ -32,7 +32,7 @@
   animation: check-animation2 .5s forwards;
 }
 
-button:checked + label .round {
+input:checked + label .round {
   transform: translate(0px, 0px);
   animation: check-animation .5s forwards;
   background-color: hsl(0, 0%, 100%);
@@ -76,7 +76,7 @@ button:checked + label .round {
   top: 0;
 }
 
-button:checked + .love-heart, button:checked + .love-heart::after, button:checked + .love-heart .bottom {
+input:checked + .love-heart, input:checked + .love-heart::after, input:checked + .love-heart .bottom {
   border-color: #76498c;
   box-shadow: inset 6px -5px 0px 2px #76498c;
 }
