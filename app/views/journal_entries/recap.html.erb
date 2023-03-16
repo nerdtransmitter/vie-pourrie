@@ -53,13 +53,14 @@
       <div class="modal-dialog">
         <%# <div class="card-content"> %>
           <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Comment c'était?</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header mt-3 d-flex justify-content-center">
+              <%# <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> %>
+              <%# <h1 class="modal-title fs-5" id="exampleModalLabel">Alors, <br>ça t'a plu?</h1> %>
+               <%= image_tag "solei.PNG", width: 150,  class:"modal-title fs-5", id:"exampleModalLabel"%>
             </div>
-              <div class="modal-body">
+              <div class="modal-body fw-semibold">
                 <%= simple_form_for @journal_entry do |f| %>
-                <%= f.input :content, label: "Description", class: "w-75 p-3 ", input_html: {style: "height:15vh"}  %>
+                <%= f.input :content, label: "Alors,ça t'a plu?", class: "w-75 p-3 ", input_html: {style: "height:15vh bold"}  %>
                 <%= f.input :rating, collection: (1..5).to_a, label: "Comment tu te sens?", input_html: {data: {controller: "star-rating"}} %>
               </div>
 

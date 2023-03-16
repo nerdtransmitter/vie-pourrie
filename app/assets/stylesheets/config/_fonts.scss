@@ -12,12 +12,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Hammersmith+One&family=Jost:wght@200;300;500;700&display=swap');
 
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Tilt Warp", cursive;
 
-$headers-font2: "Lobster Two", cursive;
+$headers-font2: "Hammersmith One", cursive;
+// $headers-font2: "Lobster Two", cursive;
 $main-font: "Montserrat", "sans-serif";
 $message-font: "Nunito", sans-serif;
 $monospace-font: "Inconsolata", monospace;
