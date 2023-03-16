@@ -11,13 +11,13 @@
         <div class="carousel-item card-wishlist p-0 <%= 'active' if index == 0 %>">
           <div class="d-flex flex-column justify-content-center align-items-center">
             <div class="justify-content-center mt-4">
-              <%= cl_image_tag(card.photo.key, width: 260) %>
+              <%= cl_image_tag(card.photo.key, height: 200 ) %>
             </div>
             <div class="title-swip mt-5 d-flex flex-column justify-content-center align-item-end">
               <h2 class=""><%= card.name %></h2>
                 <%= simple_form_for  @journal_entry do |f| %>
                   <%= f.input :card, label: false, input_html: {value: card.id, class: "d-none"} %>
-                  <%= f.submit "C'est parti !", class: "btn btn-ghost3 mt-3 text-center" %>
+                  <%= f.submit "C'est parti !", class: "btn btn-ghost4 mt-3 text-center" %>
                 <% end %>
             </div>
           </div>

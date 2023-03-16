@@ -75,6 +75,16 @@
   font-size: 16px;
 }
 
+.btn-ghost4 {
+  color: white;
+  bottom: 70px;
+  border: 1px solid #c2a2d3;
+  padding: 8px 24px;
+  border-radius: 50px;
+  transition: opacity 0.3s ease;
+  background-color: #c2a2d3;
+}
+
 .btn-ghost:hover {
   opacity: 1;
   color: palevioletred;
