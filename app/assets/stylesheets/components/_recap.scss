@@ -1,5 +1,5 @@
 .card-photo {
-  height: 130px;
+  height: 150px;
   // display: block;
   // margin-left: auto;
   // margin-right: auto;
@@ -18,9 +18,13 @@
 .fond-blanc {
   background-color: transparent;
   // height: 530px;
-  height: 610px;
+  height: 800px;
   margin-top: 10px;
   border-radius: 15px;
   padding: 10px 5px 20px 5px;
   // position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 700px;
 }

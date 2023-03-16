@@ -1,20 +1,20 @@
-<div class="navbar background-navbar navbar-expand-sm navbar-light navbar-life w-100 d-flex justify-content-between me-auto list-inline">
+<div class="py-2 navbar background-navbar navbar-expand-sm navbar-light navbar-life w-100 d-flex justify-content-between me-auto list-inline">
   <%# <div class="d-flex justify-content-between"> %>
     <%# <ul class="navbar-nav me-auto"> %>
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to dashboard_path, class: "nav-link" do %>
-            <%= image_tag "nav-journal.png", width: 35 %>
+          <%= link_to dashboard_path, class: "nav-link py-1" do %>
+            <%= image_tag "nav-journal.png", width: 40 %>
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to filters_path, class: "nav-link" do %>
-            <%= image_tag "nav-tirage.png", width: 35 %>
+          <%= link_to filters_path, class: "nav-link py-1" do %>
+            <%= image_tag "nav-tirage.png", width: 40 %>
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to wishlists_path, class: "nav-link" do %>
-            <%= image_tag "nav-wishlist.png", width: 35 %>
+          <%= link_to wishlists_path, class: "nav-link py-1" do %>
+            <%= image_tag "nav-wishlist.png", width: 40 %>
           <% end %>
         </li>
       <% else %>
