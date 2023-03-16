@@ -3,46 +3,58 @@
   height: 400px;
 
   h1 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Black Han Sans', sans-serif;
   }
 }
 
 .label-icon {
-  width: 100px;
-  height: 100px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, .7);
+  background-color: #d2a9ec;
 }
 
 .radio-btn-div:hover .label-icon {
+  box-shadow: 0 0 4px 0 rgba(3, 3, 3, 0.6);
   background-color: white;
 }
 
 .radio-btn:checked  + label .label-icon {
+  box-shadow: 0 0 4px 0 rgba(3, 3, 3, 0.6);
   background-color: white;
-  // border: 1px solid $card-light-green;
-  // box-shadow: rgba(240, 46, 170, 0.4) 5px 5px 5px;
-  // box-shadow: rgba(242, 40, 209, 0.27) 0px 0px 0.25em, rgba(239, 37, 209, 0.05) 0px 0.25em 1em;
-  box-shadow: rgba(240, 46, 170, 0.5) 0px 5px 15px;
 }
 
-// .preferences {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   height: 300px;
-// }
+.bulle3 {
+  width: 326px;
+  position: absolute;
+  margin-top: -7px;
+}
 
-.chat-bubble {
-  padding: 10px 20px;
-  background-color: white;
-  border-radius: 20px;
-  text-align: start;
-  margin-bottom: 20px;
-  width: 275px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+.text-filter {
+  color: $purple;
+}
 
-  .chat-q {
+.img-position {
+  background-image: url("bulle3.png");
+  background-position: center;
+  background-size: 87vw;
+  background-repeat: no-repeat;
+  padding: 30px 50px 20px;
+  margin-top: 50px;
+  .p {
+    line-height: 12px;
     margin-bottom: 0;
   }
+}
+
+.img-bulle3 {
+  background-image: url("intestin.png");
+  background-position: top;
+  background-size: 87vw 51vh;
+  background-repeat: no-repeat;
+  padding: 30px 63px 36px;
+}
+
+.text-bulle {
+  position: top;
 }
