@@ -124,7 +124,7 @@ thematic_card2 = Card.new(name: "Marcher prendre l'air")
 thematic_card2.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/marcher_prendre_lair.png")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 thematic_card2.save
 
-activity_card_one = Card.create!(name: "Balade aux Tuilleries", address: "Place de la Concorde, 75001 Paris", outside: true, active: true)
+activity_card_one = Card.create!(name: "Balade aux Tuileries", address: "Place de la Concorde, 75001 Paris", outside: true, active: true)
 activity_card_one.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/balade.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_one.save!
 activity_card_one.parent = thematic_card2
