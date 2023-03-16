@@ -383,7 +383,7 @@ journal_twenty_three = JournalEntry.create(user: User.last, card: Card.last)
 journal_twenty_three.save!
 
 ##### A RENOMMER + ILLU
-activity_card_two = Card.create!(name: "Siester avec de l'ASMR orage", playlist: "https://open.spotify.com/episode/18zoyfCK89e09qGGAEAQDH?si=YqqFLX0NTwWTrPrv-WUf7w", outside: false, active: false)
+activity_card_two = Card.create!(name: "Siester avec de l'ASMR", playlist: "3AvNoKf7JT6ACN7UuK5ovu", outside: false, active: false)
 activity_card_two.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/siesteasmr.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_two.save!
 activity_card_two.parent = thematic_card5
