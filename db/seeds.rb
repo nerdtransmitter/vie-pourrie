@@ -98,7 +98,7 @@ journal_six_bis.save!
 
 ##
 
-activity_card_four = Card.create!(name: "Pique-niquer aux Buttes Chaumonts", address: "1 Rue Botzaris, 75019 Paris", outside: true, active: false)
+activity_card_four = Card.create!(name: "Pique-niquer aux Buttes-Chaumonts", address: "1 Rue Botzaris, 75019 Paris", outside: true, active: false)
 activity_card_four.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/piquenique.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_four.save!
 activity_card_four.parent = thematic_card
@@ -124,7 +124,7 @@ thematic_card2 = Card.new(name: "Marcher prendre l'air")
 thematic_card2.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/marcher_prendre_lair.png")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 thematic_card2.save
 
-activity_card_one = Card.create!(name: "Balade aux Tuilleries", address: "Place de la Concorde, 75001 Paris", outside: true, active: true)
+activity_card_one = Card.create!(name: "Balade aux Tuileries", address: "Place de la Concorde, 75001 Paris", outside: true, active: true)
 activity_card_one.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/balade.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_one.save!
 activity_card_one.parent = thematic_card2
@@ -323,7 +323,7 @@ activity_card_four.save!
 journal_twenty = JournalEntry.create(user: User.last, card: Card.last)
 journal_twenty.save!
 
-activity_card_five = Card.create!(name: "Courir au Canal st Martin", address: "196 quai de Valmy, 75010 Paris", outside: true, active: true)
+activity_card_five = Card.create!(name: "Courir le long du Canal St-Martin", address: "196 quai de Valmy, 75010 Paris", outside: true, active: true)
 activity_card_five.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/courir.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_five.save!
 activity_card_five.parent = thematic_card4
@@ -442,7 +442,7 @@ activity_card_six.save!
 journal_twenty_nine = JournalEntry.create(user: User.last, card: Card.last)
 journal_twenty_nine.save!
 
-activity_card_seven = Card.create!(name: "Playlist pour dancer", playlist:"37i9dQZF1EIhIsNBs86Fmu", outside: false, active: true)
+activity_card_seven = Card.create!(name: "Playlist pour danser", playlist:"37i9dQZF1EIhIsNBs86Fmu", outside: false, active: true)
 activity_card_seven.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/music3.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_seven.save!
 activity_card_seven.parent = thematic_card6
