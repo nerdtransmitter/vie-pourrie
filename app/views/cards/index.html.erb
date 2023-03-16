@@ -16,10 +16,7 @@
   </div>
   <div class="form-later">
     <%= simple_form_for [@card.parent, @wishlist] do |f|%>
-      <%= f.submit " ", class: "", id: "" do %>
-        <button class="learn-more">Pour plus tard!</button>
-      <% end %>
-
+      <%= f.submit "Pour plus tard!", class: "learn-more", id: "btn-later" %>
     <% end %>
   </div>
 
