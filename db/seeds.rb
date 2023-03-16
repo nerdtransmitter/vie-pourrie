@@ -128,6 +128,8 @@ thematic_card2 = Card.new(name: "Marcher prendre l'air")
 thematic_card2.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/marcher_prendre_lair.png")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 thematic_card2.save
 
+Wishlist.create!(user: User.last, card: Card.last)
+
 activity_card_one = Card.create!(name: "Balade aux Tuileries", address: "Place de la Concorde, 75001 Paris", outside: true, active: true)
 activity_card_one.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/balade.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_one.save!
@@ -295,6 +297,8 @@ thematic_card4 = Card.new(name: "Faire du sport")
 thematic_card4.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/faire_du_sport.png")), filename: "faire_du_sport.png", content_type: "image/png")
 thematic_card4.save
 
+Wishlist.create!(user: User.last, card: Card.last)
+
 activity_card_one = Card.create!(name: "Hatha Yoga", video: "https://www.youtube.com/watch?v=l3oAT3X1eL0", outside: false, active: true)
 activity_card_one.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/yoga.PNG")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_one.save!
@@ -382,15 +386,14 @@ thematic_card5 = Card.new(name: "Siester")
 thematic_card5.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/siester.png")), filename: "siester.png", content_type: "image/png")
 thematic_card5.save
 
+Wishlist.create!(user: User.last, card: Card.last)
+
 
 activity_card_one = Card.create!(name: "Playlist pour la sieste", playlist: "37i9dQZF1DWZd79rJ6a7lp", outside: false, active: false)
 activity_card_one.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/sieste2.png")), filename: "marcher_prendre_lair.png", content_type: "image/png")
 activity_card_one.save!
 activity_card_one.parent = thematic_card5
 activity_card_one.save!
-
-# journal_twenty_three = JournalEntry.create(user: User.last, card: Card.last)
-# journal_twenty_three.save!
 
 ##### A RENOMMER + ILLU
 activity_card_two = Card.create!(name: "Siester avec de l'ASMR", playlist: "3AvNoKf7JT6ACN7UuK5ovu", outside: false, active: false)
