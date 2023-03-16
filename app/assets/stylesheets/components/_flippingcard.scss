@@ -8,7 +8,8 @@
 .flip-card {
   background-color: transparent;
   width: 100%;
-  perspective: 100px; /* Remove this if you don't want the 3D effect */
+  perspective: 10000px; /* Remove this if you don't want the 3D effect */
+  cursor: pointer;
 }
 
 /* This container is needed to position the front and back side */

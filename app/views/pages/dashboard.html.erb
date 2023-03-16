@@ -18,7 +18,6 @@
 
   <% messages = [
       "Pour pouvoir contempler un arc-en-ciel, il faut d'abord endurer la pluie.",
-      "Le succès n'est pas final, l'échec n'est pas fatal: c'est le courage de continuer qui compte.",
       "La vie est un défi à relever, un bonheur à mériter, une aventure à tenter.",
       "Il n'y a pas de raccourci pour atteindre un endroit que ça vaut la peine d'aller.",
       "Le seul endroit où le succès vient avant le travail, c'est dans le dictionnaire.",
@@ -31,7 +30,7 @@
       "Soyez la personne que vous voulez être et vivez la vie que vous voulez vivre."
     ] %>
       <%# Display a randomly selected message on each page refresh %>
-  <div class="message-text mx-4 fst-italic justify-content-center">
+  <div class="message-text mx-5 fst-italic justify-content-center">
     <p class="m-0 fw-bolder text-center"><i class="fa-solid fa-quote-left"></i> <small><%= messages.sample %></small> <i class="fa-solid fa-quote-right"></i></p>
   </div>
   <br>
@@ -60,10 +59,8 @@
                   <%= cl_image_tag entry.card.photo.key, width: 40, class: "entry-icon" %>
                   <h6 class="entry-card-name p-2"><%= entry.card.name %></h6>
                 </div>
-                <div class="entry-rating d-flex justify-content center">
-                  <%= entry.rating.to_i.times do  %>
-                    <i class="fa-solid fa-star"></i>
-                  <% end %>
+                <div class="entry-rating d-flex justify-content center pe-2 ">
+                  <%= raw emoji_my_mood(entry.rating) %>
                 </div>
               </div>
               <p class="w-100 text-start"><%= entry.content %></p>
