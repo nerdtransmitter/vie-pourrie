@@ -1,7 +1,8 @@
 .modal {
+    --bs-modal-zindex: 1150;
     --bs-modal-margin: 1.5rem;
     --bs-modal-color: ;
-    --bs-modal-bg: #e4cef0;
+    --bs-modal-bg: #f5e2ff;
     --bs-modal-border-width: 7px;
     --bs-modal-border-radius: 30px;
     --bs-modal-inner-border-radius: 16px;
@@ -52,7 +53,7 @@
     left: 43%;
     transform: translate(-50%, -50%);
     padding: 2em;
-    background: #e4cef0;
+    background: #f5e2ff;
   }
   header {
     font-weight: bold;
@@ -102,9 +103,10 @@ a {
   width: 45px;
 }
 
-.modal-icon:hover {
-  background-color: beige;
-}
+// .modal-icon:hover {
+//   background-color: rgb(118, 29, 88);
+//   border-radius: 30%;
+// }
 
 label[for="mood_emotion"] {
   display: none;
@@ -112,4 +114,15 @@ label[for="mood_emotion"] {
 
 .modal-index {
   z-index: 2000000;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  label {
+    text-align: center;
+  }
 }

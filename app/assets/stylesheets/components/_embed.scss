@@ -1,7 +1,32 @@
 .embed-playlist {
-  height: 250px;
+  margin-top: 20px;
+  // box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+  margin: 50px 0;
+
 }
 
-.spotify-playlist {
-  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+.spotify-player {
+  // box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+.map-embed {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 50px;
+  border-radius: 15px;
+  margin: 50px 0;
+}
+
+.map-container {
+
+}
+
+.video-embed {
+  margin: 50px 0;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 50px;
+  border-radius: 15px;
+}
+
+.title-activité {
+  margin-bottom: 40px;
+  background-color: $light-purple;
+  color: white;
 }

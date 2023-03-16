@@ -23,23 +23,14 @@
   z-index: -5;
 }
 
-.journal-date {
-  border-right: 2px solid rgba(14, 27, 150, 0.8);
-  box-sizing: border-box;
-  padding-right: 20px;
-  width: 50px;
-  height: 50px;
-  padding-top: 0;
-  font-family: $monospace-font;
-}
-
 a {
   color: #000000;
 }
 
 .message-text {
-
   // margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   line-height: 18px;
   text-align: end;
   padding: 10px;
@@ -62,59 +53,15 @@ a {
   }
 }
 
-/*MENU */
-.wrapper .sidebar_menu{
-  position: fixed;
-  top: 150px;
-  left: 0;
-  background: #a67fbe;;
-  width: 50px;
-  height: 100%;
-  transition: all 0.3s linear;
-  border-radius: 10px;
-}
-// .wrapper .sidebar_menu .inner_sidebar_menu{
-//     position: relative;
-//     padding-top: 60px;
-// }
-
-.wrapper .sidebar_menu ul li a{
-    color: #fff;
-    font-size: 25px;
-    // padding: 20px 35px;
-    display: block;
-    white-space: nowrap;
-    text-decoration-line: none;
-}
-
-.wrapper .sidebar_menu ul li a .span{
-    display: inline-block;
-}
-
-.wrapper .sidebar_menu ul li a .icon{
-    // margin-right: 20px;
-}
-
-.wrapper.active .sidebar_menu ul li a .list{
-    // display: none;
-    // left: -206px;
-}
-
 
 /*Card*/
-
-// .card-box.bg-violet.card-hidden {
-//   position: fixed;
-//   opacity: 0;
-//   right: 100vw;
-// }
 
 .card-box.bg-violet {
   position: fixed;
   width: 100%;
   top: 160px;
   // left: 55px;
-  margin: 0 10px;
+  margin: 25px 10px 0px 10px;
   opacity: 1;
   transition: all 05ms ease;
   z-index: 10000;
@@ -123,10 +70,6 @@ a {
   h3 {
     top: -10px
   }
-}
-
-.bg-violet {
-    // background-color: rgba(166, 127, 190, .6) !important;
 }
 
 .card-box {
@@ -159,20 +102,11 @@ a {
 }
 
 #inner-wishlist {
-  // padding-right: 44px;
   width: 100%;
 
   h1 {
-    color: white;
+    color: #432066;;
   }
-}
-
-.dashboard-hello {
-
-}
-
-#gradient-overlay {
-
 }
 
 #gradient-overlay {
@@ -191,7 +125,7 @@ a {
 }
 
 .card-entry {
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.6) 0px 30px 60px -30px;
   // box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
@@ -203,6 +137,20 @@ a {
 
   h6 {
     margin-bottom: 0;
+    font-family: 'Lobster', cursive;
+    color: $purple;
+  }
+
+  .journal-date {
+    border-right: 2px solid rgba(14, 27, 150, 0.8);
+    box-sizing: border-box;
+    padding-right: 20px;
+    width: 50px;
+    height: 50px;
+    padding-top: 0;
+    font-family: $monospace-font;
+    color: $purple;
+    font-weight: bold;
   }
 }
 
@@ -228,11 +176,17 @@ a {
 }
 
 .hello-mssg {
-
+  color: $purple;
 }
 
 .entry-icon {
   position: absolute;
   bottom: 5px;
   right: 10px;
+  width: fit-content;
+  display: block;
+  max-width:50px;
+  max-height:50px;
+  width: auto;
+  height: auto;
 }

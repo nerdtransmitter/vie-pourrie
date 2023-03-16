@@ -6,9 +6,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  h1 {
-    color: palevioletred;
-  }
+  // h1 {
+  //   color: palevioletred;
+  // }
 }
 
 // card animation
@@ -16,4 +16,10 @@ body {
 .form-later {
   bottom: 140px;
   position: absolute;
+}
+
+.fleche2 {
+  width: 41px;
+  margin-top: -26px;
+  padding: -14px;
 }

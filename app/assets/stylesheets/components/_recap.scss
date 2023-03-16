@@ -1,8 +1,11 @@
 .card-photo {
-  height: 130px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto
+  height: 150px;
+  // display: block;
+  // margin-left: auto;
+  // margin-right: auto;
+  // position: absolute;
+  // top: 80px;
+  // left: 95px;
 }
 
 .activity-typo {
@@ -13,7 +16,15 @@
 }
 
 .fond-blanc {
-  background-color: rgba(255, 255, 255, .5);
-  height: 100%;
-  padding-top: 40px;
+  background-color: transparent;
+  // height: 530px;
+  height: 800px;
+  margin-top: 10px;
+  border-radius: 15px;
+  padding: 10px 5px 20px 5px;
+  // position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 700px;
 }
