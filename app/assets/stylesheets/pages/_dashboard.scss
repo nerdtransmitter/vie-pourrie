@@ -137,7 +137,8 @@ a {
 
   h6 {
     margin-bottom: 0;
-    font-family: 'Lobster', cursive;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
     color: $purple;
   }
 
@@ -151,6 +152,11 @@ a {
     font-family: $monospace-font;
     color: $purple;
     font-weight: bold;
+  }
+
+  p {
+    font-size: 16px;
+    margin-left: 10px;
   }
 }
 
