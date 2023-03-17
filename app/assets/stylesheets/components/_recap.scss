@@ -28,3 +28,20 @@
   justify-content: space-between;
   height: 700px;
 }
+
+
+.gl-star-rating--stars {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+.sun-hair {
+  animation: rotating-sun 20s infinite linear ;
+}
+
+@keyframes rotating-sun {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

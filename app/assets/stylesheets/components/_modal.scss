@@ -26,10 +26,11 @@
   border-radius: var(--bs-modal-border-radius);
   outline: 0;
 }
-
+.recap-soleil {
+  height: 150px;
+}
 .modal-window {
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.25);
   top: 300px;
   right: 0;
   bottom: 0;
