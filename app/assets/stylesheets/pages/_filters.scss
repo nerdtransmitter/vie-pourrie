@@ -39,7 +39,7 @@
   background-position: center;
   background-size: 87vw;
   background-repeat: no-repeat;
-  padding: 30px 50px 20px;
+  padding: 30px 47px;
   margin-top: 50px;
   .p {
     line-height: 12px;
@@ -50,11 +50,21 @@
 .img-bulle3 {
   background-image: url("intestin.png");
   background-position: top;
-  background-size: 87vw 51vh;
+  background-size: 87vw 53vh;
   background-repeat: no-repeat;
-  padding: 30px 63px 36px;
+  padding: 30px 53px 36px;
 }
 
 .text-bulle {
   position: top;
+}
+
+input#btn-later {
+  border: none;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  color: purple;
+  border: 1px solid;
+  box-shadow: 1px 1px 4px purple;
 }
