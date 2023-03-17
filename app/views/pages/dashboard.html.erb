@@ -6,7 +6,12 @@
       <h2 class="pt-3 hello-mssg">Bonjour, <span class="fw-bolder"><%= current_user.username %></span> !</h2>
       <div class="dropdown btn-profile">
         <button class="btn btn-profile " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, class: "avatar-large me-auto bd-highlight" %>
+        <% else %>
+          <%= image_tag "solei.PNG", class: "avatar-large me-auto bd-highlight"  %>
+        <% end %>
+
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           <li><%= link_to "Editer mon profil", edit_user_registration_path, class: "dropdown-item" %></li>
@@ -54,7 +59,8 @@
             <div class="w-100">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center">
-                  <%= cl_image_tag entry.card.photo.key, width: 40, class: "entry-icon" %>
+
+                    <%= cl_image_tag entry.card.photo.key, width: 40, class: "entry-icon" %>
                   <h6 class="entry-card-name p-2"><%= entry.card.name %></h6>
                 </div>
                 <div class="entry-rating d-flex justify-content center pe-2 ">
