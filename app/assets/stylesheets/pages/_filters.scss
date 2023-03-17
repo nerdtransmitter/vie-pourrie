@@ -8,10 +8,14 @@
 }
 
 .label-icon {
-  width: 96px;
-  height: 96px;
+  width: 10vh;
+  height: 10vh;
   border-radius: 50%;
   background-color: #d2a9ec;
+}
+
+.mt-4vh {
+  margin-top: 4vh;
 }
 
 .radio-btn-div:hover .label-icon {
@@ -40,23 +44,28 @@
   background-size: 87vw;
   background-repeat: no-repeat;
   padding: 30px 47px;
-  margin-top: 50px;
+  margin-top: 4vh;
   .p {
     line-height: 12px;
     margin-bottom: 0;
+  }
+  p {
+    font-size: 2vh;
   }
 }
 
 .img-bulle3 {
   background-image: url("intestin.png");
   background-position: top;
-  background-size: 87vw 53vh;
+  background-size: 87vw 50vh;
   background-repeat: no-repeat;
-  padding: 30px 53px 36px;
+  padding: 2vh 53px 5vh;
+  margin-bottom: 1vh;
 }
 
 .text-bulle {
   position: top;
+  font-size: 2vh;
 }
 
 input#btn-later {

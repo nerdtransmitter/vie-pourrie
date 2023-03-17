@@ -1,11 +1,8 @@
-<div class="">
-    <%# <div class="background-navbar3 container-fluid p-2 profile-typo"> %>
-      <h2 class="m-0 w-100 text-center p-3 title-activité"><%= @journal_entry.card.name %></h2>
-    <%# </div> %>
-</div>
-<div class="container fond-blanc 100vh pt-4 mt-4">
-  <%# <div class="swiper"> %>
-  <div class="d-flex justify-content-center">
+<div class="container fond-blanc 100vh">
+  <div class="">
+    <h2 class="m-0 w-100 text-center p-3 title-activité"><%= @journal_entry.card.name %></h2>
+  </div>
+  <div class="d-flex justify-content-center mt-5">
     <%= cl_image_tag @journal_entry.card.photo.key, class: "card-photo my-2" %>
   </div>
   <div class="embed">
