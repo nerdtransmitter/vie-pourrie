@@ -1,4 +1,4 @@
-<div style="min-height: calc(100vh - 124px); margin-bottom: 54px;">
+<div style="min-height: calc(100vh - 124px); margin-bottom: 54px; width: 100%;">
   <div class="py-2">
     <div class="d-flex justify-content-between align-items-center mb-2">
       <%=image_tag "journal2.PNG", width: 60, height: 60, class: "text-start ms-3", data: { action: "click->dashboard#displayJournal" }%>
@@ -34,10 +34,12 @@
         "Soyez la personne que vous voulez être et vivez la vie que vous voulez vivre."
       ] %>
         <%# Display a randomly selected message on each page refresh %>
-    <div class="message-text mx-5 fst-italic justify-content-center">
-      <p class="m-0 fw-bolder text-center"><i class="fa-solid fa-quote-left"></i> <small><%= messages.sample %></small> <i class="fa-solid fa-quote-right"></i></p>
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="message-text mx-5 fst-italic justify-content-center">
+        <p class="m-0 fw-bolder text-center"><i class="fa-solid fa-quote-left"></i> <small><%= messages.sample %></small> <i class="fa-solid fa-quote-right"></i></p>
+      </div>
+      <br>
     </div>
-    <br>
   </div>
   <br>
   <div class="dashboard-container mt-5" data-controller="dashboard">

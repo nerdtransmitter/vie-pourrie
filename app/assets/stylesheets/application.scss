@@ -92,3 +92,15 @@ p, h5 {
 .app-content {
   min-height: calc(100vh - 124px);
 }
+
+@media (min-width: 1440px) {
+  .app-content {
+    min-height: calc(100vh - 311px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .app-content {
+    min-height: calc(100vh - 311px);
+  }
+}
