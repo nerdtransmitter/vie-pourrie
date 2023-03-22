@@ -15,7 +15,14 @@
   width: 100%;
   margin-top: 8vh;
 }
-
+@media (min-width: 1024px) {
+  .btns-radio {
+    // margin-top: 10vh;
+  }
+  .btn-filter {
+    margin-top: 1vh;
+  }
+}
 .radio-btn {
   position: absolute;
   // transform: scale(0);

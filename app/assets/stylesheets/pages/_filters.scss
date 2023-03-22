@@ -77,3 +77,35 @@ input#btn-later {
   border: 1px solid;
   box-shadow: 1px 1px 4px purple;
 }
+
+@media (min-width: 1024px) {
+  .filters-container {
+  max-width: 630px;
+  margin-top: 0;
+  }
+  .img-position {
+    background-size: 45vh;
+    padding: 40px 120px 30px 120px;
+    margin-top: 0;
+    p {
+      font-size: 16px;
+      width: 43vh;
+      padding: 0 33px;
+    }
+  }
+
+  .img-bulle3 {
+    background-size: 45vh;
+    padding: 30px;
+  }
+  .text-bulle {
+    width: 36vh;
+    padding-left: 16px;
+    font-size: 1.9vh;
+
+  }
+  .form {
+    max-width: 630px;
+    padding: 0 110px;
+  }
+}
