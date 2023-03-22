@@ -42,6 +42,12 @@
   opacity: 0;
 }
 
+@media (min-width: 1024px) {
+  .btns-radio {
+    padding: 0px 4vh;
+  }
+}
+
 @media (min-width: 1440px) {
   .btns-radio {
     padding: 0px 15vh;
