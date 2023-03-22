@@ -98,9 +98,3 @@ p, h5 {
     min-height: calc(100vh - 311px);
   }
 }
-
-@media (min-width: 1024px) {
-  .app-content {
-    min-height: calc(100vh - 200px);
-  }
-}
