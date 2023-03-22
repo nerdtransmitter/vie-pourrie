@@ -68,7 +68,31 @@ a {
   overflow: scroll;
   mask-image: linear-gradient(transparent, white 3%);
   h3 {
-    top: -10px
+    top: -10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-box.bg-violet {
+    width: 66%;
+  }
+  .dashboard-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-box.bg-violet {
+    width: 66%;
+    top: 173px;
+  }
+
+  .dashboard-container {
+    width: 100%;
+  }
+
+  .message-text {
+    width: 40vh;
   }
 }
 
@@ -103,7 +127,6 @@ a {
 
 #inner-wishlist {
   width: 100%;
-
   h1 {
     color: #432066;;
   }

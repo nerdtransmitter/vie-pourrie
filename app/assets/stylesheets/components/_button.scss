@@ -15,17 +15,37 @@
   width: 100%;
   margin-top: 8vh;
 }
-
+@media (min-width: 768px) {
+  .btns-radio {
+    padding: 0px 5vh;
+  }
+  .btn-filter {
+    margin-top: 1vh;
+  }
+  .radio-btn {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 100;
+    width: 96px;
+    height: 96px;
+    opacity: 0;
+  }
+}
 .radio-btn {
   position: absolute;
-  // transform: scale(0);
   top: 5px;
   left: 5px;
   z-index: 100;
   width: 96px;
   height: 96px;
   opacity: 0;
+}
 
+@media (min-width: 1440px) {
+  .btns-radio {
+    padding: 0px 15vh;
+  }
 }
 
 .radio-btn:checked + label {

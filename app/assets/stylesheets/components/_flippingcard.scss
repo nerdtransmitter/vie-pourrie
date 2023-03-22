@@ -10,6 +10,8 @@
   width: 100%;
   perspective: 10000px; /* Remove this if you don't want the 3D effect */
   cursor: pointer;
+  margin-top: 11vh;
+
 }
 
 /* This container is needed to position the front and back side */
@@ -23,9 +25,9 @@
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-// .flip-card .flip-card-inner:hover {
-//   transform: rotateY(180deg);
-// }
+.flip-card .flip-card-inner:hover {
+  transform: rotateY(180deg);
+}
 
 /* Position the front and back side */
 .flip-card-front {
@@ -53,4 +55,12 @@
 .flip-card-back {
   color: white;
   transform: rotateY(180deg);
+}
+
+
+@media (min-width: 1024px) {
+  .flip-card {
+    width: 40vh;
+    margin-top: 6vh;
+  }
 }

@@ -5,6 +5,11 @@
   padding: 50px ;
 }
 
+@media (min-width: 1024px) {
+  .container-home {
+    width: 200vh;
+  }
+}
 .title {
   padding-top: 0;
   font-size: 35px;
@@ -29,6 +34,8 @@
   height: 339px;
   transform: rotate(290deg);
 }
+
+
 // @import url('https://fonts.googleapis.com/css?family=Titan+One');
 
 // body{text-align:center}
