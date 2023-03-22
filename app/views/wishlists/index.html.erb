@@ -1,7 +1,7 @@
 <div class="inner w-60 mt-5" id="inner-wishlist">
   <h1 class="">Ma <%= image_tag "like.PNG", width: 90 %> Wishlist</h1>
   <div class="d-flex justify-content-center">
-    <div id="carouselExampleControls" class="carousel slide carousel-container w-100" data-bs-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide carousel-container w-100 wishlist-controls" data-bs-ride="carousel">
       <div class="carousel-inner p-5 carousel-items align-items-center justify-content-center">
         <% @wishlists.each_with_index do |wish, index| %>
           <div class="carousel-item card-wishlist p-0 <%= 'active' if index == 0 %>">

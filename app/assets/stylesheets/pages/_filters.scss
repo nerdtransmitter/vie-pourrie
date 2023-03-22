@@ -80,9 +80,10 @@ input#btn-later {
 
 @media (min-width: 1024px) {
   .filters-container {
-  max-width: 630px;
-  margin-top: 0;
+    max-width: 630px;
+    margin-top: 0;
   }
+
   .img-position {
     background-size: 45vh;
     padding: 40px 134px 30px 134px;
@@ -91,13 +92,13 @@ input#btn-later {
     p {
       font-size: 1.9vh;
       width: 46vh;
-      padding: 0 4.5vh;
+      padding: 0 2.5vh;
     }
   }
 
   .img-bulle3 {
     background-size: 45vh;
-    padding: 30px;
+    padding: 5vh;
   }
   .text-bulle {
     width: 38vh;
