@@ -9,7 +9,7 @@ class Card < ApplicationRecord
   has_one_attached :photo
 
   def is_thematic?
-    level == 0
+    level.zero?
   end
 
   def is_activity?
@@ -17,13 +17,11 @@ class Card < ApplicationRecord
   end
 
   def filter_video_url
-    if video
-      match = self.video.match(/\b=.*(\b&|\z)/).to_s
-      if match[-1] == "&"
-        return match[1..-2]
-      else
-        return match[1..-1]
-      end
-    end
+    return unless video
+
+    match = video.match(/\b=.*(\b&|\z)/).to_s
+    return match[1..-2] if match[-1] == "&"
+
+    return match[1..]
   end
 end
