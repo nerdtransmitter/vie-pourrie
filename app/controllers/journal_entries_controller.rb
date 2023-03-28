@@ -1,5 +1,5 @@
 class JournalEntriesController < ApplicationController
-  before_action :set_journal_entry, only: [:show, :update, :recap, :edit, :destroy]
+  before_action :set_journal_entry, only: %i[show update recap edit destroy]
 
   def new
     @card = Card.find(params[:parent_card])
@@ -46,7 +46,8 @@ class JournalEntriesController < ApplicationController
 
   def recap
     if @journal_entry.card.address.present?
-      @markers = [{ lat: @journal_entry.card.latitude, lng: @journal_entry.card.longitude, info_window_html: render_to_string(partial: "info_window") }]
+      @markers = [{ lat: @journal_entry.card.latitude, lng: @journal_entry.card.longitude,
+                    info_window_html: render_to_string(partial: "info_window") }]
     elsif @journal_entry.card.website.present?
       @journal_entry.card.website
     elsif @journal_entry.card.playlist.present?
