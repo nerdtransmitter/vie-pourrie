@@ -1,8 +1,18 @@
 # Quand La Vie C'est Pourri
 
-[Quand La Vie C'est Pourri](https://www.viepourrie.com/) is a French web app that proposes activities when you're feeling down (or just want ideas) based on your location and preferences for the day. It is optimized for mobile but is responsive on tablet and desktop. The goal is to make your day better by helping you find something that will make your day better and put you in a better mood. It includes a journal to follow your progress and track which activities you preferred. It is based on a [card game](https://www.etsy.com/listing/1147771650/when-life-is-rotten-card-game?show_sold_out_detail=1&ref=nla_listing_details) created by one of the developers([McSquurl](https://github.com/mcsqurrl)) with completely original illustrations.
+<div style="display: flex">
+  [Quand La Vie C'est Pourri](https://www.viepourrie.com/) is a French web app that proposes activities when you're feeling down (or just
+  want ideas) based on your location and preferences for the day. It is optimized for mobile but is responsive on tablet and desktop. The
+  goal is to make your day better by helping you find something that will make your day better and put you in a better mood. It includes a
+  journal to follow your progress and track which activities you preferred. It is based on a [card game
+  (https://www.etsy.com/listing/1147771650/when-life-is-rotten-card-game?show_sold_out_detail=1&ref=nla_listing_details) created by one of
+  the developers([McSquurl](https://github.com/mcsqurrl)) with completely original illustrations.
 
-<img src="/app/assets/images/Purple Modern App Instagram Ad.png" alt="home page mockup" title="Vie Pourri mockup" style="display: inline-block; margin: 0 auto; max-width: 250px">
+  <img src="/app/assets/images/Purple Modern App Instagram Ad.png" 
+       alt="home page mockup" 
+       title="Vie Pourri mockup" 
+       style="display: inline-block; margin: 0 auto; max-width: 250px">
+</div>
 
 ## Installation
 
