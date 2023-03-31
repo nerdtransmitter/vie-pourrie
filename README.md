@@ -4,7 +4,7 @@
 want ideas) based on your location and preferences for the day. It is optimized for mobile but is responsive on tablet and desktop. The
 goal is to make your day better by helping you find something that will make your day better and put you in a better mood. It includes a
 journal to follow your progress and track which activities you preferred. It is based on a [card game](https://www.etsy.com/listing/1147771650/when-life-is-rotten-card-game?show_sold_out_detail=1&ref=nla_listing_details) created by one of
-the developers[McSquurl](https://github.com/mcsqurrl) with completely original illustrations.
+the developers [McSquurl](https://github.com/mcsqurrl) with completely original illustrations.
 
   <img src="/app/assets/images/Purple Modern App Instagram Ad.png" 
        alt="home page mockup" 
@@ -39,7 +39,8 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ## Contact
 
-Alessia Moison - adm2217@columbia.edu
+[Alessia Moison](https://github.com/nerdtransmitter/) - adm2217@columbia.edu
+[Olga Rusnac](https://github.com/olgarusnac) - olga.v.rusnac@gmail.com
 
 Project Link: https://github.com/nerdtransmitter/vie-pourrie
 
