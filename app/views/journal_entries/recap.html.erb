@@ -27,7 +27,6 @@
     <% end %>
   </div>
   <div class="d-flex justify-content-center ms-2 mt-4 mb-4" data-controller="modal" >
-    <%# <%= link_to "C'est fait! ", edit_journal_entry_path(@journal_entry), class: "btn btn-violet"  %>
     <div class="love my-4 py-3" >
       <input id="switch" type="checkbox" data-modal-target="checkbox" data-action="change->modal#love">
       <label class="love-heart mb-4" for="switch">
@@ -40,28 +39,23 @@
     <!-- Modal -->
     <div class="modal w-100 fade" data-modal-target="modal" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <%# <div class="card-content"> %>
-          <div class="modal-content">
-            <div class="modal-header mt-3 d-flex recap-soleil justify-content-center position-relative">
-              <%# <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> %>
-              <%# <h1 class="modal-title fs-5" id="exampleModalLabel">Alors, <br>ça t'a plu?</h1> %>
-
-               <%= image_tag "sol-bg.png", width: 150,  class:"modal-title fs-5 position-absolute sun-hair", id:"exampleModalLabel"%>
-               <%= image_tag "hairless-sun.png", width: 130,  class:"modal-title fs-5 rotating-rays position-absolute", id:"exampleModalLabel"%>
-            </div>
-              <div class="modal-body fw-semibold ">
-                <%= simple_form_for @journal_entry do |f| %>
-                  <%= f.input :content, label: "Alors, ça t'a plu ?", class: "w-100 p-3 ", input_html: {style: "height:15vh bold"}  %>
-                  <%= f.input :rating, collection: (1..5).to_a, label: "Comment tu te sens ?", input_html: {data: {controller: "star-rating"}} %>
-                  <div class="d-flex justify-content-center">
-                    <%= f.submit "Enregistrer", class:"btn-violet w-80 " %>
-                  </div>
+        <div class="modal-content">
+          <div class="modal-header mt-3 d-flex recap-soleil justify-content-center position-relative">
+              <%= image_tag "sol-bg.png", width: 150,  class:"modal-title fs-5 position-absolute sun-hair", id:"exampleModalLabel"%>
+              <%= image_tag "hairless-sun.png", width: 130,  class:"modal-title fs-5 rotating-rays position-absolute", id:"exampleModalLabel"%>
+          </div>
+          <div class="modal-body fw-semibold ">
+            <%= simple_form_for @journal_entry do |f| %>
+              <%= f.input :content, label: "Alors, ça t'a plu ?", class: "w-100 p-3 ", input_html: {style: "height:15vh bold"}  %>
+              <%= f.input :rating, collection: (1..5).to_a, label: "Comment tu te sens ?", input_html: {data: {controller: "star-rating"}} %>
+              <div class="d-flex justify-content-center">
+                <%= f.submit "Enregistrer", class:"btn-violet w-80 " %>
               </div>
               <div class="modal-footer">
               </div>
-              <% end %>
+            <% end %>
           </div>
-        <%# </div> %>
+        </div>
       </div>
     </div>
   </div>
