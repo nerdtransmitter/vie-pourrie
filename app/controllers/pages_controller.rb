@@ -14,9 +14,5 @@ class PagesController < ApplicationController
     @journal_entries = current_user.journal_entries
     @journal_entries = @journal_entries.order('created_at DESC')
     @wishlists = current_user.wishlists
-<<<<<<< HEAD
-  
-=======
->>>>>>> 58596850db6ff0d6965dfed0565860af7e34fd9b
   end
 end
