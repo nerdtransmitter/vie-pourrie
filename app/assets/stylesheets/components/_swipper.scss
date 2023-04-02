@@ -5,9 +5,17 @@
 .swiper {
   width: 320px;
   height: 570px;
-  margin-top: 98px;
   background-color: white;
   border-radius: 10px;
+  margin-top: 5vh;
+}
+
+@media (min-width: 1440px) {
+  .swiper {
+    margin-top: 10vh;
+    width: 365px;
+    height: 610px;
+  }
 }
 
 .swiper-wrapper {

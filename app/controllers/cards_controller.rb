@@ -8,11 +8,10 @@ class CardsController < ApplicationController
     if params[:outside]
       if params[:active]
         @cards = Card.where(outside: params[:outside]).where(active: params[:active])
-        @cards = @cards.near([lat, lng]) unless params[:lat].empty?
       else
         @cards = Card.where(outside: params[:outside])
-        @cards = @cards.near([lat, lng]) unless params[:lat].empty?
       end
+      @cards = @cards.near([lat, lng]) unless params[:lat].empty?
     elsif params[:active]
       @cards = Card.where(active: params[:active])
     else
@@ -25,7 +24,6 @@ class CardsController < ApplicationController
   def show
     @card = Card.find(params[:id])
   end
-
 
   def filters
   end

@@ -8,10 +8,14 @@
 }
 
 .label-icon {
-  width: 96px;
-  height: 96px;
+  width: 10vh;
+  height: 10vh;
   border-radius: 50%;
   background-color: #d2a9ec;
+}
+
+.mt-4vh {
+  margin-top: 2vh;
 }
 
 .radio-btn-div:hover .label-icon {
@@ -39,22 +43,139 @@
   background-position: center;
   background-size: 87vw;
   background-repeat: no-repeat;
-  padding: 30px 50px 20px;
-  margin-top: 50px;
+  padding: 30px 47px;
+  margin-top: 2vh;
   .p {
     line-height: 12px;
     margin-bottom: 0;
+  }
+  p {
+    font-size: 2vh;
   }
 }
 
 .img-bulle3 {
   background-image: url("intestin.png");
   background-position: top;
-  background-size: 87vw 51vh;
+  background-size: 87vw 50vh;
   background-repeat: no-repeat;
-  padding: 30px 63px 36px;
+  padding: 2vh 53px 5vh;
+  margin-bottom: 1vh;
 }
 
 .text-bulle {
   position: top;
+  font-size: 2vh;
+}
+
+input#btn-later {
+  border: none;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  color: purple;
+  border: 1px solid;
+  box-shadow: 1px 1px 4px purple;
+}
+
+@media (min-width: 768px) {
+  .filters-container {
+  max-width: 630px;
+  margin-top: 0;
+  }
+  .img-position {
+    background-size: 45vh;
+    padding: 40px 134px 30px 134px;
+    margin-top: 0;
+    p {
+      font-size: 1.9vh;
+      width: 43vh;
+      padding: 0 3.5vh;
+    }
+  }
+
+  .img-bulle3 {
+    background-size: 45vh;
+    padding: 30px;
+  }
+  .text-bulle {
+    width: 36vh;
+    padding-left: 3vh;
+    font-size: 1.9vh;
+
+  }
+  .form {
+    max-width: 630px;
+    padding: 0 110px;
+  }
+}
+
+@media (min-width: 1023px) {
+  .filters-container {
+    max-width: 630px;
+    margin-top: 0;
+  }
+
+  .img-position {
+    background-size: 45vh;
+    padding: 40px 134px 30px 134px;
+    margin-top: 0;
+
+    p {
+      font-size: 1.9vh;
+      width: 46vh;
+      padding: 0 2.5vh;
+    }
+  }
+
+  .img-bulle3 {
+    background-size: 45vh;
+    padding: 4vh;
+  }
+  .text-bulle {
+    width: 38vh;
+    padding-left: 2vh;
+    font-size: 1.9vh;
+
+  }
+  .form {
+    max-width: 630px;
+    padding: 0 110px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .filters-container {
+  max-width: 630px;
+  margin-top: 0;
+  }
+
+  .img-position {
+    background-size: 45vh;
+    padding: 30px 134px 40px 80px;
+    margin-top: 0;
+
+    p {
+      font-size: 2.1vh;
+      width: 55vh;
+      padding: 0px 10.5vh;
+    }
+  }
+
+  .img-bulle3 {
+    background-size: 45vh;
+    padding: 15px 60px;
+  }
+
+  .text-bulle {
+    padding-left: 10vh;
+    font-size: 2.1vh;
+    width: 45vh;
+    margin-top: 3vh;
+  }
+
+  .form {
+    max-width: 630px;
+    padding: 0 18px;
+  }
 }

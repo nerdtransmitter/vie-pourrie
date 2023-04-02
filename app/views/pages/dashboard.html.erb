@@ -1,75 +1,85 @@
-<div class="py-2">
-  <div class="d-flex justify-content-between align-items-center mb-2">
-    <%=image_tag "journal2.PNG", width: 60, height: 60, class: "text-start ms-3", data: { action: "click->dashboard#displayJournal" }%>
+<div style="min-height: calc(100vh - 124px); margin-bottom: 54px; width: 100%;">
+  <div class="py-2">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <%=image_tag "journal2.PNG", width: 60, height: 60, class: "text-start ms-3", data: { action: "click->dashboard#displayJournal" }%>
 
-    <div class="d-flex align-items-center justify-content-end me-3">
-      <h2 class="pt-3 hello-mssg">Bonjour, <span class="fw-bolder"><%= current_user.username %></span> !</h2>
-      <div class="dropdown btn-profile">
-        <button class="btn btn-profile " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          <%= cl_image_tag current_user.photo.key, class: "avatar-large me-auto bd-highlight" %>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><%= link_to "Editer mon profil", edit_user_registration_path, class: "dropdown-item" %></li>
-          <li><%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
-        </ul>
+      <div class="d-flex align-items-center justify-content-end me-3">
+        <h2 class="pt-3 hello-mssg">Bonjour, <span class="fw-bolder"><%= current_user.username %></span> !</h2>
+        <div class="dropdown btn-profile">
+          <button class="btn btn-profile " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar-large me-auto bd-highlight" %>
+          <% else %>
+            <%= image_tag "solei.PNG", class: "avatar-large me-auto bd-highlight"  %>
+          <% end %>
+
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><%= link_to "Editer mon profil", edit_user_registration_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <% messages = [
+        "Pour pouvoir contempler un arc-en-ciel, il faut d'abord endurer la pluie.",
+        "La vie est un défi à relever, un bonheur à mériter, une aventure à tenter.",
+        "Chaque jour est une nouvelle chance de vivre une vie meilleure.",
+        "La réussite n'est pas la clé du bonheur. Le bonheur est la clé de la réussite.",
+        "La vie est un voyage, profitez de chaque instant et apprenez de chaque expérience.",
+        "N'abandonnez jamais vos rêves, car ils peuvent se réaliser un jour.",
+        "La vie est trop courte pour ne pas être heureux.",
+        "Le bonheur ne dépend pas de ce que vous avez, mais de ce que vous êtes.",
+        "Soyez la personne que vous voulez être et vivez la vie que vous voulez vivre."
+      ] %>
+        <%# Display a randomly selected message on each page refresh %>
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="message-text mx-5 fst-italic justify-content-center">
+        <p class="m-0 fw-bolder text-center"><i class="fa-solid fa-quote-left"></i> <small><%= messages.sample %></small> <i class="fa-solid fa-quote-right"></i></p>
+      </div>
+      <br>
+    </div>
+  </div>
+  <br>
+  <div class="dashboard-container mt-5" data-controller="dashboard">
+    <%# <div id="gradient-overlay">
+    </div> %>
+    <div class="card-box bg-violet">
+      <div class="inner">
+        <% @journal_entries.each do |entry| %>
+          <div class="card-entry">
+            <div class="d-flex justify-content-between w-100 ">
+              <div class="journal-date d-flex flex-column  justify-content-center align-items-center px-2 py-5 me-2">
+                <small><%= entry.created_at.strftime("%a") %></small>
+                <small><%= entry.created_at.strftime("%d") %></small>
+                  <%= link_to entry,
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                    class: "btn text-start" do %>
+                    <small><i class="fas fa-trash-alt text-secondary"></i></small>
+                  <% end %>
+              </div>
+              <div class="w-100">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex align-items-center">
+
+                      <%= cl_image_tag entry.card.photo.key, width: 40, class: "entry-icon" %>
+                    <h6 class="entry-card-name p-2"><%= entry.card.name %></h6>
+                  </div>
+                  <div class="entry-rating d-flex justify-content center pe-2 ">
+                    <%= raw emoji_my_mood(entry.rating) %>
+                  </div>
+                </div>
+                <p class="w-100 text-start"><%= entry.content %></p>
+              </div>
+            </div>
+
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-
-  <% messages = [
-      "Pour pouvoir contempler un arc-en-ciel, il faut d'abord endurer la pluie.",
-      "La vie est un défi à relever, un bonheur à mériter, une aventure à tenter.",
-      "Chaque jour est une nouvelle chance de vivre une vie meilleure.",
-      "La réussite n'est pas la clé du bonheur. Le bonheur est la clé de la réussite.",
-      "La vie est un voyage, profitez de chaque instant et apprenez de chaque expérience.",
-      "N'abandonnez jamais vos rêves, car ils peuvent se réaliser un jour.",
-      "La vie est trop courte pour ne pas être heureux.",
-      "Le bonheur ne dépend pas de ce que vous avez, mais de ce que vous êtes.",
-      "Soyez la personne que vous voulez être et vivez la vie que vous voulez vivre."
-    ] %>
-      <%# Display a randomly selected message on each page refresh %>
-  <div class="message-text mx-5 fst-italic justify-content-center">
-    <p class="m-0 fw-bolder text-center"><i class="fa-solid fa-quote-left"></i> <small><%= messages.sample %></small> <i class="fa-solid fa-quote-right"></i></p>
+  <div class="image">
+    <%= image_tag "rainbow.PNG", class:"rainbow" %>
   </div>
-  <br>
-</div>
-<br>
-<div class="dashboard-container mt-5" data-controller="dashboard">
-  <%# <div id="gradient-overlay">
-  </div> %>
-  <div class="card-box bg-violet">
-    <div class="inner">
-      <% @journal_entries.each do |entry| %>
-        <div class="card-entry">
-          <div class="d-flex justify-content-between w-100 ">
-            <div class="journal-date d-flex flex-column  justify-content-center align-items-center px-2 py-5 me-2">
-              <small><%= entry.created_at.strftime("%a") %></small>
-              <small><%= entry.created_at.strftime("%d") %></small>
-                <%= link_to entry,
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-                  class: "btn text-start" do %>
-                  <small><i class="fas fa-trash-alt text-secondary"></i></small>
-                <% end %>
-            </div>
-            <div class="w-100">
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center">
-                  <%= cl_image_tag entry.card.photo.key, width: 40, class: "entry-icon" %>
-                  <h6 class="entry-card-name p-2"><%= entry.card.name %></h6>
-                </div>
-                <div class="entry-rating d-flex justify-content center pe-2 ">
-                  <%= raw emoji_my_mood(entry.rating) %>
-                </div>
-              </div>
-              <p class="w-100 text-start"><%= entry.content %></p>
-            </div>
-          </div>
-
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-<div class="image">
-  <%= image_tag "rainbow.PNG", class:"rainbow" %>
 </div>

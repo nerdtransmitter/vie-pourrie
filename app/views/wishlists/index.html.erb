@@ -1,29 +1,31 @@
-<div class="inner w-100 mt-5" id="inner-wishlist">
+<div class="inner w-60 mt-5" id="inner-wishlist">
   <h1 class="">Ma <%= image_tag "like.PNG", width: 90 %> Wishlist</h1>
-  <div id="carouselExampleControls" class="carousel slide carousel-container w-100" data-bs-ride="carousel">
-    <div class="carousel-inner p-5 carousel-items align-items-center justify-content-center">
-      <% @wishlists.each_with_index do |wish, index| %>
-        <div class="carousel-item card-wishlist p-0 <%= 'active' if index == 0 %>">
-          <div class="d-flex flex-column justify-content-center align-items-center">
-            <%= link_to new_journal_entry_path(parent_card: wish.card.id, outside: params[:outside], active: params[:active]), class: "carousel-link" do %>
-              <%= cl_image_tag wish.card.photo.key, width: 200 %>
-            <% end %>
-            <%= link_to wish,
-              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-              class: "btn ml-4" do %>
-              <i class="fa-sharp fa-solid fa-trash-can del-icon"></i>
-            <% end %>
+  <div class="d-flex justify-content-center">
+    <div id="carouselExampleControls" class="carousel slide carousel-container w-100 wishlist-controls" data-bs-ride="carousel">
+      <div class="carousel-inner p-5 carousel-items align-items-center justify-content-center">
+        <% @wishlists.each_with_index do |wish, index| %>
+          <div class="carousel-item card-wishlist p-0 <%= 'active' if index == 0 %>">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+              <%= link_to new_journal_entry_path(parent_card: wish.card.id, outside: params[:outside], active: params[:active]), class: "carousel-link" do %>
+                <%= cl_image_tag wish.card.photo.key, width: 200 %>
+              <% end %>
+              <%= link_to wish,
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                class: "btn ml-4" do %>
+                <i class="fa-sharp fa-solid fa-trash-can del-icon"></i>
+              <% end %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+        <span class="sr-only">Previous</span>
+        <%= image_tag "boutonl.png", class: "fleche2" %>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+        <span class="sr-only">Next</span>
+        <%= image_tag "boutonr.png", class: "fleche2" %>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-      <span class="sr-only">Previous</span>
-      <%= image_tag "boutonl.png", class: "fleche2" %>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
-      <span class="sr-only">Next</span>
-      <%= image_tag "boutonr.png", class: "fleche2" %>
-    </a>
   </div>
 </div>

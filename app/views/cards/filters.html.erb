@@ -1,14 +1,14 @@
-<div class="img-position mx-4 fst-italic justify-content-center">
-  <p class="">D'accord <span class="text-color fw-bolder"><%= current_user.username %></span> ! On va faire en sorte d'améliorer ta journée avec une activité cool.
-  De quoi tu as envie ?</p>
-</div>
 
-<div class="container">
+<div class="container filters-container">
+  <div class="img-position fst-italic justify-content-center align-items-center">
+    <p class="text-bulle">D'accord <span class="text-color fw-bolder"><%= current_user.username %></span> ! On va faire en sorte d'améliorer ta journée avec une activité cool.
+    De quoi tu as envie ?</p>
+  </div>
   <div class="fst-italic justify-content-center">
     <div class="justify-content-between align-items-center">
       <div class="form">
         <%= form_with  url: cards_path, method: :get do |f| %>
-          <div class="d-flex img-bulle3 flex-column align-items-start justify-content-between">
+          <div class="d-flex img-bulle3 flex-column align-items-start justify-content-around">
               <div class="">
                 <p class="text-bulle">Tu préfères rester à <span class="text-color fw-bolder">la maison</span> ou aller à <span class="text-color fw-bolder">l'extérieur</span> ?
                 Tu as envie de <span class="text-color fw-bolder">bouger</span> ou tu as <span class="text-color fw-bolder">la flemme</span> ?</p>
@@ -50,10 +50,10 @@
               </div>
 
             </div>
-            <div class="d-flex flex-column align-items-center justify-content-between pt-3 pb-2">
+            <div class="d-flex mt-4vh flex-column align-items-center justify-content-between pb-2">
               <%= f.hidden_field :user_id, value: current_user.id %>
               <div class="w-100 justify-content-center align-items-center d-flex">
-                <%= f.submit "Mélanger les cartes", class: "btn btn-filter m-4 text-center" %>
+                <%= f.submit "Mélanger les cartes", class: "btn btn-filter text-center" %>
               </div>
             <% end %>
             <%# <div class="img-bulle2 mx-4 fst-italic justify-content-center">
