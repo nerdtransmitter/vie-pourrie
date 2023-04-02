@@ -18,6 +18,6 @@ class PagesController < ApplicationController
     @journal_entries = current_user.journal_entries
     @journal_entries = @journal_entries.order('created_at DESC')
     @wishlists = current_user.wishlists
-    # @wishlist = Wishlist.find(params[:id])
+  
   end
 end
